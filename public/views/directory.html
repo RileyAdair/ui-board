@@ -1,0 +1,35 @@
+<section>
+  <h2>{{ user.name }}</h2>
+  <br>
+  <p>Create board</p>
+  <button ng-click="showModal=true">+</button>
+  <br>
+  <br>
+</section>
+
+<!-- Create board modal -->
+<section class="modal" ng-if="showModal">
+  <h2>Create board</h2>
+  <br>
+  <button class="close-modal" ng-click="hideModal()">X</button>
+  <form>
+    <input ng-model="board.name" type="text" placeholder="Name">
+  </form>
+  <br>
+  <button ng-click="createBoard(board)">Create</button>
+</section>
+
+<section>
+  <div class="thumbnail-site-container" ng-repeat="board in boards">
+    <div class="thumbnail-container" ng-click="boardRoute(board)">
+    <div class="thumbnail">
+      <iframe ng-src="{{ board.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
+      <img class="board-image" ng-src="{{ board.image_url }}">
+    </div>
+    <div class="directory-board-name">{{ board.name }}</div>
+    </div>
+    <button ng-click="deleteBoard(board.board_id)">X</button>
+  </div>
+</section>
+
+<!-- ui-sref="board({ board_id: board.board_id, name: board.name })" -->
