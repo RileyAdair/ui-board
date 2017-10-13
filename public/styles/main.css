@@ -60,8 +60,10 @@ body {
 
 /* This container helps the thumbnail behave as if it were an unscaled IMG element */
 .thumbnail-container {
-  width: calc(1440px * 0.25);
-  height: calc(800px * 0.25);
+  /*width: calc(1440px * 0.25);
+  height: calc(800px * 0.25);*/
+  width: 360px;
+  height: 200px;
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -96,6 +98,14 @@ body {
   -o-transform-origin: 0 0;
   -webkit-transform: scale(0.25);
   -webkit-transform-origin: 0 0;
+  position: relative;
+  transition: all 2s;
+}
+
+/* This is a ng-animate class for selecting the index of image in ng-repeat*/
+.thumbnail.selected {
+  z-index: 10;
+  border: 20px solid red;
 }
 
 /* This is our screen sizing */
@@ -119,6 +129,11 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.thumbnail.selected:after {
+  content: "";
+  position: relative;
 }
 
 .thumbnail .board-image {
@@ -154,5 +169,34 @@ body {
 }
 
 .board-name-header {
+  /*text-transform: uppercase;*/
+}
 
+.board-name-header:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa;
+}
+
+/* View ======================================================================*/
+
+.view-title:empty:before, .view-description:empty:before,
+.view-reference-url:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa;
+}
+
+.view-description, .view-reference-url, .view-site-url {
+  font-size: 14px;
+}
+
+.view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 2em;
 }

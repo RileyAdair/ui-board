@@ -1,4 +1,4 @@
-app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, $sce, boardSrvc) {
+app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, $sce, boardSrvc, $rootScope, $state) {
 
   firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -10,28 +10,34 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
         console.log(this.user);
   })
 
+
+
   const boardId = $stateParams.board_id;
 
   angular.element(document).ready(function(){
+    // Board name header
     $('body').find('.board-name-header').on('click', function() {
       $(this).prop('contentEditable', true)
     })
     $('body').find('.board-name-header').on('blur', function() {
       const name = $(this).text()
-      boardSrvc.updateBoardName(name, boardId);
+      if(name) {
+          boardSrvc.updateBoardName(name, boardId);
+      }
     })
     $('body').find('.board-name-header').keypress(function(event){
       if(event.keyCode == 13){
         $(this).prop('contentEditable', false)
         const name = $(this).text()
-        boardSrvc.updateBoardName(name, boardId);
+        if(name) {
+          boardSrvc.updateBoardName(name, boardId);
+        }
       }
-    });
 
-    // $('body').find('.edit-me').prop('contentEditable', true).on('blur', function() {
-    //   console.log( $(this).text() );
-    // })
+    });
   })
+
+  // **** For testing updates
   $scope.images;
   // Get Board Name & Board Images / Sites
   boardSrvc.getBoardName(boardId).then(response => {
@@ -80,11 +86,6 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
         console.log(response);
       }, 0)
     })
-  }
-
-  $scope.select = (image) => {
-    console.log(image);
-    $scope.test = image.title;
   }
 
 });

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ngFileUpload'])
+var app = angular.module('app', ['ui.router', 'ngFileUpload', 'ngAnimate'])
 .config(function($urlRouterProvider, $stateProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -21,5 +21,16 @@ var app = angular.module('app', ['ui.router', 'ngFileUpload'])
       url: '/directory:id/board:board_id',
       templateUrl: 'views/board.html',
       controller: 'boardCtrl',
+      // resolve: {
+      //   resetParams: function() {
+      //     return
+      //   }
+      // }
+    })
+
+    .state('board.view', {
+      url: '/:view',
+      templateUrl: 'views/view.html',
+      controller: 'viewCtrl'
     })
 });

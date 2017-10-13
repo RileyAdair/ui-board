@@ -1,4 +1,4 @@
-<h1 contenteditable="true" input class="board-name-header">{{ boardName }}</h1>
+<h1 class="board-name-header" contenteditable="true" placeholder="ADD A TITLE HERE...">{{ boardName }}</h1>
 <section>
   <form name="form">
     <div ngf-drop="upload($file)" class="drop-box"
@@ -17,14 +17,13 @@
 </section>
 <br>
 
-<h1 class="test">{{ test }}</h1>
+<!-- <h1 class="test">{{ test }}</h1> -->
 
 <!-- Saved images and sites -->
 <section>
   <div class="thumbnail-site-container" ng-repeat="image in images">
-    <p class="edit-me">{{ image.title }}</p>
-    <div class="thumbnail-container" ng-click="select(image)">
-    <div class="thumbnail">
+    <div class="thumbnail-container" ui-sref="board.view({view: image.image_id})">
+    <div class="thumbnail" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id }">
       <iframe ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
       <img class="board-image" ng-src="{{ image.image_url }}">
     </div>
@@ -32,8 +31,8 @@
     <button ng-click="deleteImage(image)">X</button>
   </div>
 </section>
-
-
+<section ng-include src="views/view.html"></section>
+<ui-view></ui-view>
 
 <!-- <div ng-repeat="image in images">
   <img class="board-image" ng-src="{{ image.image_url }}">

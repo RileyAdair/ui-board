@@ -82,10 +82,10 @@ app.service('boardSrvc',function($http, $location, $sce){
         const downloadURL = uploadTask.snapshot.downloadURL;
         const boardId = file.id;
         const name = file.name
-        file.title = name.replace(/.([^.]*)$/,'')
-        const title = file.title;
+        file.title = name.replace(/.([^.]*)$/,'');
+        const title = file.title.charAt(0).toUpperCase() + file.title.slice(1);
         // pass download url to database
-
+        console.log(title);
         resolve({downloadURL, boardId, title});
       });
 
@@ -147,7 +147,7 @@ app.service('boardSrvc',function($http, $location, $sce){
 
     let title = site.replace(/(^\w+:|^)\/\//, '')
     title = title.replace(/.([^.]*)$/,'')
-    title = title.replace(/(?:www.)/,'')
+    title = title.replace(/(?:www.)/,'').charAt(0).toUpperCase() + title.slice(1);
 
     return $http.post('/user/addsite', [ site, boardId, title ])
     .then(response => {
@@ -173,10 +173,14 @@ app.service('boardSrvc',function($http, $location, $sce){
 
   }
 
+  /*
+  Update board name ============================================================
+  */
   this.updateBoardName = (name, boardId) => {
     console.log(name, boardId);
     // Endpoint - update board name
     return $http.post('/user/updateBoardName', [ name, boardId ])
   }
+
 
 })

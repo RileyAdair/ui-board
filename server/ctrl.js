@@ -154,6 +154,41 @@ module.exports = {
       .update_board_name(req.body)
       .then(image => res.json(image))
       .catch(err => res.json(err));
+  },
+
+  /*
+  View Endpoints ===============================================================
+  */
+  getViewInfo(req, res) {
+    req.app
+      .get('db')
+      .get_view_info(req.body)
+      .then(name => res.json(name))
+      .catch(err => res.json(err));
+  },
+
+  updateViewTitle(req, res) {
+    req.app
+      .get('db')
+      .update_view_title(req.body)
+      .then(image => res.json(image))
+      .catch(err => res.json(err));
+  },
+
+  updateViewDescription(req, res) {
+    req.app
+      .get('db')
+      .update_view_description(req.body)
+      .then(image => res.json(image))
+      .catch(err => res.json(err));
+  },
+
+  updateViewReference(req, res) {
+    req.app
+      .get('db')
+      .update_view_reference(req.body)
+      .then(image => res.json(image))
+      .catch(err => res.json(err));
   }
 
 }

@@ -57,6 +57,11 @@ app.post('/user/addImage', ctrl.addImage);
 app.post('/user/deleteImage', ctrl.deleteImage);
 app.post('/user/addsite', ctrl.addSite);
 app.post('/user/updateBoardName', ctrl.updateBoardName);
+// View Endpoints
+app.post('/user/getViewInfo', ctrl.getViewInfo);
+app.post('/user/updateViewTitle', ctrl.updateViewTitle);
+app.post('/user/updateViewDescription', ctrl.updateViewDescription)
+app.post('/user/updateViewReference', ctrl.updateViewReference)
 
 app.listen(port, function() {
   console.log('Server listening on port', port);

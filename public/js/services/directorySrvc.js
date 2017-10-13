@@ -86,7 +86,6 @@ app.service('directorySrvc',function($http, $location, $sce){
     // Endpoint - delete board
     return $http.post('/user/deleteBoard', [ board, userId ])
     .then(response => {
-      console.log(response);
       const results = response.data;
       const imagesArr = [];
 

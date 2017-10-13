@@ -50,7 +50,6 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   $scope.deleteBoard = (board) => {
     const userId = parseInt($stateParams.id);
     directorySrvc.deleteBoard(board, userId).then(response => {
-      console.log(response);
       $scope.boards = response;
     })
   }
