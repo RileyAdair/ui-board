@@ -1,4 +1,4 @@
-app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, $sce, boardSrvc, $rootScope, $state) {
+app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, $sce, boardSrvc, directorySrvc, $state) {
 
   firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -9,8 +9,6 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
         // else { ng-show set to false }
         console.log(this.user);
   })
-
-
 
   const boardId = $stateParams.board_id;
 
@@ -106,5 +104,8 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
       }, 0)
     })
   }
-  
+
+  // Invoke directorySrvc.getUser to set userId and userName on $rootScope
+  // on topBarCtrl
+  directorySrvc.getUser($stateParams)
 });

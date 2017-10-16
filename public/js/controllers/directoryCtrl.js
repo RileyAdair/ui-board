@@ -20,7 +20,6 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   })
 
   directorySrvc.getBoards($stateParams).then(response => {
-    console.log(response);
     response.forEach(i => {
       boardsArr.push(i);
     })

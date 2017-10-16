@@ -1,4 +1,4 @@
-app.service('directorySrvc',function($http, $location, $sce){
+app.service('directorySrvc',function($http, $location, $sce, $rootScope){
 
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -16,7 +16,12 @@ app.service('directorySrvc',function($http, $location, $sce){
   */
   this.getUser = (params) => {
     // Endpoint - Get user
-    return $http.get(`/user/getUser/${params.id}`);
+    return $http.get(`/user/getUser/${params.id}`).then(response => {
+      // Emit fires and passes user object on $rooteScope topbarCtrl
+      $rootScope.$emit('userStorer', response.data[0])
+
+      return response;
+    })
   }
 
   this.getBoards = (params) => {

@@ -24,6 +24,7 @@ app.service('boardSrvc',function($http, $location, $sce){
     // Endpoint - get board images
     return $http.get(`/user/getBoardImages/${board.board_id}`)
     .then(response => {
+      console.log(response);
       const results = response.data;
       const imagesArr = [];
 

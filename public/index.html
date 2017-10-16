@@ -10,8 +10,8 @@
 <body>
   <!-- Topbar -->
   <section class="topbar" ng-controller="topbarCtrl">
-    <p>Directory</p>
-    {{ test }}
+    <p ng-click="userDirectory(user.id)">Directory</p>
+    <p>{{ user.name }}</p>
   </section>
   <!-- Sidebar -->
   <section class="sidebar"></section>
