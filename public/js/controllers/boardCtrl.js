@@ -38,23 +38,37 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
   })
 
   // **** For testing updates
-  $scope.images;
+  $scope.images = [];
+  const imagesArr = $scope.images;
+
   // Get Board Name & Board Images / Sites
   boardSrvc.getBoardName(boardId).then(response => {
     $scope.boardName = response.data[0].name;
   })
+
   boardSrvc.getBoardImages($stateParams).then(response => {
-    console.log(response);
-    $scope.images = response;
+    response.forEach(i => {
+      imagesArr.push(i);
+    })
+    console.log(imagesArr);
   })
 
-  // Delete image
   $scope.deleteImage = (image) => {
-    const imageId = image.image_id;
-    console.log(boardId);
-    boardSrvc.deleteImage(imageId, boardId).then(response => {
-      $scope.images = response;
-    })
+    let imageProp = 'image_id'
+    let imageId = image.image_id;
+    let i = imagesArr.length;
+
+    while(i--){
+       if( imagesArr[i]
+           && imagesArr[i].hasOwnProperty(imageProp)
+           && (arguments.length > 2 && imagesArr[i][imageProp] === imageId ) ){
+
+           imagesArr.splice(i,1);
+
+       }
+    }
+    console.log(imagesArr);
+    boardSrvc.deleteImage(imageId, boardId)
   }
 
   // Add site
@@ -66,8 +80,10 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
       console.log(boardId);
       boardSrvc.addSite(site, boardId)
       .then(response => {
+
+        imagesArr.push(response);
         console.log(response);
-        $scope.images = response;
+        // $scope.images = response;
       })
     }
   }
@@ -77,15 +93,18 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
     Add image_url to database
     Update $scope.images
   */
+
   $scope.upload = (file) => {
     file.id = boardId;
     boardSrvc.upload(file)
     .then(response => {
       $timeout(function(){
-        $scope.images = response;
+
+        imagesArr.push(response);
+        // $scope.images = response;
         console.log(response);
       }, 0)
     })
   }
-
+  
 });

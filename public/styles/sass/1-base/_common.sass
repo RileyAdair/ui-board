@@ -1,0 +1,60 @@
+@font-face
+  font-family: 'gilroy-bold'
+  src: url('../../assets/font/gilroy-extrabold-webfont.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'gilroy-light'
+  src: url('../../assets/font/gilroy-light-webfont.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html, body
+  width: 100%
+
+body
+  font-family: $font-stack-light
+  -webkit-font-smoothing: auto
+  font-size: 14px
+  letter-spacing: .25px
+  background: $offwhite
+  color: $darkGrey
+  text-align: center
+
+h1,h2,h3,h4,h5,h6
+  font-family: $font-stack-bold
+  -webkit-font-smoothing: antialiased
+
+a
+  color: $grey
+  text-decoration: none
+  transition: .3s
+
+  &:hover
+    color: $darkGrey
+
+button
+  background: transparent
+  outline: 0
+  border: 0
+  color: $lightGrey
+  transition: .3s
+  cursor: pointer
+
+  &:hover
+    color: $darkGrey
+
+  &:active
+    color: $darkGrey
+
+  &:focus
+    box-shadow: none
+    outline: none
+    border: 0
+    color: $darkGrey

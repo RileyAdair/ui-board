@@ -1,4 +1,4 @@
-app.service('homeSrvc',function($http, $location){
+app.service('loginSrvc',function($http, $location){
 
   firebase.auth().onAuthStateChanged(user => {
     if (user) {

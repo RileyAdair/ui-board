@@ -5,10 +5,10 @@ var app = angular.module('app', ['ui.router', 'ngFileUpload', 'ngAnimate'])
 
 
   $stateProvider
-    .state('home', {
+    .state('login', {
       url: '/',
-      templateUrl: 'views/home.html',
-      controller: 'homeCtrl'
+      templateUrl: 'views/login.html',
+      controller: 'loginCtrl'
     })
 
     .state('directory', {

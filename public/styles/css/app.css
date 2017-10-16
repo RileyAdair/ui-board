@@ -1,0 +1,438 @@
+/* COMMON STYLES */
+@font-face {
+  font-family: "gilroy-bold";
+  src: url("../../assets/font/gilroy-extrabold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "gilroy-light";
+  src: url("../../assets/font/gilroy-light-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  width: 100%; }
+
+body {
+  font-family: "gilroy-light", sans-serif;
+  -webkit-font-smoothing: auto;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  background: #F3F3F3;
+  color: #424242;
+  text-align: center; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "gilroy-bold", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+a {
+  color: #8C96A9;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+  a:hover {
+    color: #424242; }
+
+button {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  color: #DDE0E7;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer; }
+  button:hover {
+    color: #424242; }
+  button:active {
+    color: #424242; }
+  button:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    outline: none;
+    border: 0;
+    color: #424242; }
+
+/* LAYOUTS STYLES */
+.sidebar {
+  width: 60px;
+  height: 100%;
+  background-image: url(../../assets/logo/logo_full_vertical.svg);
+  background-size: 30px auto;
+  background-position: center bottom 20px;
+  background-repeat: no-repeat;
+  background-color: #2E2E2E;
+  border-right: 1px solid #464646;
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0; }
+
+.ui-board {
+  position: relative;
+  display: block;
+  width: calc(100vw - 60px);
+  height: auto;
+  top: 0;
+  left: 60px;
+  background: #F3F3F3; }
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.close-modal {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: transparent;
+  background-color: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer; }
+
+.drop-box {
+  text-align: center;
+  width: 360px;
+  height: 180px;
+  background: #cacaca; }
+
+/* Thumbnail Test ============================================================ */
+/* This container helps the thumbnail behave as if it were an unscaled IMG element */
+.thumbnail-container {
+  width: 360px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 16px 0; }
+
+/* Image Icon for the Background */
+.thumbnail-container::before {
+  position: absolute;
+  left: 45.5%;
+  top: 45%;
+  opacity: 0.2;
+  display: block;
+  -ms-zoom: 2;
+  -o-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2); }
+
+/* This is a masking container for the zoomed iframe element */
+.thumbnail {
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+  position: relative;
+  -webkit-transition: all 2s;
+  transition: all 2s; }
+
+/* This is a ng-animate class for selecting the index of image in ng-repeat */
+.thumbnail.selected {
+  z-index: 10;
+  border: 20px solid #ff3e4e; }
+
+/* This is our screen sizing */
+.thumbnail, .thumbnail iframe {
+  width: 1440px;
+  height: 800px; }
+
+/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+.thumbnail iframe {
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+
+/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+.thumbnail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.thumbnail.selected:after {
+  content: "";
+  position: relative; }
+
+.thumbnail .board-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%; }
+
+.directory-board-name {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 10px 0 8px; }
+
+.iframe-test {
+  width: 33.3333333%;
+  min-height: 180px;
+  height: auto; }
+
+.iframe-test img {
+  width: 100%; }
+
+#document img {
+  width: 100%; }
+
+.board-name-header {
+  /*text-transform: uppercase */ }
+
+.board-name-header:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa; }
+
+/* View ====================================================================== */
+.view-title:empty:before, .view-description:empty:before,
+.view-reference-url:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa; }
+
+.view-description, .view-reference-url, .view-site-url {
+  font-size: 14px; }
+
+.view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 2em; }
+
+.bottombar {
+  position: fixed;
+  height: 30px;
+  left: 60px;
+  background: rgba(255, 255, 255, 0.95); }
+
+.bottombar, .link {
+  right: 0;
+  bottom: 0; }
+
+.link {
+  overflow: hidden;
+  position: absolute;
+  width: auto;
+  color: #C8C8C8;
+  -webkit-font-smoothing: auto;
+  letter-spacing: 0;
+  margin: 0 20px 4px 0; }
+
+.link p {
+  font-size: 12px;
+  line-height: 20px; }
+
+.link a {
+  font-family: "gilroy-bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #2E2E2E;
+  letter-spacing: 0.1px;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  white-space: nowrap;
+  padding: 0 2px; }
+
+.link a:hover {
+  color: #fff;
+  overflow: hidden; }
+
+.link a:hover::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
+
+.link a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #2E2E2E;
+  transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
+  -webkit-transform: translateY(92%);
+          transform: translateY(92%); }
+
+.login-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 1000; }
+
+.login-content-container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  max-width: 541px;
+  overflow: hidden; }
+
+.login-form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.logo-ui-box {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background-image: url(../../assets/logo/logo_ui_box.svg);
+  background-size: 50px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-top: 4em; }
+
+.login-header, .login-header-placeholder {
+  font-family: "gilroy-bold", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8C96A9;
+  margin: 0 0 2.5em; }
+
+.login-header-placeholder {
+  visibility: hidden; }
+
+.login-input {
+  width: 100%;
+  text-align: center;
+  caret-color: #424242;
+  background: 0 0;
+  font-family: "gilroy-light", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  margin: 0 auto 15px; }
+
+.login-input-container {
+  border-bottom: 1px solid #A5ACBA; }
+
+.login-input-container.error {
+  border-bottom: 1px solid #ff3e4e; }
+
+.login-input::-webkit-input-placeholder {
+  color: #DDE0E7; }
+
+.login-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  color: #424242; }
+
+/*============================================================================ */
+/*============================================================================ */
+#login-step-one {
+  width: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+#login-step-two {
+  width: 100%;
+  display: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+#signup-step-one {
+  width: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+#signup-step-two {
+  width: 100%;
+  display: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+#signup-step-three {
+  width: 100%;
+  display: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+.login-button-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.login-back-button-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.login-next {
+  margin: 4em 0 0; }
+
+.login-back {
+  margin: 4em 0 0; }
+
+.login-signup {
+  -webkit-font-smoothing: antialiased;
+  color: #8C96A9;
+  margin: 2em auto 1em; }
+
+/* MODULES STYLES */
+
+/*# sourceMappingURL=app.css.map */

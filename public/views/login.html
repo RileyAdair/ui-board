@@ -1,0 +1,86 @@
+<!-- Login container -->
+<main class="login-container">
+  <section class="login-content-container">
+    <!-- Login -->
+    <form class="login-form" ng-show="showLogin">
+      <div class="logo-ui-box"></div>
+
+      <div id="login-step-one">
+        <h2 class="login-header">Login</h2>
+        <div id="login-email-container" class="login-input-container">
+          <input id="login-email-input" class="login-input" type="text" placeholder="Enter your email" autofocus ng-model="user.email" ng-focus="emailFocus()">
+        </div>
+        <div class="login-button-container">
+          <button class="login-next" ng-click="loginNext(user.email)">Next</button>
+        </div>
+      </div>
+
+      <div id="login-step-two">
+        <h2 class="login-header-placeholder">Login</h2>
+        <div id="login-password-container" class="login-input-container">
+          <input id="login-password-input" class="login-input" type="password" placeholder="Enter your password" ng-model="user.password" ng-focus="passwordFocus()">
+          <div>{{ error }}</div>
+        </div>
+        <div class="login-back-button-container">
+          <button class="login-back" ng-click="loginBack()">Back</button>
+          <button class="login-next" ng-click="login(user)">Login</button>
+        </div>
+      </div>
+
+      <div class="login-signup">
+        <p>Don't have an account?</p>
+        <a href="" ng-click="hideLogin()">Sign up</a>
+      </div>
+    </form>
+
+
+    <!-- Sign up -->
+    <form class="login-form" ng-show="showSignup">
+      <div class="logo-ui-box"></div>
+
+      <div id="signup-step-one">
+        <h2 class="login-header">Sign up</h2>
+        <div id="signup-name-container" class="login-input-container">
+          <input id="signup-name-input" class="login-input" type="text" placeholder="Enter your name" autofocus ng-model="name" ng-focus="signupNameFocus()">
+        </div>
+        <div class="login-button-container">
+          <button class="login-next" ng-click="signupNextOne(name)">Next</button>
+        </div>
+      </div>
+
+      <div id="signup-step-two">
+        <h2 class="login-header-placeholder">Sign up</h2>
+        <div id="signup-email-container" class="login-input-container">
+          <input id="signup-email-input" class="login-input" type="text" placeholder="Enter your email" autofocus ng-model="email" ng-focus="signupEmailFocus()">
+        </div>
+        <div class="login-back-button-container">
+          <button class="login-back" ng-click="signupBackOne()">Back</button>
+          <button class="login-next" ng-click="signupNextTwo(email)">Next</button>
+        </div>
+      </div>
+
+      <div id="signup-step-three">
+        <h2 class="login-header-placeholder">Sign up</h2>
+        <div id="signup-password-container" class="login-input-container">
+          <input id="signup-password-input" class="login-input" type="password" placeholder="Create a password" autofocus ng-model="password" ng-focus="signupPasswordFocus()">
+        </div>
+        <div class="login-back-button-container">
+          <button class="login-back" ng-click="signupBackTwo()">Back</button>
+          <button class="login-next" ng-click="createUser(name, email, password)">Next</button>
+        </div>
+      </div>
+
+      <div class="login-signup">
+        <p>Don't have an account?</p>
+        <a href="" ng-click="hideSignUp()">Login</a>
+      </div>
+      <!-- Sign out -->
+      <!-- <br>
+      <button ng-click="signOut()">Sign out</button> -->
+    </section>
+    </form>
+</main>
+
+
+<!-- Sass header box mixin example -->
+<!-- <div class="box"></div> -->

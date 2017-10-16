@@ -10,18 +10,20 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
         console.log(this.user);
   })
 
+  // Boards array
+  $scope.boards = [];
+  const boardsArr = $scope.boards;
+
   // Get user and boards
   directorySrvc.getUser($stateParams).then(response => {
     $scope.user = response.data[0];
   })
 
   directorySrvc.getBoards($stateParams).then(response => {
-    $scope.boards = response;
-
-    // directorySrvc.getDirectoryImages($stateParams).then(response => {
-    //   console.log(response.data);
-    //   $scope.images = response.data
-    // })
+    console.log(response);
+    response.forEach(i => {
+      boardsArr.push(i);
+    })
   })
 
   // Board route
@@ -48,10 +50,20 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
 
   // Delete Board
   $scope.deleteBoard = (board) => {
+    let boardProp = 'board_id'
+    let boardId = board;
+    let i = boardsArr.length;
+    while(i--){
+       if( boardsArr[i]
+           && boardsArr[i].hasOwnProperty(boardProp)
+           && (arguments.length > 2 && boardsArr[i][boardProp] === boardId ) ){
+
+           boardsArr.splice(i,1);
+
+       }
+    }
     const userId = parseInt($stateParams.id);
-    directorySrvc.deleteBoard(board, userId).then(response => {
-      $scope.boards = response;
-    })
+    directorySrvc.deleteBoard(board, userId)
   }
 
 });

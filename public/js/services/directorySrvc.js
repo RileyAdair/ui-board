@@ -41,7 +41,6 @@ app.service('directorySrvc',function($http, $location, $sce){
   }
 
   this.getDirectoryImages = (params) => {
-    // console.log(params.id);
     // Endpoint - Get board images for directory view
     return $http.get(`/user/getDirectoryImages/${params.id}`)
   }
@@ -85,22 +84,6 @@ app.service('directorySrvc',function($http, $location, $sce){
   this.deleteBoard = (board, userId) => {
     // Endpoint - delete board
     return $http.post('/user/deleteBoard', [ board, userId ])
-    .then(response => {
-      const results = response.data;
-      const imagesArr = [];
-
-      for(var i = 0; i < results.length; i++){
-        const obj = {
-          board_id: results[i].board_id,
-          image_url: $sce.trustAsResourceUrl(results[i].image_url),
-          site_url: $sce.trustAsResourceUrl(results[i].site_url),
-          name: results[i].name
-        }
-        imagesArr.push(obj);
-      }
-      return imagesArr;
-
-    })
   }
 
 })

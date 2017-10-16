@@ -96,48 +96,26 @@ app.service('boardSrvc',function($http, $location, $sce){
       // Endpoint - add image
       return $http.post('/user/addImage', [ downloadURL, boardId, title ])
       .then(response => {
+        const results = response.data[0];
+        console.log(results);
 
-        const results = response.data;
-        const imagesArr = [];
-
-        for(var i = 0; i < results.length; i++){
-          const obj = {
-            board_id: results[i].board_id,
-            image_url: $sce.trustAsResourceUrl(results[i].image_url),
-            site_url: $sce.trustAsResourceUrl(results[i].site_url),
-            reference_url: results[i].reference_url,
-            title: results[i].title,
-            description: results[i].description,
-            image_id: results[i].image_id
-          }
-          imagesArr.push(obj);
+        const obj = {
+          board_id: results.board_id,
+          image_url: $sce.trustAsResourceUrl(results.image_url),
+          site_url: $sce.trustAsResourceUrl(results.site_url),
+          reference_url: results.reference_url,
+          title: results.title,
+          description: results.description,
+          image_id: results.image_id
         }
-        return imagesArr;
+
+        return obj;
       })
     })
   }
 
   this.deleteImage = (imageId, boardId) => {
     return $http.post('/user/deleteImage', [ imageId, boardId ])
-    .then(response => {
-      const results = response.data;
-      const imagesArr = [];
-
-      for(var i = 0; i < results.length; i++){
-        const obj = {
-          board_id: results[i].board_id,
-          image_url: $sce.trustAsResourceUrl(results[i].image_url),
-          site_url: $sce.trustAsResourceUrl(results[i].site_url),
-          reference_url: results[i].reference_url,
-          title: results[i].title,
-          description: results[i].description,
-          image_id: results[i].image_id
-        }
-        imagesArr.push(obj);
-      }
-      return imagesArr;
-
-    })
   }
 
   /*
@@ -147,28 +125,25 @@ app.service('boardSrvc',function($http, $location, $sce){
 
     let title = site.replace(/(^\w+:|^)\/\//, '')
     title = title.replace(/.([^.]*)$/,'')
-    title = title.replace(/(?:www.)/,'').charAt(0).toUpperCase() + title.slice(1);
+    title = title.replace(/(?:www.)/,'');
+    title = title.charAt(0).toUpperCase() + title.slice(1)
 
     return $http.post('/user/addsite', [ site, boardId, title ])
     .then(response => {
-      console.log(response);
-      const results = response.data;
-      const imagesArr = [];
+      const results = response.data[0];
+      console.log(results);
 
-      for(var i = 0; i < results.length; i++){
-        const obj = {
-          board_id: results[i].board_id,
-          image_url: $sce.trustAsResourceUrl(results[i].image_url),
-          site_url: $sce.trustAsResourceUrl(results[i].site_url),
-          reference_url: results[i].reference_url,
-          title: results[i].title,
-          description: results[i].description,
-          image_id: results[i].image_id
-        }
-        imagesArr.push(obj);
+      const obj = {
+        board_id: results.board_id,
+        image_url: $sce.trustAsResourceUrl(results.image_url),
+        site_url: $sce.trustAsResourceUrl(results.site_url),
+        reference_url: results.reference_url,
+        title: results.title,
+        description: results.description,
+        image_id: results.image_id
       }
-      return imagesArr;
 
+      return obj;
     })
 
   }
