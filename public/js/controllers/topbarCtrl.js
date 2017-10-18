@@ -1,4 +1,4 @@
-app.controller('topbarCtrl', function($scope, $rootScope, $location, $stateParams) {
+app.controller('topbarCtrl', function($scope, $rootScope, $location, $stateParams, loginSrvc) {
 
   $rootScope.$on('userStorer', function(event, user){
     $scope.user = user
@@ -7,4 +7,6 @@ app.controller('topbarCtrl', function($scope, $rootScope, $location, $stateParam
   $scope.userDirectory = (userId) => {
     $location.path('/directory' + userId);
   }
+
+  $scope.signOut = loginSrvc.signOut;
 })

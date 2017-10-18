@@ -1,1 +1,0 @@
-app.controller("directoryCtrl",function(r,o,t){});

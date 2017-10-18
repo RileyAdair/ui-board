@@ -177,6 +177,17 @@
 		"oAP": "\/public\/assets\/font\/gilroy-light-webfont.woff2",
 		"oF": 0
 		},
+	"\/public\/assets\/icons\/trash.png": {
+		"ft": 32768,
+		"iS": 829,
+		"oA": 0,
+		"oAP": "\/public\/assets\/icons\/trash.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/public\/assets\/logo\/logo_full.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -259,16 +270,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/public\/js\/controllers\/loginCtrl-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/public\/js\/controllers\/topbarCtrl-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/public\/js\/controllers\/topbarCtrl-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -469,10 +470,40 @@
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-home.sassc",
 		"oF": 0
 		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-login.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-login.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_1-directory.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_1-directory.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_2-board.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_2-board.sassc",
+		"oF": 0
+		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_bottombar.sassc": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_bottombar.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_break-points.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_break-points.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_breakpoints.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_breakpoints.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_layouts-dir.sassc": {
@@ -487,10 +518,22 @@
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_sidebar.sassc",
 		"oF": 0
 		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_topbar.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_topbar.sassc",
+		"oF": 0
+		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_ui-board.sassc": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_ui-board.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-directory.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-directory.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-home.sassc": {
@@ -515,6 +558,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/ui-board.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc": {
@@ -586,6 +635,45 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/public\/styles\/sass\/2-layouts\/_0-login.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_0-login.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/2-layouts\/_1-directory.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_1-directory.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/2-layouts\/_2-board.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_2-board.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/public\/styles\/sass\/2-layouts\/_bottombar.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -595,6 +683,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/2-layouts\/_bottombar.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/2-layouts\/_breakpoints.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_breakpoints.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -625,6 +726,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/public\/styles\/sass\/2-layouts\/_topbar.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_topbar.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/public\/styles\/sass\/2-layouts\/_ui-board.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -638,7 +752,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/public\/styles\/sass\/2-layouts\/_view-login.sass": {
+	"\/public\/styles\/sass\/3-modules\/_add-button.sass": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -646,7 +760,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/2-layouts\/_view-login.css",
+		"oAP": "\/public\/styles\/sass\/3-modules\/_add-button.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

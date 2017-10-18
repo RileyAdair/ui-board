@@ -232,8 +232,6 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
     });
   }
 
-  $scope.signOut = loginSrvc.signOut;
-
   // Hide / Show - Login & Sign up
   $scope.showSignup = false;
   $scope.showLogin = true;

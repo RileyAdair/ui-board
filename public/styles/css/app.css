@@ -25,7 +25,8 @@ body {
   letter-spacing: 0.25px;
   background: #F3F3F3;
   color: #424242;
-  text-align: center; }
+  text-align: center;
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "gilroy-bold", sans-serif;
@@ -59,6 +60,102 @@ button {
     color: #424242; }
 
 /* LAYOUTS STYLES */
+.topbar {
+  position: relative;
+  display: block;
+  width: calc(100vw - 60px);
+  height: auto;
+  top: 0;
+  left: 60px; }
+
+.path-container {
+  position: relative;
+  width: auto;
+  height: 60px;
+  font-size: 15px;
+  padding: 0 25px; }
+
+.directory-container {
+  cursor: pointer;
+  text-align: left;
+  float: left; }
+
+.directory-container p {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  color: #2E2E2E;
+  line-height: 58px;
+  -webkit-transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+  transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91); }
+
+.directory-container p::after {
+  content: "";
+  display: inline;
+  position: absolute;
+  top: 82%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2E2E2E;
+  opacity: 0;
+  -webkit-transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+  transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91); }
+
+.directory-container p:hover::after {
+  top: 70%;
+  opacity: 1; }
+
+.username-container {
+  height: 60px;
+  cursor: pointer;
+  text-align: right;
+  float: right;
+  font-family: "gilroy-bold", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+.username {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  opacity: 1; }
+
+.signout-container {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 68px;
+  right: 25px;
+  bottom: 18px;
+  line-height: 26px;
+  z-index: 0;
+  background: #2E2E2E;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out; }
+
+.username {
+  max-height: 25px;
+  line-height: 26px;
+  overflow: hidden;
+  margin-top: 16px;
+  letter-spacing: -0.2px;
+  -webkit-transition: max-height 0.25s ease-out;
+  transition: max-height 0.25s ease-out; }
+
+.username-container:hover .username {
+  max-height: 0;
+  -webkit-transition: max-height 0.15s ease-in;
+  transition: max-height 0.15s ease-in;
+  -webkit-transition: opacity 0s all;
+  transition: opacity 0s all; }
+
+.username-container:hover .signout-container {
+  max-height: 68px;
+  -webkit-transition: max-height 0.25s ease-in;
+  transition: max-height 0.25s ease-in; }
+
 .sidebar {
   width: 60px;
   height: 100%;
@@ -82,140 +179,11 @@ button {
   left: 60px;
   background: #F3F3F3; }
 
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
-.close-modal {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-  background: transparent;
-  background-color: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer; }
-
 .drop-box {
   text-align: center;
   width: 360px;
   height: 180px;
   background: #cacaca; }
-
-/* Thumbnail Test ============================================================ */
-/* This container helps the thumbnail behave as if it were an unscaled IMG element */
-.thumbnail-container {
-  width: 360px;
-  height: 200px;
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-  background: #f9f9f9;
-  border-radius: 7px;
-  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  margin: 16px 0; }
-
-/* Image Icon for the Background */
-.thumbnail-container::before {
-  position: absolute;
-  left: 45.5%;
-  top: 45%;
-  opacity: 0.2;
-  display: block;
-  -ms-zoom: 2;
-  -o-transform: scale(2);
-  -moz-transform: scale(2);
-  -webkit-transform: scale(2); }
-
-/* This is a masking container for the zoomed iframe element */
-.thumbnail {
-  -ms-zoom: 0.25;
-  -moz-transform: scale(0.25);
-  -moz-transform-origin: 0 0;
-  -o-transform: scale(0.25);
-  -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.25);
-  -webkit-transform-origin: 0 0;
-  position: relative;
-  -webkit-transition: all 2s;
-  transition: all 2s; }
-
-/* This is a ng-animate class for selecting the index of image in ng-repeat */
-.thumbnail.selected {
-  z-index: 10;
-  border: 20px solid #ff3e4e; }
-
-/* This is our screen sizing */
-.thumbnail, .thumbnail iframe {
-  width: 1440px;
-  height: 800px; }
-
-/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
-.thumbnail iframe {
-  opacity: 0;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out; }
-
-/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
-.thumbnail:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; }
-
-.thumbnail.selected:after {
-  content: "";
-  position: relative; }
-
-.thumbnail .board-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: auto;
-  height: 100%; }
-
-.directory-board-name {
-  width: 100%;
-  background: #fff;
-  position: absolute;
-  bottom: 0;
-  margin: 0 auto;
-  padding: 10px 0 8px; }
-
-.iframe-test {
-  width: 33.3333333%;
-  min-height: 180px;
-  height: auto; }
-
-.iframe-test img {
-  width: 100%; }
-
-#document img {
-  width: 100%; }
 
 .board-name-header {
   /*text-transform: uppercase */ }
@@ -261,7 +229,7 @@ button {
   color: #C8C8C8;
   -webkit-font-smoothing: auto;
   letter-spacing: 0;
-  margin: 0 24px 4px 0; }
+  margin: 0 25px 4px 0; }
 
 .link p {
   font-size: 12px;
@@ -365,7 +333,7 @@ button {
   border-bottom: 1px solid #A5ACBA; }
 
 .login-input-container.error {
-  border-bottom: 1px solid #ff3e4e; }
+  border-bottom: 1px solid #FD515C; }
 
 .login-input::-webkit-input-placeholder {
   color: #DDE0E7; }
@@ -433,6 +401,209 @@ button {
   color: #8C96A9;
   margin: 2em auto 1em; }
 
+.directory-boards-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 100px; }
+
+.modal-button {
+  margin: 100px 0; }
+
+.directory-thumbnail-container {
+  width: 300px;
+  height: auto;
+  margin: 30px 20px 10px;
+  border-radius: 7px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .directory-thumbnail-container:hover {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+    -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2); }
+
+.directory-thumbnail-container:hover .thumbnail::after {
+  opacity: 1; }
+
+.directory-thumbnail-container:hover .thumbnail-trash {
+  opacity: 0.55; }
+
+.directory-thumbnail-container {
+  /* This container helps the thumbnail behave as if it were an unscaled IMG element */
+  /* This is our screen sizing */
+  /* This is a masking container for the zoomed iframe element */
+  /* Image Icon for the Background */
+  /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+  /* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */ }
+  .directory-thumbnail-container .thumbnail-container {
+    width: calc(1200px * 0.25);
+    height: calc(747px * 0.25);
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    background: #f9f9f9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f5fa), to(#e9ebf2));
+    background: linear-gradient(#f4f5fa, #e9ebf2);
+    text-align: center; }
+  .directory-thumbnail-container .thumbnail, .directory-thumbnail-container .thumbnail iframe {
+    width: 1200px;
+    height: 750px; }
+  .directory-thumbnail-container .thumbnail {
+    -ms-zoom: 0.25;
+    -moz-transform: scale(0.25);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.25);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.25);
+    -webkit-transform-origin: 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    -webkit-transition: all 2s;
+    transition: all 2s; }
+  .directory-thumbnail-container .thumbnail-container::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    opacity: 0.4;
+    content: url(../../assets/logo/logo_ui_box.svg); }
+  .directory-thumbnail-container .thumbnail iframe {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out; }
+  .directory-thumbnail-container .thumbnail .board-image {
+    width: auto;
+    height: 100%; }
+  .directory-thumbnail-container .thumbnail::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.5)));
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)); }
+  .directory-thumbnail-container .thumbnail-trash {
+    content: url(../../assets/icons/trash.png);
+    position: absolute;
+    height: 180px;
+    width: 180px;
+    padding: 46px;
+    top: 14px;
+    right: 12px;
+    z-index: 100;
+    opacity: 0;
+    -webkit-transition: 0.2s;
+    transition: 0.2s; }
+  .directory-thumbnail-container .thumbnail-trash:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15); }
+
+.board-caption-container {
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  font-family: "gilroy-bold", sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
+  line-height: 60px;
+  margin-top: -3px; }
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.close-modal {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: transparent;
+  background-color: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer; }
+
+@media all and (min-width: 1657px) {
+  .directory-boards-container {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; } }
 /* MODULES STYLES */
+.action-button {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  border-radius: 500px;
+  padding: 10px 19px;
+  white-space: normal;
+  line-height: 1.6;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #fff;
+  font-family: "gilroy-bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13.5px;
+  letter-spacing: -0.1px;
+  background: #FD515C;
+  position: fixed;
+  bottom: 43px;
+  right: 19px; }
+  .action-button:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
 
 /*# sourceMappingURL=app.css.map */

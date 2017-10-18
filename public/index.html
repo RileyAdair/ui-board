@@ -10,8 +10,15 @@
 <body>
   <!-- Topbar -->
   <section class="topbar" ng-controller="topbarCtrl">
-    <p ng-click="userDirectory(user.id)">Directory</p>
-    <p>{{ user.name }}</p>
+    <div class="path-container">
+      <div class="directory-container" ng-click="userDirectory(user.id)">
+        <p>Directory</p>
+      </div>
+      <div class="username-container" ng-click="signOut()">
+        <div class="signout-container">Sign out</div>
+        <div class="username"><p>{{ user.name }}</p></div>
+      </div>
+    </div>
   </section>
   <!-- Sidebar -->
   <section class="sidebar"></section>

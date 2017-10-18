@@ -1,0 +1,83 @@
+// // BOARD VIEW
+//
+// .board-thumbnail-container
+//   width: 360px
+//   height: auto
+//   margin: 15px 20px 20px 20px
+//   border-radius: 7px
+//   overflow: hidden
+//   cursor: pointer
+//   box-shadow: 0 12px 22px 0 rgba(0,0,0,.1)
+//   transition: all .35s
+//
+//   &:hover
+//     // transform: scale(1.015)
+//     box-shadow: 0 15px 25px 2px rgba(0,0,0,.15)
+//
+// .board-thumbnail-container
+//   /* This container helps the thumbnail behave as if it were an unscaled IMG element */
+//   .thumbnail-container
+//     width: calc(1440px * 0.25)
+//     height: calc(810px * 0.25)
+//     display: inline-block
+//     overflow: hidden
+//     position: relative
+//     background: #f9f9f9
+//     background: linear-gradient(#f4f5fa, #e9ebf2)
+//     text-align: center
+//
+//   /* This is our screen sizing */
+//   .thumbnail, .thumbnail iframe
+//     width: 1440px
+//     height: 810px
+//
+//   /* This is a masking container for the zoomed iframe element */
+//   .thumbnail
+//     -ms-zoom: 0.25
+//     -moz-transform: scale(0.25)
+//     -moz-transform-origin: 0 0
+//     -o-transform: scale(0.25)
+//     -o-transform-origin: 0 0
+//     -webkit-transform: scale(0.25)
+//     -webkit-transform-origin: 0 0
+//     display: flex
+//     flex-direction: column
+//     align-items: center
+//     position: relative
+//     transition: all 2s
+//
+//   /* Image Icon for the Background */
+//   .thumbnail-container::before
+//     position: absolute
+//     left: 50%
+//     top: 50%
+//     height: 50px
+//     width: 50px
+//     margin-left: -25px
+//     margin-top: -25px
+//     opacity: .4
+//     content: url(../../assets/logo/logo_ui_box.svg)
+//
+//   /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+//   .thumbnail iframe
+//     position: absolute
+//     opacity: 0
+//     transition: all 300ms ease-in-out
+//     // set this to a button-click to view mobile
+//     // width: 360px
+//
+//   .thumbnail .board-image
+//     width: auto
+//     height: 100%
+//
+//
+//   /* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+//   .thumbnail:after
+//     content: ""
+//     display: block
+//     position: absolute
+//     top: 0
+//     left: 0
+//     right: 0
+//     bottom: 0
+//

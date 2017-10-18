@@ -21,11 +21,6 @@ var app = angular.module('app', ['ui.router', 'ngFileUpload', 'ngAnimate'])
       url: '/directory:id/board:board_id',
       templateUrl: 'views/board.html',
       controller: 'boardCtrl',
-      // resolve: {
-      //   resetParams: function() {
-      //     return
-      //   }
-      // }
     })
 
     .state('board.view', {

@@ -1,10 +1,24 @@
-<section>
-  <br>
-  <p>Create board</p>
-  <button ng-click="showModal=true">+</button>
-  <br>
-  <br>
+<!-- Directory boards -->
+<section class="directory-boards-container">
+  <div class="directory-thumbnail-container" ng-repeat="board in boards">
+    <div class="thumbnail-container" ng-click="boardRoute(board)">
+      <div class="thumbnail">
+        <img class="board-image" ng-src="{{ board.image_url }}">
+        <iframe ng-src="{{ board.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
+        <div class="thumbnail-trash" ng-click="deleteBoard(board.board_id)"></div>
+      </div>
+    </div>
+    <div class="board-caption-container">
+      <div class="board-caption-before-hover"></div>
+      <div class="board-caption-name">{{ board.name }}</div>
+    </div>
+
+    <!-- <button ng-click="deleteBoard(board.board_id)">X</button> -->
+  </div>
 </section>
+
+<!-- Show create board modal-->
+<div class="action-button" ng-click="showModal=true">Create</div>
 
 <!-- Create board modal -->
 <section class="modal" ng-if="showModal">
@@ -17,18 +31,3 @@
   <br>
   <button ng-click="createBoard(board)">Create</button>
 </section>
-
-<section>
-  <div class="thumbnail-site-container" ng-repeat="board in boards">
-    <div class="thumbnail-container" ng-click="boardRoute(board)">
-    <div class="thumbnail">
-      <iframe ng-src="{{ board.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
-      <img class="board-image" ng-src="{{ board.image_url }}">
-    </div>
-    <div class="directory-board-name">{{ board.name }}</div>
-    </div>
-    <button ng-click="deleteBoard(board.board_id)">X</button>
-  </div>
-</section>
-
-<!-- ui-sref="board({ board_id: board.board_id, name: board.name })" -->

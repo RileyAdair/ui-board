@@ -93,7 +93,7 @@ app.service('loginSrvc',function($http, $location){
   Sign out =====================================================================
   */
   this.signOut = (user) => {
-    console.log('clicked');
+    $location.path('/');
     firebase.auth().signOut().then((user) => {
         console.log(this.user.uid, 'Signed Out');
     })
