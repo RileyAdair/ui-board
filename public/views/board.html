@@ -1,38 +1,71 @@
-<h1 class="board-name-header" contenteditable="true" placeholder="ADD A TITLE HERE...">{{ boardName }}</h1>
-<section>
-  <form name="form">
-    <div ngf-drop="upload($file)" class="drop-box"
-      ngf-drag-over-class="'dragover'"
-      ngf-pattern="'image/*,application/pdf'">DRAG &amp; DROP your file</div>
-    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-    <p>or</p>
-    <button class="button" ngf-select="upload($file)">Browse</button>
-  </form>
-  <br>
-  <form>
-    <input type="text" ng-model="site">
-    <label>Website</label>
-    <button ng-click="addSite(site)">Save</button>
-  </form>
-</section>
-<br>
-
-<!-- <h1 class="test">{{ test }}</h1> -->
-
-<!-- Saved images and sites -->
-<section>
-  <div class="thumbnail-site-container" ng-repeat="image in images">
-    <div class="thumbnail-container" ui-sref="board.view({view: image.image_id})">
-    <div class="thumbnail" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id }">
-      <iframe ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
-      <img class="board-image" ng-src="{{ image.image_url }}">
-    </div>
-    </div>
-    <button ng-click="deleteImage(image)">X</button>
+<section class="board-topbar">
+  <div class="board-name-container">
+    <span>—</span>
+    <p id="board-name-header" class="editable-content" contenteditable="true" placeholder="Add title here...">{{ boardName }}</p>
   </div>
 </section>
-<section ng-include src="views/view.html"></section>
+
+<!-- Saved images and sites -->
+<section class="board-view-container unselected" ng-class="{selected : $state.current.name === 'board.view'}">
+  <div class="board-view-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-repeat="image in images">
+    <div class="board-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, test: $state.current.name === 'board.view' && image.image_id != id}" ui-sref="board.view({view: image.image_id})">
+      <div class="board-thumbnail unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}">
+        <img class="board-view-image unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.image_url }}">
+        <iframe class="board-iframe unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
+        <div class="thumbnail-trash" ng-click="deleteImage(image)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- upload modal -->
+  <!-- <section style="width: 100%">
+    <form name="form">
+      <div ngf-drop="upload($file)" class="drop-box"
+        ngf-drag-over-class="'dragover'"
+        ngf-pattern="'image/*,application/pdf'">DRAG &amp; DROP your file</div>
+      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+      <p>or</p>
+      <button class="button" ngf-select="upload($file)">Browse</button>
+    </form>
+    <br>
+    <form>
+      <input type="text" ng-model="site">
+      <label>Website</label>
+      <button ng-click="addSite(site)">Save</button>
+    </form>
+  </section> -->
+
+</section>
+<!-- <section ng-include src="views/view.html"></section> -->
 <ui-view></ui-view>
+
+<!-- Show save modal-->
+<div id="save-modal-button" class="action-button" ng-click="showModal()">Save</div>
+
+<!-- Save modal -->
+<section id="create-board-modal-container">
+  <div ngf-drop="upload($file)" class="save-drop-box"
+    ngf-drag-over-class="'dragover'"
+    ngf-pattern="'image/*,application/pdf'"></div>
+  <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+  <div id="save-modal-container" class="create-board-modal-content-container">
+    <div id="create-board-step">
+      <div>
+        <h2 class="input-header">Save from a website</h2>
+        <form id="create-board-container" class="input-container">
+          <input id="create-board-input" class="input" ng-model="site" type="text" autofocus placeholder="Add a url" ng-focus="boardNameFocus()">
+        </form>
+      </div>
+      <button id="save-website-button" class="action-button" ng-click="addSite(site)">Save</button>
+    </div>
+    <div class="upload-container">
+      <div class="drag-drop"></div>
+      <p>Your files anywhere or, <span ngf-select="upload($file)">browse</span></p>
+    </div>
+  </div>
+  <button class="close-modal" ng-click="hideModal()">X</button>
+
+</section>
 
 <!-- <div ng-repeat="image in images">
   <img class="board-image" ng-src="{{ image.image_url }}">

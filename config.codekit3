@@ -177,6 +177,17 @@
 		"oAP": "\/public\/assets\/font\/gilroy-light-webfont.woff2",
 		"oF": 0
 		},
+	"\/public\/assets\/icons\/drag-drop.png": {
+		"ft": 32768,
+		"iS": 17497,
+		"oA": 0,
+		"oAP": "\/public\/assets\/icons\/drag-drop.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/public\/assets\/icons\/trash.png": {
 		"ft": 32768,
 		"iS": 829,
@@ -488,6 +499,12 @@
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_2-board.sassc",
 		"oF": 0
 		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_3-preview.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_3-preview.sassc",
+		"oF": 0
+		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_bottombar.sassc": {
 		"ft": 8192,
 		"oA": 1,
@@ -564,6 +581,18 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_editable-content.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_editable-content.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_input.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_input.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc": {
@@ -674,6 +703,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/public\/styles\/sass\/2-layouts\/_3-preview.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/2-layouts\/_3-preview.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/public\/styles\/sass\/2-layouts\/_bottombar.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -761,6 +803,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/3-modules\/_add-button.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/3-modules\/_editable-content.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/3-modules\/_editable-content.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/3-modules\/_input.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/3-modules\/_input.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

@@ -64,22 +64,13 @@ app.service('directorySrvc',function($http, $location, $sce, $rootScope){
   Create board =================================================================
   */
   this.createNewBoard = (board) => {
+    console.log(board);
     const userId = board.id
-    // Endpoint - check board
-    return $http.post('/user/checkBoard', board)
+    // Endpoint - create board
+    return $http.post('/user/createBoard', board)
     .then(response => {
-      if(response.data.validBoard == 'board already exists') {
-        // Run jQuery here in Id to add html message
-        console.log('This board already exists');
-      }
-      else {
-        // Endpoint - create board
-        return $http.post('/user/createBoard', board)
-        .then(response => {
-          const boardId = response.data[0].board_id
-          $location.path('/directory' + userId + '/board' + boardId);
-        })
-      }
+      const boardId = response.data[0].board_id
+      $location.path('/directory' + userId + '/board' + boardId);
     })
   }
 

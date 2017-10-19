@@ -10,6 +10,39 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
         console.log(this.user);
   })
 
+  angular.element(document).ready(function(){
+
+    // Show / Hide - Modal
+    $scope.showModal = () => {
+      $('#create-board-modal-container').css('display','block');
+
+      setTimeout(function(){
+        $('#create-board-step').css('transform','translateX(100%)');
+      }, 10);
+
+      setTimeout(function(){
+        $('#create-board-modal-container').css('opacity','1');
+        $('#create-board-step').css('opacity','1');
+        $('#create-board-input').focus();
+      }, 100);
+
+      setTimeout(function(){
+        $('#create-board-step').css('transition','all .4s ease-out');
+        $('#create-board-step').css('transform','translateX(0)');
+      }, 250);
+    }
+
+    $scope.hideModal = () => {
+      $('#create-board-modal-container').css('opacity','0');
+      $('#create-board-step').css('opacity','0');
+      setTimeout(function(){
+        $('#create-board-modal-container').css('display','none');
+        $('#create-board-input').val('')
+      }, 300);
+    }
+
+  })
+
   // Boards array
   $scope.boards = [];
   const boardsArr = $scope.boards;
@@ -32,19 +65,29 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   }
 
   // Create board
-  $scope.createBoard = (board) => {
-    if(!board) {
+  $scope.createBoard = (boardName) => {
+    if(!boardName) {
       console.log('Please enter name');
+      $('#create-board-container').addClass('error')
     }
-    else {
-      board.id = $stateParams.id;
+    if(boardName) {
+      console.log(boardName);
+      const board = {
+        name: boardName,
+        id: $stateParams.id
+      }
+      // console.log(board);
+      // board.id = $stateParams.id;
       directorySrvc.createNewBoard(board);
     }
   };
 
-  // Hide / Show - Modal
-  $scope.hideModal = () => {
-    $scope.showModal = false;
+  // Remove error class
+  $scope.boardNameFocus = () => {
+    $('#create-board-input').keypress(function(event){
+      console.log('typing');
+      $('#create-board-container').removeClass('error')
+    });
   }
 
   // Delete Board

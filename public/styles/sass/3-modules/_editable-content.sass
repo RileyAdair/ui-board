@@ -1,0 +1,16 @@
+// EDITABLE CONTENT MODULE
+
+.editable-content
+  text-align: left
+  transition: .2s
+  outline: 1px solid transparent
+
+  &:focus
+    outline: 1px solid $lightGrey
+
+.editable-content:empty:before
+  content: attr(placeholder)
+  display: block
+  color: $grey
+  text-align: left
+  font-family: $font-stack-light

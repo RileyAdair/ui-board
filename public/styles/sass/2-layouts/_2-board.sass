@@ -1,24 +1,160 @@
 // // BOARD VIEW
+
+.board-topbar
+  position: relative
+  width: 42%
+  height: auto
+  top: -60px
+  left: 99px
+  text-align: left
+
+.board-name-container
+  position: relative
+  width: auto
+  height: 60px
+
+.board-name-container span
+  padding-right: 10px
+  font-size: 14px
+  line-height: 59px
+
+#board-name-header
+  position: absolute
+  display: inline-block
+  height: auto
+  top: 19px
+  font-size: 15px
+
+  +bold-font
+
+  &:focus
+    outline: 1px solid $lightButtonGrey
+
+#board-name-header:empty:before
+  color: $textGrey
+
+#save-modal-button
+  right: 23px
+
+
+
+// ================================================================== Save Modal
+// #save-modal-container
+//   position: fixed
+//   top: 0
+//   right: 0
+//   bottom: 0
+//   left: 0
+//   background: #fff
+//   z-index: 1000
+//   // display: none
+//   opacity: 1
+//   transition: .2s
 //
+// #save-modal-container.ng-enter
+//   transition: 0.2s linear all
+//   opacity: 0
+//
+// #save-modal-container.ng-enter.ng-enter-active
+//   opacity: 1
+//
+// #save-modal-container.ng-leave
+//   transition: 0.2s linear all
+//   opacity: 1
+//
+// #save-modal-container.ng-leave.ng-leave-active
+//   opacity: 0
+//
+// #save-step
+//   width: 100%
+//   opacity: 1
+//   transition: transform 1s ease
+//   transform: translate3d(0, 0, 0)
+//   &.ng-enter
+//       transform: translate3d(0, -30%, 0)
+//
+//   &.ng-enter-active
+//     transform: translate3d(0, 0, 0)
+//
+//   &.ng-leave
+//     transform: translate3d(0, 0, 0)
+//
+//   &.ng-leave-active
+//     transform: translate3d(0, -30%, 0)
+
+#save-modal-container
+  justify-content: space-around
+
+.save-drop-box
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+#save-website-button
+  background: $lightButtonGrey
+  position: relative
+  bottom: 0
+  right: 0
+  margin: 70px auto 0
+
+  &:hover
+    background: $grey
+
+  &:active
+    background: $grey
+
+  &:focus
+    background: $grey
+
+.upload-container
+  font-size: 29px
+  color: $lightButtonGrey
+  -webkit-font-smoothing: antialiased
+
+.upload-container span
+  cursor: pointer
+  border-bottom: 1px solid $lightButtonGrey
+
+.drag-drop
+  background-image: url(../../assets/icons/drag-drop.png)
+  background-repeat: no-repeat
+  background-position: center center
+  width: 100%
+  height: 200px
+  margin: 0 auto
+  opacity: 0.45
+
+// .drop-box
+//   text-align: center
+//   margin: 100px auto 0
+//   padding-top: 10%
+//   width: 100%
+//   height: 200px
+//   background: #cacaca
+
+// // Board Thumbnails
 // .board-thumbnail-container
-//   width: 360px
-//   height: auto
-//   margin: 15px 20px 20px 20px
+//   width: 300px
+//   height: 187.5px
+//   margin: 30px 20px 10px
 //   border-radius: 7px
 //   overflow: hidden
 //   cursor: pointer
-//   box-shadow: 0 12px 22px 0 rgba(0,0,0,.1)
-//   transition: all .35s
+//   box-shadow: 0 12px 22px 0 rgba(0,0,0,.16)
+//   transition: all .25s ease-in
 //
 //   &:hover
-//     // transform: scale(1.015)
-//     box-shadow: 0 15px 25px 2px rgba(0,0,0,.15)
+//     transform: translateY(-2px)
+//     box-shadow: 0 14px 24px 0 rgba(0,0,0,.24)
+//     transition: all .25s ease-out
 //
 // .board-thumbnail-container
 //   /* This container helps the thumbnail behave as if it were an unscaled IMG element */
 //   .thumbnail-container
-//     width: calc(1440px * 0.25)
-//     height: calc(810px * 0.25)
+//     width: calc(1200px * 0.25)
+//     height: calc(750px * 0.25)
 //     display: inline-block
 //     overflow: hidden
 //     position: relative
@@ -28,8 +164,8 @@
 //
 //   /* This is our screen sizing */
 //   .thumbnail, .thumbnail iframe
-//     width: 1440px
-//     height: 810px
+//     width: 1202px
+//     height: 754px
 //
 //   /* This is a masking container for the zoomed iframe element */
 //   .thumbnail
@@ -60,16 +196,21 @@
 //
 //   /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
 //   .thumbnail iframe
-//     position: absolute
+//     // position: absolute
 //     opacity: 0
 //     transition: all 300ms ease-in-out
 //     // set this to a button-click to view mobile
 //     // width: 360px
 //
+//   // .thumbnail .board-image
+//   //   width: auto
+//   //   height: 100%
 //   .thumbnail .board-image
+//     position: absolute
+//     top: 0
+//     left: 0
 //     width: auto
 //     height: 100%
-//
 //
 //   /* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
 //   .thumbnail:after
@@ -81,3 +222,207 @@
 //     right: 0
 //     bottom: 0
 //
+//   /* This is a ng-animate class for selecting the index of image in ng-repeat*/
+//   .thumbnail.selected
+//     z-index: 100
+//
+//   .thumbnail.selected:after
+//     content: ""
+//     position: relative
+
+.board-view-container.unselected
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  padding: 0 20px 100px
+
+.board-view-container.selected
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 90vh
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  padding: 0 20px 100px
+  overflow: hidden
+
+
+
+// ============================================================ Unselected Board
+/* This container helps the thumbnail behave as if it were an unscaled IMG element */
+.board-thumbnail-container.unselected
+  width: calc(1200px * 0.25)
+  height: calc(750px * 0.25)
+  // width: 360px
+  // height: 200px
+  display: inline-block
+  overflow: hidden
+  position: relative
+  background: #f9f9f9
+  background: linear-gradient(#f4f5fa, #e9ebf2)
+  border-radius: 7px
+  box-shadow: 0 12px 22px 0 rgba(0,0,0,.16)
+  text-align: center
+  margin: 30px 20px 10px
+  cursor: pointer
+
+  // Return animation
+  transition: transform .3s, box-shadow .3s, height .3s ease, width .3s ease, overflow .3s, top 3s, left 3s
+  z-index: 0
+  // border: 0 solid transparent
+
+  // Initial animation
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 14px 24px 0 rgba(0,0,0,.24)
+    transition: top 3s, left 3s transform .3s, height .9s, width .9s, background .3s, box-shadow .3s, overflow .5s
+
+// ============================================================== Selected Board
+.board-thumbnail-container.selected
+  width: calc(1200px * 0.5)
+  height: calc(750px * 0.5)
+  // width: 360px
+  // height: 200px
+  display: inline-block
+  overflow: hidden
+  position: absolute
+  border-radius: 7px
+  text-align: center
+  margin: 30px 20px 10px
+  //
+  top: 0
+  left: 0
+  overflow: visible
+  background: #fff
+  box-shadow: 0 0 0 0 transparent
+
+  transition: height .5s, width .5s, background 0s, top 3s, left 3s
+  z-index: 1000
+  // border: 50px solid red
+
+  &:hover
+    transform: translateY(0)
+    box-shadow: none
+
+// =============================================== Thumbnail Trash Hover Effects
+.board-thumbnail-container.unselected:hover .thumbnail-trash
+  opacity: 1
+  transition: all .3s ease-out
+
+.board-thumbnail-container.selected:hover .thumbnail-trash
+  display: none
+
+.board-thumbnail-container.unselected:hover .board-thumbnail.unselected:after
+  opacity: 1
+  transition: all .3s ease-out
+
+// =============================================== Thumbnail Trash Hover Effects
+
+/* This is our screen sizing */
+/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+.board-iframe
+  position: absolute
+  left: 0
+  opacity: 0
+  transition: all 3s
+
+.board-iframe.unselected
+  width: 1202px
+  height: 754px
+  transition: all 3s
+
+.board-iframe.selected
+  width: 1202px
+  height: 754px
+  transition: all 3s
+
+/* This is a masking container for the zoomed iframe element */
+.board-thumbnail.unselected
+  width: 1202px
+  height: 754px
+  -ms-zoom: 0.25
+  -moz-transform: scale(0.25)
+  -moz-transform-origin: 0 0
+  -o-transform: scale(0.25)
+  -o-transform-origin: 0 0
+  -webkit-transform: scale(0.25)
+  -webkit-transform-origin: 0 0
+  position: relative
+
+  // border: 0 solid transparent
+  transition: all .3s
+
+.board-thumbnail.selected
+  width: 1202px
+  height: 754px
+  -ms-zoom: 0.25
+  -moz-transform: scale(0.5)
+  -moz-transform-origin: 0 0
+  -o-transform: scale(0.5)
+  -o-transform-origin: 0 0
+  -webkit-transform: scale(0.5)
+  -webkit-transform-origin: 0 0
+  position: relative
+
+  // border: 20px solid red
+  transition: all .3s ease-in-out
+
+/* Image Icon for the Background */
+.board-thumbnail-container::before
+  position: absolute
+  left: 50%
+  top: 50%
+  height: 50px
+  width: 50px
+  margin-left: -25px
+  margin-top: -25px
+  opacity: .4
+  content: url(../../assets/logo/logo_ui_box.svg)
+
+/* This is a masking container for the zoomed iframe element */
+// .thumbnail
+//   -ms-zoom: 0.25
+//   -moz-transform: scale(0.25)
+//   -moz-transform-origin: 0 0
+//   -o-transform: scale(0.25)
+//   -o-transform-origin: 0 0
+//   -webkit-transform: scale(0.25)
+//   -webkit-transform-origin: 0 0
+//   position: relative
+//   z-index: 0
+//   border: 0 solid transparent
+//   transition: all 2s ease-in-out
+
+
+
+
+
+/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+.board-thumbnail.unselected:after
+  content: ""
+  display: block
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  opacity: 0
+  transition: all .3s ease-out
+  background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.5))
+
+.board-thumbnail.selected:after
+  content: ""
+  position: relative
+
+.board-view-image.unselected
+  width: auto
+  height: 100%
+
+.board-view-image.selected
+  width: auto
+  height: 100%

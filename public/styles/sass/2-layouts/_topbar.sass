@@ -20,7 +20,7 @@
   text-align: left
   float: left
 
-.directory-container p
+.directory-item
   position: relative
   display: inline-block
   height: auto
@@ -28,7 +28,7 @@
   line-height: 58px
   transition: all .22s cubic-bezier(.615,.19,.305,.91)
 
-.directory-container p::after
+.directory-item::after
   content: ''
   display: inline
   position: absolute
@@ -40,52 +40,36 @@
   opacity: 0
   transition: all .22s cubic-bezier(.615,.19,.305,.91)
 
-.directory-container p:hover::after
+.directory-item:hover::after
   top: 70%
   opacity: 1
 
 .username-container
-  height: 60px
   cursor: pointer
-  text-align: right
+  text-align: left
   float: right
-  font-family: $font-stack-bold
-  -webkit-font-smoothing: antialiased
 
-.username
-  position: relative
-  display: inline-block
-  height: auto
-  // line-height: 60px
+.user-item
+  @extend .directory-item
+
+.user-item::after
+  content: ''
+  display: inline
+  position: absolute
+  top: 82%
+  left: 0
+  width: 100%
+  height: 2px
+  background: $charcoal
+  opacity: 0
+  transition: all .22s cubic-bezier(.615,.19,.305,.91)
+
+.user-item:hover::after
+  top: 70%
   opacity: 1
 
-.signout-container
-  text-align: center
-  color: #fff
-  position: absolute
-  width: 68px
-  right: 25px
-  bottom: 18px
-  line-height: 26px
-  z-index: 0
-  background: $charcoal
-  max-height: 0
-  overflow: hidden
-  transition: max-height 0.2s ease-out
-
 .username
-  max-height: 25px
-  line-height: 26px
-  overflow: hidden
-  margin-top: 16px
-  letter-spacing: -0.2px
-  transition: max-height 0.25s ease-out
+  +bold-font
 
-.username-container:hover .username
-  max-height: 0
-  transition: max-height 0.15s ease-in
-  transition: opacity 0s all
-
-.username-container:hover .signout-container
-  max-height: 68px
-  transition: max-height 0.25s ease-in
+.username-hiphen
+  padding: 0 5px

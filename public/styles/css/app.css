@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased; }
 
 a {
-  color: #8C96A9;
+  color: #7d8696;
   text-decoration: none;
   -webkit-transition: 0.3s;
   transition: 0.3s; }
@@ -80,7 +80,7 @@ button {
   text-align: left;
   float: left; }
 
-.directory-container p {
+.directory-item, .user-item {
   position: relative;
   display: inline-block;
   height: auto;
@@ -89,7 +89,7 @@ button {
   -webkit-transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91);
   transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91); }
 
-.directory-container p::after {
+.directory-item::after, .user-item::after {
   content: "";
   display: inline;
   position: absolute;
@@ -102,59 +102,38 @@ button {
   -webkit-transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91);
   transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91); }
 
-.directory-container p:hover::after {
+.directory-item:hover::after, .user-item:hover::after {
   top: 70%;
   opacity: 1; }
 
 .username-container {
-  height: 60px;
   cursor: pointer;
-  text-align: right;
-  float: right;
+  text-align: left;
+  float: right; }
+
+.user-item::after {
+  content: "";
+  display: inline;
+  position: absolute;
+  top: 82%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2E2E2E;
+  opacity: 0;
+  -webkit-transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+  transition: all 0.22s cubic-bezier(0.615, 0.19, 0.305, 0.91); }
+
+.user-item:hover::after {
+  top: 70%;
+  opacity: 1; }
+
+.username {
   font-family: "gilroy-bold", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
-.username {
-  position: relative;
-  display: inline-block;
-  height: auto;
-  opacity: 1; }
-
-.signout-container {
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  width: 68px;
-  right: 25px;
-  bottom: 18px;
-  line-height: 26px;
-  z-index: 0;
-  background: #2E2E2E;
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out; }
-
-.username {
-  max-height: 25px;
-  line-height: 26px;
-  overflow: hidden;
-  margin-top: 16px;
-  letter-spacing: -0.2px;
-  -webkit-transition: max-height 0.25s ease-out;
-  transition: max-height 0.25s ease-out; }
-
-.username-container:hover .username {
-  max-height: 0;
-  -webkit-transition: max-height 0.15s ease-in;
-  transition: max-height 0.15s ease-in;
-  -webkit-transition: opacity 0s all;
-  transition: opacity 0s all; }
-
-.username-container:hover .signout-container {
-  max-height: 68px;
-  -webkit-transition: max-height 0.25s ease-in;
-  transition: max-height 0.25s ease-in; }
+.username-hiphen {
+  padding: 0 5px; }
 
 .sidebar {
   width: 60px;
@@ -165,7 +144,7 @@ button {
   background-repeat: no-repeat;
   background-color: #2E2E2E;
   border-right: 1px solid #464646;
-  z-index: 999;
+  z-index: 99;
   position: fixed;
   left: 0;
   top: 0; }
@@ -179,39 +158,7 @@ button {
   left: 60px;
   background: #F3F3F3; }
 
-.drop-box {
-  text-align: center;
-  width: 360px;
-  height: 180px;
-  background: #cacaca; }
-
-.board-name-header {
-  /*text-transform: uppercase */ }
-
-.board-name-header:empty:before {
-  content: attr(placeholder);
-  display: block;
-  color: #aaa; }
-
-/* View ====================================================================== */
-.view-title:empty:before, .view-description:empty:before,
-.view-reference-url:empty:before {
-  content: attr(placeholder);
-  display: block;
-  color: #aaa; }
-
-.view-description, .view-reference-url, .view-site-url {
-  font-size: 14px; }
-
-.view-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  padding: 2em; }
-
+/* Board ====================================================================== */
 .bottombar {
   position: fixed;
   height: 30px;
@@ -273,7 +220,7 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  background: white;
+  background: #fff;
   z-index: 1000; }
 
 .login-content-container {
@@ -305,42 +252,6 @@ button {
   background-position: center center;
   background-repeat: no-repeat;
   margin-top: 4em; }
-
-.login-header, .login-header-placeholder {
-  font-family: "gilroy-bold", sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #8C96A9;
-  margin: 0 0 2.5em; }
-
-.login-header-placeholder {
-  visibility: hidden; }
-
-.login-input {
-  width: 100%;
-  text-align: center;
-  caret-color: #424242;
-  background: 0 0;
-  font-family: "gilroy-light", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 30px;
-  outline: none;
-  border: none;
-  margin: 0 auto 15px; }
-
-.login-input-container {
-  border-bottom: 1px solid #A5ACBA; }
-
-.login-input-container.error {
-  border-bottom: 1px solid #FD515C; }
-
-.login-input::-webkit-input-placeholder {
-  color: #DDE0E7; }
-
-.login-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 30px white inset;
-  color: #424242; }
 
 /*============================================================================ */
 /*============================================================================ */
@@ -398,7 +309,7 @@ button {
 
 .login-signup {
   -webkit-font-smoothing: antialiased;
-  color: #8C96A9;
+  color: #7d8696;
   margin: 2em auto 1em; }
 
 .directory-boards-container {
@@ -425,108 +336,119 @@ button {
   cursor: pointer;
   -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in; }
   .directory-thumbnail-container:hover {
     -webkit-transform: translateY(-2px);
             transform: translateY(-2px);
     -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2); }
+            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out; }
 
 .directory-thumbnail-container:hover .thumbnail::after {
   opacity: 1; }
 
 .directory-thumbnail-container:hover .thumbnail-trash {
-  opacity: 0.55; }
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  /* This container helps the thumbnail behave as if it were an unscaled IMG element */ }
 
-.directory-thumbnail-container {
-  /* This container helps the thumbnail behave as if it were an unscaled IMG element */
-  /* This is our screen sizing */
-  /* This is a masking container for the zoomed iframe element */
-  /* Image Icon for the Background */
-  /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
-  /* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */ }
-  .directory-thumbnail-container .thumbnail-container {
-    width: calc(1200px * 0.25);
-    height: calc(747px * 0.25);
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    background: #f9f9f9;
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f5fa), to(#e9ebf2));
-    background: linear-gradient(#f4f5fa, #e9ebf2);
-    text-align: center; }
-  .directory-thumbnail-container .thumbnail, .directory-thumbnail-container .thumbnail iframe {
-    width: 1200px;
-    height: 750px; }
-  .directory-thumbnail-container .thumbnail {
-    -ms-zoom: 0.25;
-    -moz-transform: scale(0.25);
-    -moz-transform-origin: 0 0;
-    -o-transform: scale(0.25);
-    -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.25);
-    -webkit-transform-origin: 0 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    -webkit-transition: all 2s;
-    transition: all 2s; }
-  .directory-thumbnail-container .thumbnail-container::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 50px;
-    width: 50px;
-    margin-left: -25px;
-    margin-top: -25px;
-    opacity: 0.4;
-    content: url(../../assets/logo/logo_ui_box.svg); }
-  .directory-thumbnail-container .thumbnail iframe {
-    position: absolute;
-    opacity: 0;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out; }
-  .directory-thumbnail-container .thumbnail .board-image {
-    width: auto;
-    height: 100%; }
-  .directory-thumbnail-container .thumbnail::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    -webkit-transition: 0.25s;
-    transition: 0.25s;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.35)), to(rgba(0, 0, 0, 0.5)));
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)); }
-  .directory-thumbnail-container .thumbnail-trash {
-    content: url(../../assets/icons/trash.png);
-    position: absolute;
-    height: 180px;
-    width: 180px;
-    padding: 46px;
-    top: 14px;
-    right: 12px;
-    z-index: 100;
-    opacity: 0;
-    -webkit-transition: 0.2s;
-    transition: 0.2s; }
-  .directory-thumbnail-container .thumbnail-trash:hover {
-    opacity: 1;
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15); }
+.thumbnail-container {
+  width: calc(1200px * 0.25);
+  height: calc(747px * 0.25);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f5fa), to(#e9ebf2));
+  background: linear-gradient(#f4f5fa, #e9ebf2);
+  text-align: center; }
+
+/* This is our screen sizing */
+.thumbnail, .thumbnail iframe {
+  width: 1200px;
+  height: 750px; }
+
+/* This is a masking container for the zoomed iframe element */
+.thumbnail {
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-transition: all 2s;
+  transition: all 2s; }
+
+/* Image Icon for the Background */
+.thumbnail-container::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  opacity: 0.4;
+  content: url(../../assets/logo/logo_ui_box.svg); }
+
+/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+.thumbnail iframe {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+
+.thumbnail .board-image {
+  width: auto;
+  height: 100%; }
+
+/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+.thumbnail::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)); }
+
+.thumbnail-trash {
+  content: url(../../assets/icons/trash.png);
+  position: absolute;
+  height: 180px;
+  width: 180px;
+  padding: 46px;
+  top: 14px;
+  right: 12px;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+.thumbnail-trash:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15); }
 
 .board-caption-container {
   width: 100%;
@@ -539,15 +461,26 @@ button {
   line-height: 60px;
   margin-top: -3px; }
 
-.modal {
+#create-board-modal-container {
   position: fixed;
-  z-index: 1;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all; }
+
+.create-board-modal-content-container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  max-width: 541px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -557,26 +490,364 @@ button {
           flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+          justify-content: center; }
+
+#create-board-step {
+  width: 100%;
+  opacity: 0; }
+
+#create-board-modal-button {
+  background: #C6CCD6;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 100px auto 0; }
+  #create-board-modal-button:hover {
+    background: #7d8696; }
+  #create-board-modal-button:active {
+    background: #7d8696; }
+  #create-board-modal-button:focus {
+    background: #7d8696; }
 
 .close-modal {
   position: absolute;
-  top: 2em;
-  right: 2em;
+  top: 1em;
+  right: 1.5em;
+  padding: 20px;
   background: transparent;
-  background-color: none;
   border: none;
   font-size: 20px;
   cursor: pointer; }
+
+.board-topbar {
+  position: relative;
+  width: 42%;
+  height: auto;
+  top: -60px;
+  left: 99px;
+  text-align: left; }
+
+.board-name-container {
+  position: relative;
+  width: auto;
+  height: 60px; }
+
+.board-name-container span {
+  padding-right: 10px;
+  font-size: 14px;
+  line-height: 59px; }
+
+#board-name-header {
+  position: absolute;
+  display: inline-block;
+  height: auto;
+  top: 19px;
+  font-size: 15px;
+  font-family: "gilroy-bold", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+  #board-name-header:focus {
+    outline: 1px solid #C6CCD6; }
+
+#board-name-header:empty:before {
+  color: #898e98; }
+
+#save-modal-button {
+  right: 23px; }
+
+#save-modal-container {
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.save-drop-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+#save-website-button {
+  background: #C6CCD6;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  margin: 70px auto 0; }
+  #save-website-button:hover {
+    background: #7d8696; }
+  #save-website-button:active {
+    background: #7d8696; }
+  #save-website-button:focus {
+    background: #7d8696; }
+
+.upload-container {
+  font-size: 29px;
+  color: #C6CCD6;
+  -webkit-font-smoothing: antialiased; }
+
+.upload-container span {
+  cursor: pointer;
+  border-bottom: 1px solid #C6CCD6; }
+
+.drag-drop {
+  background-image: url(../../assets/icons/drag-drop.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  opacity: 0.45; }
+
+.board-view-container.unselected {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 100px; }
+
+.board-view-container.selected {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px 100px;
+  overflow: hidden; }
+
+/* This container helps the thumbnail behave as if it were an unscaled IMG element */
+.board-thumbnail-container.unselected {
+  width: calc(1200px * 0.25);
+  height: calc(750px * 0.25);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f4f5fa), to(#e9ebf2));
+  background: linear-gradient(#f4f5fa, #e9ebf2);
+  border-radius: 7px;
+  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.16);
+  text-align: center;
+  margin: 30px 20px 10px;
+  cursor: pointer;
+  -webkit-transition: height 0.3s ease, width 0.3s ease, overflow 0.3s, top 3s, left 3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: height 0.3s ease, width 0.3s ease, overflow 0.3s, top 3s, left 3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, height 0.3s ease, width 0.3s ease, overflow 0.3s, top 3s, left 3s;
+  transition: transform 0.3s, box-shadow 0.3s, height 0.3s ease, width 0.3s ease, overflow 0.3s, top 3s, left 3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  z-index: 0; }
+  .board-thumbnail-container.unselected:hover {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+    -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
+            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
+    -webkit-transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s;
+    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s;
+    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, box-shadow 0.3s, overflow 0.5s;
+    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, box-shadow 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s; }
+
+.board-thumbnail-container.selected {
+  width: calc(1200px * 0.5);
+  height: calc(750px * 0.5);
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 7px;
+  text-align: center;
+  margin: 30px 20px 10px;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 0 transparent;
+          box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: height 0.5s, width 0.5s, background 0s, top 3s, left 3s;
+  transition: height 0.5s, width 0.5s, background 0s, top 3s, left 3s;
+  z-index: 1000; }
+  .board-thumbnail-container.selected:hover {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.board-thumbnail-container.unselected:hover .thumbnail-trash {
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+.board-thumbnail-container.selected:hover .thumbnail-trash {
+  display: none; }
+
+.board-thumbnail-container.unselected:hover .board-thumbnail.unselected:after {
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+/* This is our screen sizing */
+/* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
+.board-iframe {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all 3s;
+  transition: all 3s; }
+
+.board-iframe.unselected {
+  width: 1202px;
+  height: 754px;
+  -webkit-transition: all 3s;
+  transition: all 3s; }
+
+.board-iframe.selected {
+  width: 1202px;
+  height: 754px;
+  -webkit-transition: all 3s;
+  transition: all 3s; }
+
+/* This is a masking container for the zoomed iframe element */
+.board-thumbnail.unselected {
+  width: 1202px;
+  height: 754px;
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.board-thumbnail.selected {
+  width: 1202px;
+  height: 754px;
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.5);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.5);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+/* Image Icon for the Background */
+.board-thumbnail-container::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  opacity: 0.4;
+  content: url(../../assets/logo/logo_ui_box.svg); }
+
+/* This is a masking container for the zoomed iframe element */
+/* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
+.board-thumbnail.unselected:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)); }
+
+.board-thumbnail.selected:after {
+  content: "";
+  position: relative; }
+
+.board-view-image.unselected {
+  width: auto;
+  height: 100%; }
+
+.board-view-image.selected {
+  width: auto;
+  height: 100%; }
+
+.view-title:empty:before, .view-description:empty:before,
+.view-reference-url:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa; }
+
+.view-description, .view-reference-url, .view-site-url {
+  font-size: 14px; }
+
+.view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 2em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  z-index: 999; }
 
 @media all and (min-width: 1657px) {
   .directory-boards-container {
     -ms-flex-pack: distribute;
         justify-content: space-around; } }
 /* MODULES STYLES */
+.input-header, .input-header-placeholder {
+  font-family: "gilroy-bold", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #7d8696;
+  margin: 0 0 2.5em; }
+
+.input-header-placeholder {
+  visibility: hidden; }
+
+.input {
+  width: 100%;
+  text-align: center;
+  caret-color: #424242;
+  background: 0 0;
+  font-family: "gilroy-light", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  margin: 0 auto 15px; }
+
+.input-container {
+  border-bottom: 1px solid #A5ACBA; }
+
+.input-container.error {
+  border-bottom: 1px solid #FD515C; }
+
+.input::-webkit-input-placeholder {
+  color: #DDE0E7; }
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  color: #424242; }
+
 .action-button {
   cursor: pointer;
   display: inline-block;
@@ -603,7 +874,31 @@ button {
   bottom: 43px;
   right: 19px; }
   .action-button:hover {
+    color: #fff;
     -webkit-transform: scale(1.05);
             transform: scale(1.05); }
+  .action-button:active {
+    color: #fff;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+  .action-button:focus {
+    color: #fff;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+
+.editable-content {
+  text-align: left;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  outline: 1px solid transparent; }
+  .editable-content:focus {
+    outline: 1px solid #DDE0E7; }
+
+.editable-content:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #7d8696;
+  text-align: left;
+  font-family: "gilroy-light", sans-serif; }
 
 /*# sourceMappingURL=app.css.map */

@@ -12,11 +12,10 @@
   <section class="topbar" ng-controller="topbarCtrl">
     <div class="path-container">
       <div class="directory-container" ng-click="userDirectory(user.id)">
-        <p>Directory</p>
+        <p class="directory-item">Directory</p>
       </div>
       <div class="username-container" ng-click="signOut()">
-        <div class="signout-container">Sign out</div>
-        <div class="username"><p>{{ user.name }}</p></div>
+        <p class="user-item"><span class="username">{{ user.name }}</span><span class="username-hiphen">—</span>Signout</p>
       </div>
     </div>
   </section>

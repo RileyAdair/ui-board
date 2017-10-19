@@ -1,4 +1,4 @@
-app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, $state) {
+app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, $state, $location) {
 
   firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -9,11 +9,35 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
         // else { ng-show set to false }
         console.log(this.user);
   })
-
+  const userId = $stateParams.id
+  const boardId = $stateParams.board_id
   const viewId = $stateParams.view;
-  console.log(viewId);
 
+  console.log($stateParams);
+
+  // Document.ready
   angular.element(document).ready(function(){
+
+    setTimeout(function(){
+      $('body').find('.view-container').css('opacity', '1')
+    }, 10);
+
+    $scope.closePreview = () => {
+      setTimeout(function(){
+        $('body').find('.view-container').css('opacity', '0')
+      }, 10);
+
+      // setTimeout(function(){
+      //   $('body').find('.board-thumbnail-container.selected').css('transition', 'position 2s')
+      //   $('body').find('.board-thumbnail-container.selected').css('position', 'relative')
+      // }, 20);
+
+      setTimeout(function(){
+        $state.go('board');
+      }, 300);
+    }
+
+
     // View title
     $('body').find('.view-title').on('click', function() {
       $(this).prop('contentEditable', true)
@@ -54,7 +78,7 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
       }
 
     });
-    // View description
+    // View reference
     $('body').find('.view-reference-url').on('click', function() {
       $(this).prop('contentEditable', true)
     })
@@ -74,7 +98,10 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
       }
 
     });
+
   })
+
+
 
 
   $rootScope.id = viewId;

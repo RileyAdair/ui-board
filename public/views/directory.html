@@ -12,22 +12,24 @@
       <div class="board-caption-before-hover"></div>
       <div class="board-caption-name">{{ board.name }}</div>
     </div>
-
-    <!-- <button ng-click="deleteBoard(board.board_id)">X</button> -->
   </div>
 </section>
 
 <!-- Show create board modal-->
-<div class="action-button" ng-click="showModal=true">Create</div>
+<div class="action-button" ng-click="showModal()">Create</div>
 
 <!-- Create board modal -->
-<section class="modal" ng-if="showModal">
-  <h2>Create board</h2>
-  <br>
+<section id="create-board-modal-container">
+  <div class="create-board-modal-content-container">
+    <div id="create-board-step">
+      <div>
+        <h2 class="input-header">Create new board</h2>
+        <form id="create-board-container" class="input-container">
+          <input id="create-board-input" class="input" ng-model="board.name" type="text" autofocus placeholder="Add a board name" ng-focus="boardNameFocus()">
+        </form>
+      </div>
+      <button id="create-board-modal-button" class="action-button" ng-click="createBoard(board.name)">Get started</button>
+    </div>
+  </div>
   <button class="close-modal" ng-click="hideModal()">X</button>
-  <form>
-    <input ng-model="board.name" type="text" placeholder="Name">
-  </form>
-  <br>
-  <button ng-click="createBoard(board)">Create</button>
 </section>
