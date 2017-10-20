@@ -16,27 +16,7 @@
       </div>
     </div>
   </div>
-
-  <!-- upload modal -->
-  <!-- <section style="width: 100%">
-    <form name="form">
-      <div ngf-drop="upload($file)" class="drop-box"
-        ngf-drag-over-class="'dragover'"
-        ngf-pattern="'image/*,application/pdf'">DRAG &amp; DROP your file</div>
-      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-      <p>or</p>
-      <button class="button" ngf-select="upload($file)">Browse</button>
-    </form>
-    <br>
-    <form>
-      <input type="text" ng-model="site">
-      <label>Website</label>
-      <button ng-click="addSite(site)">Save</button>
-    </form>
-  </section> -->
-
 </section>
-<!-- <section ng-include src="views/view.html"></section> -->
 <ui-view></ui-view>
 
 <!-- Show save modal-->
@@ -49,6 +29,12 @@
     ngf-pattern="'image/*,application/pdf'"></div>
   <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
   <div id="save-modal-container" class="create-board-modal-content-container">
+    <div class="upload-container">
+      <div class="drag-drop">
+        <img src="../assets/icons/drag-drop.png" alt="">
+      </div>
+      <p>Your files anywhere or, <span ngf-select="upload($file)">browse</span></p>
+    </div>
     <div id="create-board-step">
       <div>
         <h2 class="input-header">Save from a website</h2>
@@ -58,16 +44,6 @@
       </div>
       <button id="save-website-button" class="action-button" ng-click="addSite(site)">Save</button>
     </div>
-    <div class="upload-container">
-      <div class="drag-drop"></div>
-      <p>Your files anywhere or, <span ngf-select="upload($file)">browse</span></p>
-    </div>
   </div>
   <button class="close-modal" ng-click="hideModal()">X</button>
-
 </section>
-
-<!-- <div ng-repeat="image in images">
-  <img class="board-image" ng-src="{{ image.image_url }}">
-  <button ng-click="deleteImage(image)">X</button>
-</div> -->

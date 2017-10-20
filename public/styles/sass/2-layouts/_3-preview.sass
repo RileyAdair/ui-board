@@ -1,17 +1,5 @@
 // PREVIEW VIEW
-
-.view-title:empty:before, .view-description:empty:before,
-.view-reference-url:empty:before
-  content: attr(placeholder)
-  display: block
-  color: #aaa
-
-
-.view-description, .view-reference-url, .view-site-url
-  font-size: 14px
-
-
-.view-container
+.preview-container
   position: fixed
   top: 0
   left: 0
@@ -22,3 +10,97 @@
   transition: .3s
   opacity: 0
   z-index: 999
+//=====================================
+.item-actions-container
+  position: absolute
+  top: 28px
+  right: 27px
+  text-align: right
+  z-index: 1001
+  list-style: none
+
+  .action-item
+    cursor: pointer
+    vertical-align: top
+    display: inline-block
+    border: 1px solid $lightGrey
+    border-radius: 50%
+    height: 35px
+    width: 35px
+    margin-left: 10px
+    background: #fff
+    -webkit-transition: color .15s
+    transition: color .15s
+    position: relative
+    transition: all .2s
+
+    &:hover
+      background: #FBFBFB
+
+  .mobile-icon
+    position: absolute
+    top: 9px
+    left: 12px
+    height: 15px
+    width: auto
+
+  .share-icon
+    @extend .mobile-icon
+    top: 10px
+    left: 10px
+    height: 12px
+
+  .right-arrow-icon
+    @extend .mobile-icon
+    top: 10px
+    left: 13px
+    height: 13px
+    opacity: 1
+    transition: 0s
+
+  .left-arrow-icon
+    @extend .mobile-icon
+    top: 10px
+    left: 12px
+    height: 13px
+
+  .close-icon
+    @extend .mobile-icon
+    top: 11px
+    left: 11px
+    height: 12px
+
+#item-details-container
+  position: absolute
+  text-align: left
+  box-shadow: 0 0 0 1px $lightGrey
+  height: 100%
+  width: 439px
+  background: #fff
+  padding: 37px 37px 45px
+  top: 0
+  right: 0
+  transition: opacity .4s, transform .3s
+  opacity: 1
+  z-index: 1000
+
+#item-details-container.hide
+  background: $red
+
+.board-name
+  color: $lightButtonGrey
+
+.preview-title
+  font-size: 28px
+  line-height: 38px
+  color: $darkTextGrey
+
+.preview-title:empty:before, .preview-description:empty:before,
+.preview-reference-url:empty:before
+  content: attr(placeholder)
+  display: block
+  color: #aaa
+
+
+.preview-description, .preview-reference-url, .preview-site-url
+  font-size: 14px
