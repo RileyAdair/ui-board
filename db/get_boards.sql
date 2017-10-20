@@ -1,9 +1,9 @@
-SELECT DISTINCT ON (board_id) b.board_id, b.name, x.image_url, x.site_url, i.image_id
+SELECT DISTINCT ON (board_id) b.board_id, b.name, x.image_url, x.site_url, i.image_id, i.count
 FROM boards b
 JOIN users u ON u.id = b.id
 LEFT JOIN
 
-(SELECT board_id, MIN(image_id) AS image_id
+(SELECT board_id, MIN(image_id) AS image_id, COUNT(image_id)
 FROM images
 GROUP BY board_id) i
 ON b.board_id = i.board_id

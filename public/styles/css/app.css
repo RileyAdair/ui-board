@@ -49,15 +49,15 @@ button {
   transition: 0.3s;
   cursor: pointer; }
   button:hover {
-    color: #424242; }
+    color: #7d8696; }
   button:active {
-    color: #424242; }
+    color: #7d8696; }
   button:focus {
     -webkit-box-shadow: none;
             box-shadow: none;
     outline: none;
     border: 0;
-    color: #424242; }
+    color: #7d8696; }
 
 /* LAYOUTS STYLES */
 .topbar {
@@ -244,14 +244,14 @@ button {
       justify-content: space-around; }
 
 .logo-ui-box {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
   background-image: url(../../assets/logo/logo_ui_box.svg);
-  background-size: 50px auto;
+  background-size: 70px auto;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-top: 4em; }
+  margin-top: 3em; }
 
 /*============================================================================ */
 /*============================================================================ */
@@ -310,7 +310,7 @@ button {
 .login-signup {
   -webkit-font-smoothing: antialiased;
   color: #7d8696;
-  margin: 2em auto 1em; }
+  margin: 3em auto 1em; }
 
 .directory-boards-container {
   width: 100%;
@@ -351,8 +351,8 @@ button {
 
 .directory-thumbnail-container:hover .thumbnail-trash {
   opacity: 1;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
   /* This container helps the thumbnail behave as if it were an unscaled IMG element */ }
 
 .thumbnail-container {
@@ -442,8 +442,8 @@ button {
   right: 12px;
   z-index: 100;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out; }
 
 .thumbnail-trash:hover {
   opacity: 1;
@@ -555,8 +555,9 @@ button {
   right: 23px; }
 
 #save-modal-container {
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .save-drop-box {
   position: fixed;
@@ -579,22 +580,19 @@ button {
     background: #7d8696; }
 
 .upload-container {
-  font-size: 29px;
-  color: #C6CCD6;
-  -webkit-font-smoothing: antialiased; }
+  font-size: 2em;
+  color: #7d8696;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 33%; }
 
 .upload-container span {
   cursor: pointer;
-  border-bottom: 1px solid #C6CCD6; }
+  border-bottom: 1px solid #7d8696; }
 
-.drag-drop {
-  background-image: url(../../assets/icons/drag-drop.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 200px;
-  margin: 0 auto;
-  opacity: 0.45; }
+.drag-drop img {
+  width: 60%;
+  height: auto;
+  margin: 0 auto; }
 
 .board-view-container.unselected {
   width: 100%;
@@ -653,16 +651,15 @@ button {
             transform: translateY(-2px);
     -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
             box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
-    -webkit-transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s;
-    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s;
-    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, box-shadow 0.3s, overflow 0.5s;
-    transition: top 3s, left 3s transform 0.3s, height 0.9s, width 0.9s, background 0.3s, box-shadow 0.3s, overflow 0.5s, -webkit-box-shadow 0.3s; }
+    -webkit-transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, overflow 0.3s, -webkit-box-shadow 0.3s;
+    transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, overflow 0.3s, -webkit-box-shadow 0.3s;
+    transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, box-shadow 0.3s, overflow 0.3s;
+    transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, box-shadow 0.3s, overflow 0.3s, -webkit-box-shadow 0.3s; }
 
 .board-thumbnail-container.selected {
   width: calc(1200px * 0.5);
   height: calc(750px * 0.5);
   display: inline-block;
-  overflow: hidden;
   position: absolute;
   border-radius: 7px;
   text-align: center;
@@ -670,7 +667,7 @@ button {
   top: 0;
   left: 0;
   overflow: visible;
-  background: #fff;
+  background: transparent;
   -webkit-box-shadow: 0 0 0 0 transparent;
           box-shadow: 0 0 0 0 transparent;
   -webkit-transition: height 0.5s, width 0.5s, background 0s, top 3s, left 3s;
@@ -684,8 +681,8 @@ button {
 
 .board-thumbnail-container.unselected:hover .thumbnail-trash {
   opacity: 1;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out; }
 
 .board-thumbnail-container.selected:hover .thumbnail-trash {
   display: none; }
@@ -785,16 +782,7 @@ button {
   width: auto;
   height: 100%; }
 
-.view-title:empty:before, .view-description:empty:before,
-.view-reference-url:empty:before {
-  content: attr(placeholder);
-  display: block;
-  color: #aaa; }
-
-.view-description, .view-reference-url, .view-site-url {
-  font-size: 14px; }
-
-.view-container {
+.preview-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -806,6 +794,94 @@ button {
   transition: 0.3s;
   opacity: 0;
   z-index: 999; }
+
+.item-actions-container {
+  position: absolute;
+  top: 28px;
+  right: 27px;
+  text-align: right;
+  z-index: 1001;
+  list-style: none; }
+  .item-actions-container .action-item {
+    cursor: pointer;
+    vertical-align: top;
+    display: inline-block;
+    border: 1px solid #DDE0E7;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+    background: #fff;
+    -webkit-transition: color 0.15s;
+    transition: color 0.15s;
+    position: relative;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s; }
+    .item-actions-container .action-item:hover {
+      background: #FBFBFB; }
+  .item-actions-container .mobile-icon, .item-actions-container .share-icon, .item-actions-container .right-arrow-icon, .item-actions-container .left-arrow-icon, .item-actions-container .close-icon {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    height: 15px;
+    width: auto; }
+  .item-actions-container .share-icon {
+    top: 10px;
+    left: 10px;
+    height: 12px; }
+  .item-actions-container .right-arrow-icon {
+    top: 10px;
+    left: 13px;
+    height: 13px;
+    opacity: 1;
+    -webkit-transition: 0s;
+    transition: 0s; }
+  .item-actions-container .left-arrow-icon {
+    top: 10px;
+    left: 12px;
+    height: 13px; }
+  .item-actions-container .close-icon {
+    top: 11px;
+    left: 11px;
+    height: 12px; }
+
+#item-details-container {
+  position: absolute;
+  text-align: left;
+  -webkit-box-shadow: 0 0 0 1px #DDE0E7;
+          box-shadow: 0 0 0 1px #DDE0E7;
+  height: 100%;
+  width: 439px;
+  background: #fff;
+  padding: 37px 37px 45px;
+  top: 0;
+  right: 0;
+  -webkit-transition: opacity 0.4s, -webkit-transform 0.3s;
+  transition: opacity 0.4s, -webkit-transform 0.3s;
+  transition: opacity 0.4s, transform 0.3s;
+  transition: opacity 0.4s, transform 0.3s, -webkit-transform 0.3s;
+  opacity: 1;
+  z-index: 1000; }
+
+#item-details-container.hide {
+  background: #FD515C; }
+
+.board-name {
+  color: #C6CCD6; }
+
+.preview-title {
+  font-size: 28px;
+  line-height: 38px;
+  color: #5f697a; }
+
+.preview-title:empty:before, .preview-description:empty:before,
+.preview-reference-url:empty:before {
+  content: attr(placeholder);
+  display: block;
+  color: #aaa; }
+
+.preview-description, .preview-reference-url, .preview-site-url {
+  font-size: 14px; }
 
 @media all and (min-width: 1657px) {
   .directory-boards-container {
@@ -826,7 +902,7 @@ button {
 .input {
   width: 100%;
   text-align: center;
-  caret-color: #424242;
+  caret-color: #5f697a;
   background: 0 0;
   font-family: "gilroy-light", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -846,7 +922,7 @@ button {
 
 .input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
-  color: #424242; }
+  color: #5f697a; }
 
 .action-button {
   cursor: pointer;

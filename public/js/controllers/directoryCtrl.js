@@ -45,6 +45,11 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
 
   // Boards array
   $scope.boards = [];
+
+  // if(!$scope.boards){
+  //   console.log('get started');
+  // }
+
   const boardsArr = $scope.boards;
 
   // Get user and boards
