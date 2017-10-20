@@ -83,7 +83,7 @@
 //     transform: translate3d(0, -30%, 0)
 
 #save-modal-container
-  justify-content: space-around
+  justify-content: center
 
 .save-drop-box
   position: fixed
@@ -109,22 +109,28 @@
     background: $grey
 
 .upload-container
-  font-size: 29px
-  color: $lightButtonGrey
+  font-size: 2em
+  color: $grey
   -webkit-font-smoothing: antialiased
+  margin-bottom: 33%
 
 .upload-container span
   cursor: pointer
-  border-bottom: 1px solid $lightButtonGrey
+  border-bottom: 1px solid $grey
 
-.drag-drop
-  background-image: url(../../assets/icons/drag-drop.png)
-  background-repeat: no-repeat
-  background-position: center center
-  width: 100%
-  height: 200px
+.drag-drop img
+  width: 60%
+  height: auto
   margin: 0 auto
-  opacity: 0.45
+
+// .drag-drop
+//   background-image: url(../../assets/icons/drag-drop.png)
+//   background-repeat: no-repeat
+//   background-position: center center
+//   width: 100%
+//   height: 200px
+//   margin: 0 auto
+//   opacity: 0.45
 
 // .drop-box
 //   text-align: center
@@ -280,7 +286,7 @@
   &:hover
     transform: translateY(-2px)
     box-shadow: 0 14px 24px 0 rgba(0,0,0,.24)
-    transition: top 3s, left 3s transform .3s, height .9s, width .9s, background .3s, box-shadow .3s, overflow .5s
+    transition: top 3s, left 3s transform .3s, height 3s, width 3s, background 0s, box-shadow .3s, overflow .3s
 
 // ============================================================== Selected Board
 .board-thumbnail-container.selected
@@ -289,7 +295,6 @@
   // width: 360px
   // height: 200px
   display: inline-block
-  overflow: hidden
   position: absolute
   border-radius: 7px
   text-align: center
@@ -298,7 +303,7 @@
   top: 0
   left: 0
   overflow: visible
-  background: #fff
+  background: transparent
   box-shadow: 0 0 0 0 transparent
 
   transition: height .5s, width .5s, background 0s, top 3s, left 3s
@@ -312,7 +317,7 @@
 // =============================================== Thumbnail Trash Hover Effects
 .board-thumbnail-container.unselected:hover .thumbnail-trash
   opacity: 1
-  transition: all .3s ease-out
+  transition: all .25s ease-out
 
 .board-thumbnail-container.selected:hover .thumbnail-trash
   display: none

@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25900",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
 	"\/database.rules.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -177,6 +183,16 @@
 		"oAP": "\/public\/assets\/font\/gilroy-light-webfont.woff2",
 		"oF": 0
 		},
+	"\/public\/assets\/icons\/close.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/close.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/assets\/icons\/drag-drop.png": {
 		"ft": 32768,
 		"iS": 17497,
@@ -188,6 +204,56 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/public\/assets\/icons\/laptop.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/laptop.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/icons\/leftArrow.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/leftArrow.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/icons\/mobile.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/mobile.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/icons\/rightArrow.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/rightArrow.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/icons\/shareArrow.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/shareArrow.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/assets\/icons\/trash.png": {
 		"ft": 32768,
 		"iS": 829,
@@ -198,6 +264,16 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"\/public\/assets\/icons\/trashIcon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/trashIcon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/public\/assets\/logo\/logo_full.svg": {
 		"ft": 2097152,
