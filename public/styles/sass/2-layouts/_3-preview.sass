@@ -94,13 +94,17 @@
   font-size: 28px
   line-height: 38px
   color: $darkTextGrey
+  margin-top: 20px
+
+.preview-description
+  font-size: 16px
+  color: $descriptionGrey
 
 .preview-title:empty:before, .preview-description:empty:before,
 .preview-reference-url:empty:before
   content: attr(placeholder)
   display: block
-  color: #aaa
+  color: $lightButtonGrey
 
-
-.preview-description, .preview-reference-url, .preview-site-url
+.preview-reference-url, .preview-site-url
   font-size: 14px

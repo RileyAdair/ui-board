@@ -872,15 +872,20 @@ button {
 .preview-title {
   font-size: 28px;
   line-height: 38px;
-  color: #5f697a; }
+  color: #5f697a;
+  margin-top: 20px; }
+
+.preview-description {
+  font-size: 16px;
+  color: #a1a8b5; }
 
 .preview-title:empty:before, .preview-description:empty:before,
 .preview-reference-url:empty:before {
   content: attr(placeholder);
   display: block;
-  color: #aaa; }
+  color: #C6CCD6; }
 
-.preview-description, .preview-reference-url, .preview-site-url {
+.preview-reference-url, .preview-site-url {
   font-size: 14px; }
 
 @media all and (min-width: 1657px) {
