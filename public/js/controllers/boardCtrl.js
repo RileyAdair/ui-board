@@ -1,8 +1,16 @@
 app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, $sce, boardSrvc, directorySrvc, $state) {
 
   firebase.auth().onAuthStateChanged(user => {
-        if (user) {
+        if(!user) {
+          console.log('test');
+          // $('#user-name').remove()
+          // $('#save-modal-button').remove()
+          console.log($('#save-modal-button').remove());
+        }
+        else if (user) {
             this.user = user
+            // Append this on sign in
+            // $('.username-container').append('<p id="user-name" class="user-item"><span class="username">{{ user.name }}</span><span class="username-hiphen">—</span>Signout</p>')
             return user
             console.log(user);
         };
@@ -13,15 +21,27 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
   const boardId = $stateParams.board_id;
 
   angular.element(document).ready(function(){
+    // remove move class GET IT TO WORK
+    $scope.removeClass = () => {
+      console.log('removed');
+      $('body').find('.board-thumbnail-container.selected').removeClass('move')
+    }
+
+
     // Board name header
     $('body').find('#board-name-header').on('click', function() {
       $(this).prop('contentEditable', true)
-    })
-    $('body').find('#board-name-header').on('blur', function() {
-      const name = $(this).text()
-      if(name) {
-          boardSrvc.updateBoardName(name, boardId);
-      }
+      let text = $(this).text()
+
+      $('body').find('#board-name-header').on('blur', function() {
+        const name = $(this).text()
+        if(name) {
+            boardSrvc.updateBoardName(name, boardId);
+        }
+        else {
+          $('#board-name-header').html(text);
+        }
+      })
     })
     $('body').find('#board-name-header').keypress(function(event){
       if(event.keyCode == 13){

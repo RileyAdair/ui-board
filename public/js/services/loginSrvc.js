@@ -33,6 +33,9 @@ app.service('loginSrvc',function($http, $location){
             console.log(response);
             $location.path('/directory' + response.data[0].id);
           })
+          .catch(err => {
+            console.log(err);
+          })
         })
         .catch(err => {
           console.log(err);

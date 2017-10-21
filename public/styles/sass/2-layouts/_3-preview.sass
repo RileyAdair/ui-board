@@ -10,9 +10,20 @@
   transition: .3s
   opacity: 0
   z-index: 999
+
+#preview-header
+  opacity: 0
+  transition: opacity .15s
+
+.preview-header-title
+  font-size: 17px
+  letter-spacing: .8px
+  color: $darkTextGrey
+  margin-top: 2px
+  text-transform: uppercase
 //=====================================
 .item-actions-container
-  position: absolute
+  position: fixed
   top: 28px
   right: 27px
   text-align: right
@@ -44,6 +55,12 @@
     height: 15px
     width: auto
 
+  .laptop-icon
+    @extend .mobile-icon
+    top: 10px
+    left: 8px
+    height: 13px
+
   .share-icon
     @extend .mobile-icon
     top: 10px
@@ -71,24 +88,29 @@
     height: 12px
 
 #item-details-container
-  position: absolute
+  position: fixed
   text-align: left
   box-shadow: 0 0 0 1px $lightGrey
   height: 100%
   width: 439px
   background: #fff
-  padding: 37px 37px 45px
+  padding: 39px 39px 45px
   top: 0
   right: 0
   transition: opacity .4s, transform .3s
   opacity: 1
   z-index: 1000
 
-#item-details-container.hide
-  background: $red
+  .preview-title:empty:before, .preview-description:empty:before,
+  .preview-reference-url:empty:before
+    content: attr(placeholder)
+    display: block
+    color: $lightButtonGrey
 
 .board-name
+  font-family: $font-stack-bold
   color: $lightButtonGrey
+  font-size: 13px
 
 .preview-title
   font-size: 28px
@@ -97,14 +119,18 @@
   margin-top: 20px
 
 .preview-description
-  font-size: 16px
+  font-size: 15px
   color: $descriptionGrey
+  line-height: 25px
+  margin-top: 10px
 
-.preview-title:empty:before, .preview-description:empty:before,
-.preview-reference-url:empty:before
-  content: attr(placeholder)
-  display: block
-  color: $lightButtonGrey
+.preview-url-container
+  border-top: 1px solid $lightGrey
+  width: 100%
+  height: auto
+  margin-top: 32px
+  padding-top: 28px
 
 .preview-reference-url, .preview-site-url
   font-size: 14px
+  color: $descriptionGrey

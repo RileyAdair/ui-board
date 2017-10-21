@@ -254,8 +254,8 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-  padding: 0 20px 100px
-  overflow: hidden
+  padding: 0 60px 0 60px
+
 
 
 
@@ -276,9 +276,10 @@
   text-align: center
   margin: 30px 20px 10px
   cursor: pointer
+  left: 0
 
   // Return animation
-  transition: transform .3s, box-shadow .3s, height .3s ease, width .3s ease, overflow .3s, top 3s, left 3s
+  transition: transform .3s, box-shadow .3s, height .3s ease, width .3s ease, overflow .3s, top .3s, left .3s
   z-index: 0
   // border: 0 solid transparent
 
@@ -290,23 +291,27 @@
 
 // ============================================================== Selected Board
 .board-thumbnail-container.selected
-  width: calc(1200px * 0.5)
-  height: calc(750px * 0.5)
-  // width: 360px
-  // height: 200px
+  width: calc(1200px * 0.63)
+  height: calc(750px * 0.63)
+  // width: 756 / 2 = 378
+  // height: 473 / 2  = 236px
   display: inline-block
   position: absolute
   border-radius: 7px
   text-align: center
-  margin: 30px 20px 10px
+  cursor: default
   //
-  top: 0
-  left: 0
+  top: 50%
+  // left: 50%
+  left: 33%
+  margin: 30px 20px 10px
+  margin-left: -414px
+  margin-top: -255px
   overflow: visible
   background: transparent
   box-shadow: 0 0 0 0 transparent
 
-  transition: height .5s, width .5s, background 0s, top 3s, left 3s
+  transition: height .5s, width .5s, background 0s, top .3s, left .3s
   z-index: 1000
   // border: 50px solid red
 
@@ -314,6 +319,12 @@
     transform: translateY(0)
     box-shadow: none
 
+
+.board-thumbnail-container.selected.move
+  left: 50%
+
+.board-thumbnail-container.selected.moveBack
+  left: 33%
 // =============================================== Thumbnail Trash Hover Effects
 .board-thumbnail-container.unselected:hover .thumbnail-trash
   opacity: 1
@@ -365,12 +376,12 @@
 .board-thumbnail.selected
   width: 1202px
   height: 754px
-  -ms-zoom: 0.25
-  -moz-transform: scale(0.5)
+  -ms-zoom: 0.63
+  -moz-transform: scale(0.63)
   -moz-transform-origin: 0 0
-  -o-transform: scale(0.5)
+  -o-transform: scale(0.63)
   -o-transform-origin: 0 0
-  -webkit-transform: scale(0.5)
+  -webkit-transform: scale(0.63)
   -webkit-transform-origin: 0 0
   position: relative
 

@@ -1,34 +1,34 @@
 <section class="preview-container">
-
-  <ul class="item-actions-container">
-
-    <li class="action-item">
-      <img class="mobile-icon" src="../assets/icons/mobile.svg" alt="mobile">
-    </li>
-    <li class="action-item">
-      <img class="share-icon" src="../assets/icons/shareArrow.svg" alt="share">
-    </li>
-    <li class="action-item" ng-click="sidebarToggle()">
-      <img ng-show"showSidebar" class="right-arrow-icon" src="../assets/icons/rightArrow.svg" alt="">
-      <img ng-show="showSidebar" class="left-arrow-icon" src="../assets/icons/leftArrow.svg" alt="">
-    </li>
-    <li class="action-item" ui-sref="board">
-      <img class="close-icon" src="../assets/icons/close.svg" alt="close">
-    </li>
-    <!-- <button ng-click="closePreview()">Test</button> -->
-  </ul>
-
-  <!-- <section id="item-details-container" ng-class="{hide : toggle = false}"> -->
-  <section id="item-details-container">
+  <div id="preview-header">
     <h4 class="board-name">{{ viewInfo.name }}</h4>
+    <p class="preview-header-title">{{ title }}</p>
+  </div>
+</section>
+<!-- <section id="item-details-container" ng-class="{hide : toggle = false}"> -->
 
-    <p class="preview-title" contenteditable="true" placeholder="Add a title here...">{{ viewInfo.title }}</p>
-    <br>
-    <p class="preview-description" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
-    <br>
-    <p class="preview-reference-url" ng-if="viewInfo.image_url" contenteditable="true" placeholder="Add a website here...">{{ viewInfo.reference_url }}</p>
-    <br>
-    <p ng-if="viewInfo.site_url">Site url</p>
+<ul class="item-actions-container">
+  <li class="action-item" ng-click="deviceToggle()">
+    <img class="mobile-icon" src="../assets/icons/mobile.svg" alt="mobile">
+    <img ng-show="showLaptop" class="laptop-icon" src="../assets/icons/laptop.svg" alt="laptop">
+  </li>
+  <li  class="action-item" ng-click="copyURL()">
+    <img class="share-icon" src="../assets/icons/shareArrow.svg" alt="share">
+  </li>
+  <li class="action-item" ng-click="sidebarToggle()">
+    <img class="right-arrow-icon" src="../assets/icons/rightArrow.svg" alt="">
+    <img ng-show="showSidebar" class="left-arrow-icon" src="../assets/icons/leftArrow.svg" alt="">
+  </li>
+  <li class="action-item" ng-click="removeClass()" ui-sref="board">
+    <img class="close-icon" src="../assets/icons/close.svg" alt="close">
+  </li>
+  <!-- <button ng-click="closePreview()">Test</button> -->
+</ul>
+<section id="item-details-container">
+  <h4 class="board-name">{{ viewInfo.name }}</h4>
+  <p class="preview-title editable-content" contenteditable="true" placeholder="Add a title here...">{{ viewInfo.title }}</p>
+  <p class="preview-description editable-content" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
+  <div class="preview-url-container">
+    <p class="preview-reference-url editable-content" contenteditable="true" placeholder="Add a reference URL here...">{{ viewInfo.reference_url }}</p>
     <p class="preview-site-url">{{ viewInfo.site_url }}</p>
-  </section>
+</div>
 </section>

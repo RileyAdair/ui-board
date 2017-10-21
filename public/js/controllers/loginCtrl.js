@@ -79,6 +79,7 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
       $('#login-password-container').addClass('error')
     }
     else{
+      // $('.username-container').append('<p id="user-name" class="user-item"><span class="username">{{ user.name }}</span><span class="username-hiphen">—</span>Signout</p>')
       loginSrvc.login(user)
     }
   }

@@ -8,7 +8,7 @@
 <!-- Saved images and sites -->
 <section class="board-view-container unselected" ng-class="{selected : $state.current.name === 'board.view'}">
   <div class="board-view-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-repeat="image in images">
-    <div class="board-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, test: $state.current.name === 'board.view' && image.image_id != id}" ui-sref="board.view({view: image.image_id})">
+    <div class="board-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id }" ui-sref="board.view({view: image.image_id})">
       <div class="board-thumbnail unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}">
         <img class="board-view-image unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.image_url }}">
         <iframe class="board-iframe unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
@@ -39,7 +39,7 @@
       <div>
         <h2 class="input-header">Save from a website</h2>
         <form id="create-board-container" class="input-container">
-          <input id="create-board-input" class="input" ng-model="site" type="text" autofocus placeholder="Add a url" ng-focus="boardNameFocus()">
+          <input id="create-board-input" class="input" ng-model="site" type="text" autofocus placeholder="Add a URL" ng-focus="boardNameFocus()">
         </form>
       </div>
       <button id="save-website-button" class="action-button" ng-click="addSite(site)">Save</button>
