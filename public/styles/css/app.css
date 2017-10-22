@@ -40,7 +40,7 @@ a {
   a:hover {
     color: #424242; }
 
-button {
+button, .input-button {
   background: transparent;
   outline: 0;
   border: 0;
@@ -48,11 +48,11 @@ button {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer; }
-  button:hover {
+  button:hover, .input-button:hover {
     color: #7d8696; }
-  button:active {
+  button:active, .input-button:active {
     color: #7d8696; }
-  button:focus {
+  button:focus, .input-button:focus {
     -webkit-box-shadow: none;
             box-shadow: none;
     outline: none;
@@ -322,7 +322,10 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 20px 100px; }
+  padding: 0 20px 100px;
+  opacity: 0;
+  -webkit-transition: opacity 0.18s;
+  transition: opacity 0.18s; }
 
 .modal-button {
   margin: 100px 0; }
@@ -334,25 +337,20 @@ button {
   border-radius: 7px;
   overflow: hidden;
   cursor: pointer;
-  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.12);
-  -webkit-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in; }
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: opacity 0.2s ease, -webkit-box-shadow 0.25s ease-in;
+  transition: opacity 0.2s ease, -webkit-box-shadow 0.25s ease-in;
+  transition: box-shadow 0.25s ease-in, opacity 0.2s ease;
+  transition: box-shadow 0.25s ease-in, opacity 0.2s ease, -webkit-box-shadow 0.25s ease-in; }
   .directory-thumbnail-container:hover {
-    -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
-    -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.2);
     -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out; }
 
 .directory-thumbnail-container:hover .thumbnail::after {
-  opacity: 1; }
-
-.directory-thumbnail-container:hover .thumbnail-trash {
   opacity: 1;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
   /* This container helps the thumbnail behave as if it were an unscaled IMG element */ }
 
 .thumbnail-container {
@@ -433,22 +431,27 @@ button {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)); }
 
 .thumbnail-trash {
-  content: url(../../assets/icons/trash.png);
+  content: url(../../assets/icons/trashIcon.svg);
   position: absolute;
   height: 180px;
   width: 180px;
   padding: 46px;
   top: 14px;
-  right: 12px;
+  right: 14px;
   z-index: 100;
-  opacity: 0;
   -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out; }
+  transition: all 0.25s ease-out;
+  opacity: 0; }
+
+.directory-thumbnail-container:hover .thumbnail-trash {
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  opacity: 0.75; }
 
 .thumbnail-trash:hover {
-  opacity: 1;
   -webkit-transform: scale(1.15);
-          transform: scale(1.15); }
+          transform: scale(1.15);
+  opacity: 1; }
 
 .board-caption-container {
   width: 100%;
@@ -493,8 +496,7 @@ button {
           justify-content: center; }
 
 #create-board-step {
-  width: 100%;
-  opacity: 0; }
+  width: 100%; }
 
 #create-board-modal-button {
   background: #C6CCD6;
@@ -517,7 +519,8 @@ button {
   background: transparent;
   border: none;
   font-size: 20px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 10; }
 
 .board-topbar {
   position: relative;
@@ -560,7 +563,7 @@ button {
           justify-content: center; }
 
 .save-drop-box {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -571,13 +574,15 @@ button {
   position: relative;
   bottom: 0;
   right: 0;
-  margin: 70px auto 0; }
+  margin: 70px auto 0;
+  border: none; }
   #save-website-button:hover {
     background: #7d8696; }
   #save-website-button:active {
     background: #7d8696; }
   #save-website-button:focus {
-    background: #7d8696; }
+    background: #7d8696;
+    outline: none; }
 
 .upload-container {
   font-size: 2em;
@@ -588,6 +593,17 @@ button {
 .upload-container span {
   cursor: pointer;
   border-bottom: 1px solid #7d8696; }
+
+.upload-container h3 {
+  font-size: 47px;
+  text-transform: uppercase;
+  margin: 4px 0 0; }
+
+.drag-drop {
+  background: url(../../assets/icons/upload.svg) no-repeat center center;
+  width: 20%;
+  height: 62px;
+  margin: 0 auto; }
 
 .drag-drop img {
   width: 60%;
@@ -604,7 +620,8 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 20px 100px; }
+  padding: 0 20px 100px;
+  margin-top: -50px; }
 
 .board-view-container.selected {
   position: absolute;
@@ -635,8 +652,8 @@ button {
   background: -webkit-gradient(linear, left top, left bottom, from(#f4f5fa), to(#e9ebf2));
   background: linear-gradient(#f4f5fa, #e9ebf2);
   border-radius: 7px;
-  -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.16);
-          box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
   text-align: center;
   margin: 30px 20px 10px;
   cursor: pointer;
@@ -649,12 +666,32 @@ button {
   .board-thumbnail-container.unselected:hover {
     -webkit-transform: translateY(-2px);
             transform: translateY(-2px);
-    -webkit-box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
-            box-shadow: 0 14px 24px 0 rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.22);
+            box-shadow: 0 12px 22px 0 rgba(0, 0, 0, 0.22);
     -webkit-transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, overflow 0.3s, -webkit-box-shadow 0.3s;
     transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, overflow 0.3s, -webkit-box-shadow 0.3s;
     transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, box-shadow 0.3s, overflow 0.3s;
     transition: top 3s, left 3s transform 0.3s, height 3s, width 3s, background 0s, box-shadow 0.3s, overflow 0.3s, -webkit-box-shadow 0.3s; }
+
+.board-view-thumbnail-container.unselected.ng-enter {
+  -webkit-transition-delay: 0.13s;
+  transition-delay: 0.13s;
+  -webkit-transition: 0.15s linear all;
+  transition: 0.15s linear all;
+  opacity: 0;
+  -webkit-transform: scale(1.15) !important;
+  transform: scale(1.15) !important; }
+
+.board-view-thumbnail-container.unselected.ng-enter-stagger {
+  -webkit-transition-delay: 0.13s;
+  transition-delay: 0.13s;
+  -webkit-transition-duration: 0;
+  transition-duration: 0; }
+
+.board-view-thumbnail-container.unselected.ng-enter.ng-enter-active {
+  opacity: 1;
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important; }
 
 .board-thumbnail-container.selected {
   width: calc(1200px * 0.63);
@@ -665,16 +702,16 @@ button {
   text-align: center;
   cursor: default;
   top: 50%;
-  left: 33%;
+  left: 32%;
   margin: 30px 20px 10px;
-  margin-left: -414px;
-  margin-top: -255px;
+  margin-left: -409px;
+  margin-top: -210px;
   overflow: visible;
   background: transparent;
   -webkit-box-shadow: 0 0 0 0 transparent;
           box-shadow: 0 0 0 0 transparent;
-  -webkit-transition: height 0.5s, width 0.5s, background 0s, top 0.3s, left 0.3s;
-  transition: height 0.5s, width 0.5s, background 0s, top 0.3s, left 0.3s;
+  -webkit-transition: height 0.5s, width 0.5s, background 0s, top 0.3s, left 0.3s, margin-left 0.3s;
+  transition: height 0.5s, width 0.5s, background 0s, top 0.3s, left 0.3s, margin-left 0.3s;
   z-index: 1000; }
   .board-thumbnail-container.selected:hover {
     -webkit-transform: translateY(0);
@@ -683,13 +720,17 @@ button {
             box-shadow: none; }
 
 .board-thumbnail-container.selected.move {
-  left: 50%; }
+  left: 50%;
+  -webkit-transition: margin-left 0.3s, left 0.3s;
+  transition: margin-left 0.3s, left 0.3s; }
 
-.board-thumbnail-container.selected.moveBack {
-  left: 33%; }
+.board-thumbnail-container.selected.mobile-view {
+  margin-left: -160px;
+  -webkit-transition: margin-left 0.3s, left 0.3s;
+  transition: margin-left 0.3s, left 0.3s; }
 
 .board-thumbnail-container.unselected:hover .thumbnail-trash {
-  opacity: 1;
+  opacity: 0.75;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out; }
 
@@ -698,8 +739,8 @@ button {
 
 .board-thumbnail-container.unselected:hover .board-thumbnail.unselected:after {
   opacity: 1;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out; }
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
 
 /* This is our screen sizing */
 /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
@@ -712,20 +753,29 @@ button {
 
 .board-iframe.unselected {
   width: 1202px;
-  height: 754px;
-  -webkit-transition: all 3s;
-  transition: all 3s; }
+  height: 753px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
 
 .board-iframe.selected {
   width: 1202px;
-  height: 754px;
-  -webkit-transition: all 3s;
-  transition: all 3s; }
+  height: 750px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-shadow: 0;
+          box-shadow: 0; }
+
+.board-iframe.shadow {
+  -webkit-box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0.16); }
+
+.board-iframe.selected.mobile-view {
+  width: 424px; }
 
 /* This is a masking container for the zoomed iframe element */
 .board-thumbnail.unselected {
   width: 1202px;
-  height: 754px;
+  height: 753px;
   -ms-zoom: 0.25;
   -moz-transform: scale(0.25);
   -moz-transform-origin: 0 0;
@@ -739,7 +789,7 @@ button {
 
 .board-thumbnail.selected {
   width: 1202px;
-  height: 754px;
+  height: 750px;
   -ms-zoom: 0.63;
   -moz-transform: scale(0.63);
   -moz-transform-origin: 0 0;
@@ -762,6 +812,9 @@ button {
   margin-top: -25px;
   opacity: 0.4;
   content: url(../../assets/logo/logo_ui_box.svg); }
+
+.board-thumbnail-container.selected::before {
+  content: ""; }
 
 /* This is a masking container for the zoomed iframe element */
 /* This pseudo element masks the iframe, so that mouse wheel scrolling and clicking do not affect the simulated "screenshot" */
@@ -789,7 +842,13 @@ button {
 
 .board-view-image.selected {
   width: auto;
-  height: 100%; }
+  height: 100%;
+  -webkit-box-shadow: 0;
+          box-shadow: 0; }
+
+.board-view-image.selected.shadow {
+  -webkit-box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 22px 0 rgba(0, 0, 0, 0.16); }
 
 .preview-container {
   position: fixed;
@@ -822,7 +881,10 @@ button {
   right: 27px;
   text-align: right;
   z-index: 1001;
-  list-style: none; }
+  list-style: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0; }
   .item-actions-container .action-item {
     cursor: pointer;
     vertical-align: top;
@@ -840,6 +902,10 @@ button {
     transition: all 0.2s; }
     .item-actions-container .action-item:hover {
       background: #FBFBFB; }
+  .item-actions-container #devices {
+    display: none; }
+  .item-actions-container #devices.showAction {
+    display: inline-block; }
   .item-actions-container .mobile-icon, .item-actions-container .laptop-icon, .item-actions-container .share-icon, .item-actions-container .right-arrow-icon, .item-actions-container .left-arrow-icon, .item-actions-container .close-icon {
     position: absolute;
     top: 9px;
@@ -849,7 +915,8 @@ button {
   .item-actions-container .laptop-icon {
     top: 10px;
     left: 8px;
-    height: 13px; }
+    height: 13px;
+    width: 17px; }
   .item-actions-container .share-icon {
     top: 10px;
     left: 10px;
@@ -881,11 +948,11 @@ button {
   padding: 39px 39px 45px;
   top: 0;
   right: 0;
-  -webkit-transition: opacity 0.4s, -webkit-transform 0.3s;
-  transition: opacity 0.4s, -webkit-transform 0.3s;
-  transition: opacity 0.4s, transform 0.3s;
-  transition: opacity 0.4s, transform 0.3s, -webkit-transform 0.3s;
-  opacity: 1;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+  opacity: 0;
   z-index: 1000; }
   #item-details-container .preview-title:empty:before, #item-details-container .preview-description:empty:before,
   #item-details-container .preview-reference-url:empty:before {
@@ -927,18 +994,25 @@ button {
         justify-content: space-around; }
 
   .board-thumbnail-container.selected {
-    width: calc(1200px * 0.63);
-    height: calc(750px * 0.63);
-    margin-left: -414px;
-    margin-top: -255px; }
+    width: calc(1200px * 0.85);
+    height: calc(750px * 0.85);
+    margin-left: -541px;
+    margin-top: -286px;
+    left: 36%; }
 
   .board-thumbnail.selected {
-    width: 1202px;
-    height: 754px;
-    -ms-zoom: 0.63;
-    -moz-transform: scale(0.63);
-    -o-transform: scale(0.63);
-    -webkit-transform: scale(0.63); } }
+    width: 1201px;
+    height: 749px;
+    -ms-zoom: 0.85;
+    -moz-transform: scale(0.85);
+    -o-transform: scale(0.85);
+    -webkit-transform: scale(0.85); }
+
+  #item-details-container {
+    width: 510px; }
+
+  .board-thumbnail-container.selected.mobile-view {
+    margin-left: -210px; } }
 /* MODULES STYLES */
 .input-header, .input-header-placeholder {
   font-family: "gilroy-bold", sans-serif;
@@ -961,7 +1035,8 @@ button {
   font-size: 30px;
   outline: none;
   border: none;
-  margin: 0 auto 15px; }
+  margin: 0 auto 15px;
+  cursor: text; }
 
 .input-container {
   border-bottom: 1px solid #A5ACBA; }
@@ -1027,6 +1102,80 @@ button {
   display: block;
   color: #7d8696;
   text-align: left;
-  font-family: "gilroy-light", sans-serif; }
+  font-family: "gilroy-light", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+#intro-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0f141e;
+  z-index: 1001;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+#logo-container {
+  width: 360px;
+  height: 100px;
+  opacity: 0;
+  -webkit-transform: translateY(40%);
+          transform: translateY(40%);
+  -webkit-transition: opacity 0.8s ease-in-out, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease-in-out, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease, -webkit-transform 0.8s ease; }
+
+#logo-box {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 50%;
+  margin-left: -50px;
+  background: transparent;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background 0.5s linear;
+  transition: background 0.5s linear; }
+
+#logo-ui {
+  width: 69%;
+  height: auto; }
+
+#hide-container {
+  width: 100%;
+  height: 100%; }
+
+#logo-board {
+  height: 56px;
+  width: auto;
+  position: absolute;
+  top: 23%;
+  right: 0;
+  margin-right: 100%;
+  opacity: 0; }
+
+#logo {
+  width: 360px;
+  height: auto; }
 
 /*# sourceMappingURL=app.css.map */

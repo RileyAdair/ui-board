@@ -10,31 +10,31 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
         console.log(this.user);
   })
 
+
+
   angular.element(document).ready(function(){
+    setTimeout(function(){
+      $('body').find('.directory-boards-container').css('opacity', '1')
+    }, 520);
+
+    function animate(){
+      TweenMax.staggerFrom(".animate", .2, {opacity:0, scale:1.3}, 0.2);
+    }
+    setTimeout(function(){
+      animate()
+    }, 270);
 
     // Show / Hide - Modal
     $scope.showModal = () => {
       $('#create-board-modal-container').css('display','block');
-
-      setTimeout(function(){
-        $('#create-board-step').css('transform','translateX(100%)');
-      }, 10);
-
       setTimeout(function(){
         $('#create-board-modal-container').css('opacity','1');
-        $('#create-board-step').css('opacity','1');
         $('#create-board-input').focus();
       }, 100);
-
-      setTimeout(function(){
-        $('#create-board-step').css('transition','all .4s ease-out');
-        $('#create-board-step').css('transform','translateX(0)');
-      }, 250);
     }
 
     $scope.hideModal = () => {
       $('#create-board-modal-container').css('opacity','0');
-      $('#create-board-step').css('opacity','0');
       setTimeout(function(){
         $('#create-board-modal-container').css('display','none');
         $('#create-board-input').val('')

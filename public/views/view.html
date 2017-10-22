@@ -7,7 +7,7 @@
 <!-- <section id="item-details-container" ng-class="{hide : toggle = false}"> -->
 
 <ul class="item-actions-container">
-  <li class="action-item" ng-click="deviceToggle()">
+  <li id="devices" class="action-item" ng-class="{showAction : viewInfo.site_url}" ng-click="deviceToggle()">
     <img class="mobile-icon" src="../assets/icons/mobile.svg" alt="mobile">
     <img ng-show="showLaptop" class="laptop-icon" src="../assets/icons/laptop.svg" alt="laptop">
   </li>
@@ -25,10 +25,10 @@
 </ul>
 <section id="item-details-container">
   <h4 class="board-name">{{ viewInfo.name }}</h4>
-  <p class="preview-title editable-content" contenteditable="true" placeholder="Add a title here...">{{ viewInfo.title }}</p>
-  <p class="preview-description editable-content" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
+  <p class="preview-title editable-content" spellcheck="false" contenteditable="true" placeholder="Add a title here...">{{ viewInfo.title }}</p>
+  <p class="preview-description editable-content" spellcheck="false" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
   <div class="preview-url-container">
-    <p class="preview-reference-url editable-content" contenteditable="true" placeholder="Add a reference URL here...">{{ viewInfo.reference_url }}</p>
+    <p class="preview-reference-url editable-content" spellcheck="false" contenteditable="true" placeholder="Add a reference url here...">{{ viewInfo.reference_url }}</p>
     <p class="preview-site-url">{{ viewInfo.site_url }}</p>
 </div>
 </section>

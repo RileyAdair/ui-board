@@ -5,6 +5,8 @@
   flex-wrap: wrap
   justify-content: center
   padding: 0 20px 100px
+  opacity: 0
+  transition: opacity .18s
 
 .modal-button
   margin: 100px 0
@@ -16,20 +18,17 @@
   border-radius: 7px
   overflow: hidden
   cursor: pointer
-  box-shadow: 0 12px 22px 0 rgba(0,0,0,.12)
-  transition: all .25s ease-in
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.12)
+  transition: box-shadow .25s ease-in, opacity .2s ease
 
   &:hover
-    transform: translateY(-2px)
-    box-shadow: 0 14px 24px 0 rgba(0,0,0,.2)
+    // transform: translateY(-2px)
+    box-shadow: 0 12px 22px 0 rgba(0,0,0,.2)
     transition: all .25s ease-out
 
 .directory-thumbnail-container:hover .thumbnail::after
   opacity: 1
 
-.directory-thumbnail-container:hover .thumbnail-trash
-  opacity: 1
-  transition: all .25s ease-out
 
   /* This container helps the thumbnail behave as if it were an unscaled IMG element */
 .thumbnail-container
@@ -100,20 +99,24 @@
   background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.5))
 
 .thumbnail-trash
-  content: url(../../assets/icons/trash.png)
+  content: url(../../assets/icons/trashIcon.svg)
   position: absolute
   height: 180px
   width: 180px
   padding: 46px
   top: 14px
-  right: 12px
+  right: 14px
   z-index: 100
-  opacity: 0
   transition: all .25s ease-out
+  opacity: 0
+
+.directory-thumbnail-container:hover .thumbnail-trash
+  transition: all .25s ease-out
+  opacity: .75
 
 .thumbnail-trash:hover
-    opacity: 1
     transform: scale(1.15)
+    opacity: 1
 
 .board-caption-container
   width: 100%
@@ -152,7 +155,6 @@
 
 #create-board-step
   width: 100%
-  opacity: 0
 
 #create-board-modal-button
   background: $lightButtonGrey
@@ -179,3 +181,4 @@
   border: none
   font-size: 20px
   cursor: pointer
+  z-index: 10

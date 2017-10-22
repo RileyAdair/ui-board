@@ -8,10 +8,10 @@
       <div id="login-step-one">
         <h2 class="input-header">Login</h2>
         <div id="login-email-container" class="input-container">
-          <input id="login-email-input" class="input" type="text" placeholder="Enter your email" autofocus ng-model="user.email" ng-focus="emailFocus()">
+          <input id="login-email-input" class="input" type="email" placeholder="Enter your email" autofocus ng-model="user.email" ng-focus="emailFocus()">
         </div>
         <div class="login-button-container">
-          <button class="login-next" ng-click="loginNext(user.email)">Next</button>
+          <input class="login-next input-button" type="submit" value="Next" ng-click="loginNext(user.email)"></input>
         </div>
       </div>
 
@@ -51,11 +51,11 @@
       <div id="signup-step-two">
         <h2 class="input-header-placeholder">Sign up</h2>
         <div id="signup-email-container" class="input-container">
-          <input id="signup-email-input" class="input" type="text" placeholder="Enter your email" autofocus ng-model="email" ng-focus="signupEmailFocus()">
+          <input id="signup-email-input" class="input" type="email" placeholder="Enter your email" autofocus ng-model="email" ng-focus="signupEmailFocus()">
         </div>
         <div class="login-back-button-container">
           <button class="login-back" ng-click="signupBackOne()">Back</button>
-          <button class="login-next" ng-click="signupNextTwo(email)">Next</button>
+          <input class="login-next input-button" type="submit" value="Next" ng-click="signupNextTwo(email)"></input>
         </div>
       </div>
 
@@ -71,7 +71,7 @@
       </div>
 
       <div class="login-signup">
-        <p>Don't have an account?</p>
+        <p>Already have an account?</p>
         <a href="" ng-click="hideSignUp()">Login</a>
       </div>
     </form>

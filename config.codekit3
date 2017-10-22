@@ -275,6 +275,36 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/public\/assets\/icons\/upload.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/upload.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/logo\/logo_board.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/logo\/logo_board.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/public\/assets\/logo\/logo_box.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/logo\/logo_box.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/assets\/logo\/logo_full.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -295,6 +325,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/public\/assets\/logo\/logo_ui.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/logo\/logo_ui.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/assets\/logo\/logo_ui_box.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -305,21 +345,21 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/public\/assets\/logo\/logo_ui_box_red.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/logo\/logo_ui_box_red.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/index.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/public\/index.html",
 		"oF": 0
-		},
-	"\/public\/js\/app-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/public\/js\/app-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"\/public\/js\/app.js": {
 		"ft": 64,
@@ -377,6 +417,26 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/public\/js\/controllers\/viewCtrl-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/public\/js\/intro-animation-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/public\/js\/intro-animation-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/public\/js\/intro-animation.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/public\/js\/intro-animation-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -599,6 +659,12 @@
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_breakpoints.sassc",
 		"oF": 0
 		},
+	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_intro-animation.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_intro-animation.sassc",
+		"oF": 0
+		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_layouts-dir.sassc": {
 		"ft": 8192,
 		"oA": 1,
@@ -669,6 +735,12 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_input.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_intro-animation.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_intro-animation.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc": {
@@ -905,6 +977,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/3-modules\/_input.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/public\/styles\/sass\/3-modules\/_intro-animation.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/3-modules\/_intro-animation.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

@@ -29,6 +29,8 @@
   text-align: right
   z-index: 1001
   list-style: none
+  transition: .3s
+  opacity: 0
 
   .action-item
     cursor: pointer
@@ -48,6 +50,12 @@
     &:hover
       background: #FBFBFB
 
+  #devices
+    display: none
+
+  #devices.showAction
+    display: inline-block
+
   .mobile-icon
     position: absolute
     top: 9px
@@ -60,6 +68,7 @@
     top: 10px
     left: 8px
     height: 13px
+    width: 17px
 
   .share-icon
     @extend .mobile-icon
@@ -97,8 +106,8 @@
   padding: 39px 39px 45px
   top: 0
   right: 0
-  transition: opacity .4s, transform .3s
-  opacity: 1
+  transition: opacity .3s, transform .3s
+  opacity: 0
   z-index: 1000
 
   .preview-title:empty:before, .preview-description:empty:before,

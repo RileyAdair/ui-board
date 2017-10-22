@@ -21,6 +21,7 @@ app.service('loginSrvc',function($http, $location){
       console.log(response);
       if(response.data.validUser == 'no user') {
         console.log('no user');
+        alert('This email does not exist')
       }
       if(response.data.validUser == 'valid') {
 
@@ -39,8 +40,22 @@ app.service('loginSrvc',function($http, $location){
         })
         .catch(err => {
           console.log(err);
+          if(err.message == "The password is invalid or the user does not have a password.") {
+
+            setTimeout(function(){
+              $('#login-password-container').addClass('error')
+
+            }, 50);
+            setTimeout(function(){
+              alert("Password is incorrect")
+            }, 70);
+          }
+          if(err.message == "We have blocked all requests from this device due to unusual activity. Try again later.") {
+            alert("We have blocked all requests from this device due to unusual activity. Try again later.")
+          }
           // Run jQuery here in Id to add html message
           this.error = "Password is incorrect";
+
         })
 
       }
@@ -71,6 +86,7 @@ app.service('loginSrvc',function($http, $location){
         return $http.post('/user/checkUser', userEmail)
         .then(response => {
           if(response.data.validUser == 'username already exists') {
+            alert('The email address is already in use by another account.')
             console.log('The email address is already in use by another account.')
             // Run jQuery here in Id to add html message
           }

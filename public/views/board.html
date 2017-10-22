@@ -6,12 +6,12 @@
 </section>
 
 <!-- Saved images and sites -->
-<section class="board-view-container unselected" ng-class="{selected : $state.current.name === 'board.view'}">
+<section class="board-view-container unselected"  ng-class="{selected : $state.current.name === 'board.view'}">
   <div class="board-view-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-repeat="image in images">
     <div class="board-thumbnail-container unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id }" ui-sref="board.view({view: image.image_id})">
       <div class="board-thumbnail unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}">
-        <img class="board-view-image unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.image_url }}">
-        <iframe class="board-iframe unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}" ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
+        <img class="board-view-image unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, shadow : image.image_url}" ng-src="{{ image.image_url }}">
+        <iframe class="board-iframe unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, shadow : image.site_url}" ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
         <div class="thumbnail-trash" ng-click="deleteImage(image)"></div>
       </div>
     </div>
@@ -28,21 +28,24 @@
     ngf-drag-over-class="'dragover'"
     ngf-pattern="'image/*,application/pdf'"></div>
   <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-  <div id="save-modal-container" class="create-board-modal-content-container">
+  <div ngf-drop="upload($file)"
+    ngf-drag-over-class="'dragover'"
+    ngf-pattern="'image/*,application/pdf'" id="save-modal-container" class="create-board-modal-content-container">
     <div class="upload-container">
       <div class="drag-drop">
-        <img src="../assets/icons/drag-drop.png" alt="">
+        <!-- <img src="../assets/icons/drag-drop.png" alt=""> -->
       </div>
-      <p>Your files anywhere or, <span ngf-select="upload($file)">browse</span></p>
+      <h3>Drag &amp; Drop</h3>
+      <p>Your images anywhere or, <span ngf-select="upload($file)">browse</span></p>
     </div>
     <div id="create-board-step">
       <div>
         <h2 class="input-header">Save from a website</h2>
         <form id="create-board-container" class="input-container">
-          <input id="create-board-input" class="input" ng-model="site" type="text" autofocus placeholder="Add a URL" ng-focus="boardNameFocus()">
+          <input id="create-board-input" spellcheck="false" class="input" ng-model="site" type="url" autofocus placeholder="https://" ng-focus="boardNameFocus()">
         </form>
       </div>
-      <button id="save-website-button" class="action-button" ng-click="addSite(site)">Save</button>
+      <input id="save-website-button" class="action-button" ng-click="addSite(site)" type="submit"></input>
     </div>
   </div>
   <button class="close-modal" ng-click="hideModal()">X</button>

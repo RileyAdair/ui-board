@@ -2,7 +2,7 @@ app.controller('topbarCtrl', function($scope, $rootScope, $location, $stateParam
 
   firebase.auth().onAuthStateChanged(user => {
         if(!user) {
-          console.log('test');
+          // console.log('test');
           // $('#user-name').remove()
         }
         else if (user) {

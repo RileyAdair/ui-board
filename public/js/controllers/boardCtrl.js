@@ -21,6 +21,17 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
   const boardId = $stateParams.board_id;
 
   angular.element(document).ready(function(){
+    // setTimeout(function(){
+    //   $('body').find('.board-view-container').css('opacity', '1')
+    // }, 550);
+    //
+    // function animate(){
+    //   TweenMax.staggerFrom(".animate", .25, {opacity:0, scale:1.15}, 0.2);
+    // }
+    // setTimeout(function(){
+    //   animate()
+    // }, 300);
+
     // remove move class GET IT TO WORK
     $scope.removeClass = () => {
       console.log('removed');
@@ -59,24 +70,13 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
       $('#create-board-modal-container').css('display','block');
 
       setTimeout(function(){
-        $('#create-board-step').css('transform','translateX(100%)');
-      }, 10);
-
-      setTimeout(function(){
         $('#create-board-modal-container').css('opacity','1');
-        $('#create-board-step').css('opacity','1');
         $('#create-board-input').focus();
       }, 100);
-
-      setTimeout(function(){
-        $('#create-board-step').css('transition','all .4s ease-out');
-        $('#create-board-step').css('transform','translateX(0)');
-      }, 250);
     }
 
     $scope.hideModal = () => {
       $('#create-board-modal-container').css('opacity','0');
-      $('#create-board-step').css('opacity','0');
       setTimeout(function(){
         $('#create-board-modal-container').css('display','none');
         $('#create-board-input').val('')
@@ -121,8 +121,14 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
   // Add site
   $scope.addSite = (site) => {
     if(!site){
-      $('#create-board-container').addClass('error')
-      console.log('please enter site');
+      setTimeout(function(){
+        $('#create-board-container').addClass('error')
+
+      }, 50);
+      setTimeout(function(){
+        alert('Please enter a URL.')
+      }, 70);
+
     }
     if(site) {
       console.log(site);
@@ -133,13 +139,11 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
         imagesArr.push(response);
         console.log(response);
 
-        $scope.site = ""
-
         $('#create-board-modal-container').css('opacity','0');
-        $('#create-board-step').css('opacity','0');
         setTimeout(function(){
           $('#create-board-modal-container').css('display','none');
           $('#create-board-input').val('')
+          $('#create-board-container').removeClass('error')
         }, 300);
         // $scope.images = response;
       })
@@ -148,8 +152,8 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
 
   // Remove error class
   $scope.boardNameFocus = () => {
+    $('#create-board-container').removeClass('error')
     $('#create-board-input').keypress(function(event){
-      console.log('typing');
       $('#create-board-container').removeClass('error')
     });
   }
@@ -165,16 +169,12 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
     boardSrvc.upload(file)
     .then(response => {
       $timeout(function(){
-
         imagesArr.push(response);
         console.log(response);
-
-
-
       }, 0)
 
       $('#create-board-modal-container').css('opacity','0');
-      $('#create-board-step').css('opacity','0');
+      
       setTimeout(function(){
         $('#create-board-modal-container').css('display','none');
         $('#create-board-input').val('')

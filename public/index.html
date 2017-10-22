@@ -8,6 +8,20 @@
   <title>ui board</title>
 </head>
 <body>
+  <!-- Intro animation -->
+  <div id="intro-container">
+    <div id="logo-container">
+      <div id="logo-box">
+        <img id="logo-ui" src="./assets/logo/logo_ui.svg">
+      </div>
+      <div id="hide-container">
+      </div>
+      <img id="logo-board" src="./assets/logo/logo_board.svg">
+    </div>
+      <!-- <img id="logo" src="./assets/logo/logo_full.svg" alt=""> -->
+  </div>
+
+
   <!-- Topbar -->
   <section class="topbar" ng-controller="topbarCtrl">
     <div class="path-container">
@@ -34,6 +48,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.js" charset="utf-8"></script>
   <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -57,5 +72,6 @@
   <script src="./js/services/directorySrvc.js"></script>
   <script src="./js/services/boardSrvc.js"></script>
   <script src="./js/services/viewSrvc.js"></script>
+  <script src="./js/intro-animation.js"></script>
 </body>
 </html>

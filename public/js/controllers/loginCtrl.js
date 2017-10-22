@@ -91,6 +91,7 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
     });
   }
   $scope.passwordFocus = () => {
+    
     $('#login-password-input').keypress(function(event){
       $('#login-password-container').removeClass('error')
     });

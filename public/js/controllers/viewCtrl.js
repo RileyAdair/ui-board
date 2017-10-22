@@ -32,12 +32,16 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
 
     setTimeout(function(){
       $('body').find('.preview-container').css('opacity', '1')
+      $('body').find('.item-actions-container').css('opacity', '1')
+      $('body').find('#item-details-container').css('opacity', '1')
     }, 10);
 
     // Removes left: 50% from .board-thumbnail-container.selected
     $scope.removeClass = () => {
       console.log('removed');
       $('body').find('.board-thumbnail-container.selected').removeClass('move')
+      $('body').find('.board-iframe.selected').removeClass('mobile-view')
+      $('body').find('.board-thumbnail-container.selected').removeClass('mobile-view')
     }
 
     // $scope.closePreview = () => {
@@ -125,7 +129,7 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
       $('body').find('.right-arrow-icon').css('opacity','0')
       $('body').find('#item-details-container').css('transform','translate3d(100%,0,0)')
       $('body').find('#preview-header').css('opacity','1')
-      $('body').find('.board-thumbnail-container.selected').addClass('move','50%')
+      $('body').find('.board-thumbnail-container.selected').addClass('move')
       toggle = true
       $scope.showSidebar = true
 
@@ -148,10 +152,14 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
     console.log('clicked');
     if($scope.showLaptop == false) {
       $('body').find('.mobile-icon').css('opacity','0')
+      $('body').find('.board-iframe.selected').addClass('mobile-view')
+      $('body').find('.board-thumbnail-container.selected').addClass('mobile-view')
       $scope.showLaptop = true
     }
     else {
       $('body').find('.mobile-icon').css('opacity','1')
+      $('body').find('.board-iframe.selected').removeClass('mobile-view')
+      $('body').find('.board-thumbnail-container.selected').removeClass('mobile-view')
       $scope.showLaptop = false
     }
   }
@@ -165,6 +173,7 @@ app.controller('viewCtrl', function($scope, $stateParams, viewSrvc, $rootScope, 
   .then(response => {
     $scope.title = response.data[0].title
     $scope.viewInfo = response.data[0];
+    console.log(response.data[0]);
     if(response.data[0].site_url) {
       $('body').find('.preview-reference-url').css('display','none')
     }

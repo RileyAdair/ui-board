@@ -20,7 +20,7 @@ var app = angular.module('app', ['ui.router', 'ngFileUpload', 'ngAnimate'])
     .state('board', {
       url: '/directory:id/board:board_id',
       templateUrl: 'views/board.html',
-      controller: 'boardCtrl',
+      controller: 'boardCtrl'
     })
 
     .state('board.view', {

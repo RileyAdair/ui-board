@@ -86,7 +86,7 @@
   justify-content: center
 
 .save-drop-box
-  position: fixed
+  position: absolute
   top: 0
   right: 0
   bottom: 0
@@ -98,6 +98,7 @@
   bottom: 0
   right: 0
   margin: 70px auto 0
+  border: none
 
   &:hover
     background: $grey
@@ -107,6 +108,7 @@
 
   &:focus
     background: $grey
+    outline: none
 
 .upload-container
   font-size: 2em
@@ -117,6 +119,19 @@
 .upload-container span
   cursor: pointer
   border-bottom: 1px solid $grey
+
+.upload-container h3
+  // height: 37px
+  // width: 320px
+  font-size: 47px
+  text-transform: uppercase
+  margin: 4px 0 0
+
+.drag-drop
+  background: url(../../assets/icons/upload.svg) no-repeat center center
+  width: 20%
+  height: 62px
+  margin: 0 auto
 
 .drag-drop img
   width: 60%
@@ -242,6 +257,7 @@
   flex-wrap: wrap
   justify-content: center
   padding: 0 20px 100px
+  margin-top: -50px
 
 .board-view-container.selected
   position: absolute
@@ -272,7 +288,7 @@
   background: #f9f9f9
   background: linear-gradient(#f4f5fa, #e9ebf2)
   border-radius: 7px
-  box-shadow: 0 12px 22px 0 rgba(0,0,0,.16)
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.16)
   text-align: center
   margin: 30px 20px 10px
   cursor: pointer
@@ -286,8 +302,37 @@
   // Initial animation
   &:hover
     transform: translateY(-2px)
-    box-shadow: 0 14px 24px 0 rgba(0,0,0,.24)
+    box-shadow: 0 12px 22px 0 rgba(0,0,0,.22)
     transition: top 3s, left 3s transform .3s, height 3s, width 3s, background 0s, box-shadow .3s, overflow .3s
+
+
+.board-view-thumbnail-container.unselected.ng-enter
+  -webkit-transition-delay: 0.13s
+  transition-delay: 0.13s
+  -webkit-transition: 0.15s linear all
+  transition: 0.15s linear all
+  opacity: 0
+  -webkit-transform: scale(1.15)!important
+  transform: scale(1.15)!important
+
+.board-view-thumbnail-container.unselected.ng-enter-stagger
+  -webkit-transition-delay: 0.13s
+  transition-delay: 0.13s
+  -webkit-transition-duration: 0
+  transition-duration: 0
+
+.board-view-thumbnail-container.unselected.ng-enter.ng-enter-active
+    opacity: 1
+    -webkit-transform: scale(1)!important
+    transform: scale(1)!important
+//
+// .board-view-thumbnail-container.unselected.ng-leave
+//     -webkit-transition: 0.1s linear all
+//     transition: 0.1s linear all
+//     opacity: 1
+//
+// .board-view-thumbnail-container.unselected.ng-leave.ng-leave-active
+//     opacity: 0
 
 // ============================================================== Selected Board
 .board-thumbnail-container.selected
@@ -303,15 +348,16 @@
   //
   top: 50%
   // left: 50%
-  left: 33%
+  left: 32%
   margin: 30px 20px 10px
-  margin-left: -414px
-  margin-top: -255px
+  margin-left: -409px
+  margin-top: -210px
+  // margin-top: -260px
   overflow: visible
   background: transparent
   box-shadow: 0 0 0 0 transparent
 
-  transition: height .5s, width .5s, background 0s, top .3s, left .3s
+  transition: height .5s, width .5s, background 0s, top .3s, left .3s, margin-left .3s
   z-index: 1000
   // border: 50px solid red
 
@@ -322,12 +368,17 @@
 
 .board-thumbnail-container.selected.move
   left: 50%
+  transition: margin-left .3s, left .3s
 
-.board-thumbnail-container.selected.moveBack
-  left: 33%
+.board-thumbnail-container.selected.mobile-view
+  margin-left: -160px
+  transition: margin-left .3s, left .3s
+
+// .board-thumbnail-container.selected.moveBack
+//   left: 33%
 // =============================================== Thumbnail Trash Hover Effects
 .board-thumbnail-container.unselected:hover .thumbnail-trash
-  opacity: 1
+  opacity: .75
   transition: all .25s ease-out
 
 .board-thumbnail-container.selected:hover .thumbnail-trash
@@ -335,7 +386,7 @@
 
 .board-thumbnail-container.unselected:hover .board-thumbnail.unselected:after
   opacity: 1
-  transition: all .3s ease-out
+  transition: all .2s ease-out
 
 // =============================================== Thumbnail Trash Hover Effects
 
@@ -349,18 +400,26 @@
 
 .board-iframe.unselected
   width: 1202px
-  height: 754px
-  transition: all 3s
+  height: 753px
+  transition: all .3s
 
 .board-iframe.selected
   width: 1202px
-  height: 754px
-  transition: all 3s
+  height: 750px
+  transition: all .3s
+  box-shadow: 0
+
+.board-iframe.shadow
+  box-shadow: 0 5px 22px 0 rgba(0,0,0,.16)
+
+.board-iframe.selected.mobile-view
+  width: 424px
+
 
 /* This is a masking container for the zoomed iframe element */
 .board-thumbnail.unselected
   width: 1202px
-  height: 754px
+  height: 753px
   -ms-zoom: 0.25
   -moz-transform: scale(0.25)
   -moz-transform-origin: 0 0
@@ -375,7 +434,7 @@
 
 .board-thumbnail.selected
   width: 1202px
-  height: 754px
+  height: 750px
   -ms-zoom: 0.63
   -moz-transform: scale(0.63)
   -moz-transform-origin: 0 0
@@ -399,6 +458,9 @@
   margin-top: -25px
   opacity: .4
   content: url(../../assets/logo/logo_ui_box.svg)
+
+.board-thumbnail-container.selected::before
+  content: ''
 
 /* This is a masking container for the zoomed iframe element */
 // .thumbnail
@@ -442,3 +504,7 @@
 .board-view-image.selected
   width: auto
   height: 100%
+  box-shadow: 0
+
+.board-view-image.selected.shadow
+  box-shadow: 0 5px 22px 0 rgba(0,0,0,.16)
