@@ -1,6 +1,6 @@
 // INTRO ANIMATION
 
-#intro-container
+.intro-container
   position: fixed
   top: 0
   right: 0
@@ -11,21 +11,20 @@
   display: flex
   justify-content: center
   align-items: center
-  transition: all .5s
-  display: none
+  transition: all .7s
+  // display: none
 
-#logo-container
+.logo-container
   width: 360px
   height: 100px
   opacity: 0
-  // background: grey
+  overflow: hidden
   transform: translateY(40%)
-  transition: opacity .5s ease-in-out, transform .7s ease
+  transition: opacity .8s ease-out, transform .4s ease-out
   // height: 100px
-
   // transition: all .6s cubic-bezier(0.68, -1.15, 0.265, 1.55)
 
-#logo-box
+.logo-box
   position: absolute
   height: 100px
   width: 100px
@@ -37,27 +36,41 @@
   display: flex
   justify-content: center
   align-items: center
-  transition: background .5s linear
+  z-index: 2
+  transition: all .6s ease-out
 
-
-#logo-ui-box
-  width: 100%
-  height: auto
-
-#hide-container
-  width: 100%
+.logo
   height: 100%
-  // background: green
+  width: auto
 
-#logo-board
-  height: 56px
+.mask-container
+  position: absolute
+  width: 50%
+  height: 100%
+  margin: 0
+  background: rgb(15, 20, 30)
+  z-index: 1
+  transition: all .6s ease-out
+
+.logo-board
+  height: 54px
   width: auto
   position: absolute
-  top: 23%
+  top: 22%
   right: 0
-  margin-right: 100%
   opacity: 0
+  transform: translateX(-70%)
+  transition: all 1.3s ease-out
 
-#logo
-  width: 360px
-  height: auto
+.logo-board.active
+  transform: translateX(0)
+  opacity: 1
+
+// Is Active
+.logo-container.active
+  .logo-box
+    margin-left: 0
+    left: 0
+
+  .mask-container
+    transform: translateX(-100%)

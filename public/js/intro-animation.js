@@ -1,16 +1,36 @@
 $(document).ready(function() {
   setTimeout(() => {
-    $('#logo-container').css('opacity', '1')
-    $('#logo-container').css('transform', 'translateY(0)')
+    $('.logo-container').css('opacity', '1')
+    $('.logo-container').css('transform', 'translateY(0)')
   }, 300)
 
   setTimeout(() => {
-    $('#logo-box').css('background', '#FD515C')
-  }, 400)
+    $('.logo-board').addClass('active')
+  }, 800)
 
   setTimeout(() => {
-    $('#intro-container').css('opacity', '0')
-  }, 2500)
+    $('.logo-container').addClass('active')
+  }, 1000)
+
+  setTimeout(() => {
+    $('.intro-container').css('opacity', '0')
+  }, 2800)
+
+  setTimeout(() => {
+    $('.intro-container').css('display', 'none')
+    $('.logo-container').removeClass('active')
+    $('.logo-board').removeClass('active')
+  }, 3500)
+
+
+
+
+
+
+
+
+
+
 
   // setTimeout(() => {
   //   $('#intro-container').css('display', 'none')
