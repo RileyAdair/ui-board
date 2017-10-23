@@ -401,6 +401,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/public\/js\/controllers\/sidebarCtrl.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/public\/js\/controllers\/sidebarCtrl-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/public\/js\/controllers\/topbarCtrl.js": {
 		"ft": 64,
 		"ma": 0,
@@ -719,6 +729,12 @@
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/ui-board.sassc",
 		"oF": 0
 		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_action-button.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_action-button.sassc",
+		"oF": 0
+		},
 	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc": {
 		"ft": 8192,
 		"oA": 1,
@@ -942,7 +958,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/public\/styles\/sass\/3-modules\/_add-button.sass": {
+	"\/public\/styles\/sass\/3-modules\/_action-button.sass": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -950,7 +966,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/3-modules\/_add-button.css",
+		"oAP": "\/public\/styles\/sass\/3-modules\/_action-button.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

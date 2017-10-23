@@ -4,10 +4,6 @@ app.service('loginSrvc',function($http, $location){
     if (user) {
         this.user = user
         return user
-        console.log(user);
-    }
-    else {
-      this.noUser = true;
     }
   })
 
@@ -18,20 +14,16 @@ app.service('loginSrvc',function($http, $location){
     // Endpoint - login
     return $http.post('/user/login', user)
     .then(response => {
-      console.log(response);
       if(response.data.validUser == 'no user') {
-        console.log('no user');
         alert('This email does not exist')
       }
       if(response.data.validUser == 'valid') {
 
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         .then(() => {
-          console.log("logged in")
           // Endpoint - get user id
           return $http.get(`/user/getUserId/${user.email}`)
           .then(response => {
-            console.log(response);
             $location.path('/directory' + response.data[0].id);
           })
           .catch(err => {
@@ -62,6 +54,13 @@ app.service('loginSrvc',function($http, $location){
     })
   }
 
+  this.redirectUser = (user) => {
+    return $http.get(`/user/getUserId/${user.email}`)
+    .then(response => {
+      $location.path('/directory' + response.data[0].id);
+    })
+  }
+
   /*
   Create new user ==============================================================
   */
@@ -87,8 +86,6 @@ app.service('loginSrvc',function($http, $location){
         .then(response => {
           if(response.data.validUser == 'username already exists') {
             alert('The email address is already in use by another account.')
-            console.log('The email address is already in use by another account.')
-            // Run jQuery here in Id to add html message
           }
           if(response.data.validUser == 'create new user') {
             // console.log('create new user')
@@ -104,7 +101,6 @@ app.service('loginSrvc',function($http, $location){
         })
       }
       check(name, email, password);
-
     }
   }
 

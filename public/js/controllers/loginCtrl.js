@@ -2,12 +2,13 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
 
   // Checking user state. Each controller!!!
   firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            this.user = user
-            return user
-            console.log(user);
-        };
-        // else { ng-show set to false }
+      if (user) {
+        $scope.user = user
+        loginSrvc.redirectUser(user)
+      }
+      // else {
+      //   console.log('no user');
+      // }
     })
 
   angular.element(document).ready(function(){})
@@ -91,7 +92,7 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
     });
   }
   $scope.passwordFocus = () => {
-    
+
     $('#login-password-input').keypress(function(event){
       $('#login-password-container').removeClass('error')
     });
@@ -252,5 +253,6 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
       $('#signup-name-input').focus();
     }, 100);
   }
+
 
 });

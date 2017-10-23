@@ -12,7 +12,7 @@
   <div id="intro-container">
     <div id="logo-container">
       <div id="logo-box">
-        <img id="logo-ui" src="./assets/logo/logo_ui.svg">
+        <img id="logo-ui-box" src="./assets/logo/logo_ui_box_red.svg">
       </div>
       <div id="hide-container">
       </div>
@@ -28,19 +28,84 @@
       <div class="directory-container" ng-click="userDirectory(user.id)">
         <p class="directory-item">Directory</p>
       </div>
-      <div class="username-container" ng-click="signOut()">
-        <p id="user-name" class="user-item"><span class="username">{{ user.name }}</span><span class="username-hiphen">—</span>Signout</p>
+      <div class="username-container" ng-class="{hideLink : hide}" ng-click="signOut()">
+        <p id="user-name" class="user-item" ng-class="{hideLink : hide}"><span class="username">{{ user.name }}</span><span class="username-hiphen" ng-class="{hideAction : hide}">—</span><span ng-class="{hideAction : hide}">Signout</span></p>
       </div>
     </div>
   </section>
   <!-- Sidebar -->
-  <section class="sidebar"></section>
+  <section ng-controller="sidebarCtrl">
+    <div id="navigation">
+      <div class="nav-container">
+        <div href="" id="first" class="nav-item" ng-click="toggleMenu('first')">
+          <div class="nav-title">
+            The Project
+          </div>
+          <div class="nav-subtitle">Why ui-board.com?</div>
+          <div class="nav-number">00</div>
+        </div>
+        <div href="" id="second" class="nav-item" ng-click="toggleMenu('second')">
+          <div class="nav-title item-1">
+            Report
+          </div>
+          <div class="nav-subtitle">Issues? Please let us know!</div>
+          <div class="nav-number">01</div>
+        </div>
+        <div href="" id="third" class="nav-item" ng-click="toggleMenu('third')">
+          <div class="nav-title">
+            Contact Us
+          </div>
+          <div class="nav-subtitle">Do you wanna grab a coffee with us?</div>
+          <div class="nav-number">02</div>
+        </div>
+      </div>
+    </div>
+    <div id="navigation-expanded-mask-1"></div>
+    <div id="navigation-expanded-mask-2"></div>
+    <div id="navigation-expanded">
+      <div class="scroll-wrapper scrollbar-chrome">
+        <div class="scroll-content">
+          <div class="navigation-item" ng-class="{selected : item == 'first'}">
+            <h1>The project</h1>
+            <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"></p>
+            <h2>ui-board.com - A visual bookmarking app for web designers and front end developers</h2>
+
+            <p>The essential part of your creative (web design) process.</p><p><br>ui-board.com is something <b>totally new</b>.<br>There are many websites dedicated to pure inspiration, competitions, blogs, galleries.<br>This is not one of those.<br>We created something that makes your daily creative process easy by providing the best deconstructed and filtered designs to give you exactly what you are looking for.</p>
+
+            <p><br>New websites are published every day and it’s hard to keep track of trends, styles and visual patterns.<br>ui-board.com has been created to answer a very simple question: <b>How can I design this solution?&nbsp;<br></b>As a Designer, I’ve been stuck many times during my process.<br>The process is the same for every project I’ve worked on. When you design a new website, you start with your own ideas but how do you move forward if you have designer’s block? What if you only had one visual reference and end up copying it?<br>Too many times I’ve been asking myself the same questions: “What was that website with that super cool full-screen navigation?” “What if I cannot find it anymore?” and “What if it’s not online anymore?”
+
+            </p><p><br>ui-board.com is the answer: you can easily find <b>hundreds of different visual solution for a single problem</b>.</p><p><br>Looking for a specific design pattern? You can try your luck and Google it. Or have one single place where the best websites have already been deconstructed and every design pattern divided into visual categories.</p><p><br>ui-board.com simply and essentially <b>showcases the best of UI Elements and Interactions</b>, all conveniently divided into <b>specific categories</b>. It’s a massive design database with solutions for web design that is constantly up to date.</p><p><br>ui-board.com is growing and will continue growing in the coming months.&nbsp;<br>It’s all about the content and we are working hard to provide you the most powerful and sophisticated collection of web design solutions.</p><p><br>(Featuring the <b>best of Responsive Web Design since 2017</b>)</p><p>
+          </div>
+          <div class="navigation-item" ng-class="{selected : item == 'second'}">
+            <h1>Report</h1>
+            <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"></p>
+            <h2>Coming Soon</h2>
+          </div>
+          <div class="navigation-item" ng-class="{selected : item == 'third'}">
+            <h1>Contact Us</h1>
+            <p style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"></p>
+            <h2>Coming Soon</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <button class="hamburger hamburger-spin" ng-click="toggleNav()">
+        <span class="hamburger-hover"></span>
+        <span class="hamburger-box">
+          <span class="hamburger-inner">
+
+          </span>
+        </span>
+      </button>
+    </div>
+  </section>
   <!-- View -->
   <ui-view class="ui-board"></ui-view>
   <!-- Bottombar -->
   <section class="bottombar">
     <div class="link">
-      <p>Developed by <a href="">Riley Adair</a></p>
+      <p>Developed by <a href="https://www.linkedin.com/in/riley-adair/" target="_blank">Riley Adair</a></p>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
@@ -68,6 +133,7 @@
   <script src="./js/controllers/boardCtrl.js"></script>
   <script src="./js/controllers/viewCtrl.js"></script>
   <script src="./js/controllers/topbarCtrl.js"></script>
+  <script src="./js/controllers/sidebarCtrl.js"></script>
   <script src="./js/services/loginSrvc.js"></script>
   <script src="./js/services/directorySrvc.js"></script>
   <script src="./js/services/boardSrvc.js"></script>

@@ -12,9 +12,9 @@ $(document).ready(function() {
     $('#intro-container').css('opacity', '0')
   }, 2500)
 
-  setTimeout(() => {
-    $('#intro-container').css('display', 'none')
-  }, 3000)
+  // setTimeout(() => {
+  //   $('#intro-container').css('display', 'none')
+  // }, 3000)
 
   // setTimeout(() => {
   //   $('#logo-container').css('transition', 'opacity, .2s ease-in')

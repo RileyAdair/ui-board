@@ -1,6 +1,6 @@
 <section class="preview-container">
   <div id="preview-header">
-    <h4 class="board-name">{{ viewInfo.name }}</h4>
+    <h4 class="board-name center">{{ viewInfo.name }}</h4>
     <p class="preview-header-title">{{ title }}</p>
   </div>
 </section>
@@ -11,7 +11,7 @@
     <img class="mobile-icon" src="../assets/icons/mobile.svg" alt="mobile">
     <img ng-show="showLaptop" class="laptop-icon" src="../assets/icons/laptop.svg" alt="laptop">
   </li>
-  <li  class="action-item" ng-click="copyURL()">
+  <li class="action-item" ng-click="copyURL()">
     <img class="share-icon" src="../assets/icons/shareArrow.svg" alt="share">
   </li>
   <li class="action-item" ng-click="sidebarToggle()">
@@ -21,14 +21,18 @@
   <li class="action-item" ng-click="removeClass()" ui-sref="board">
     <img class="close-icon" src="../assets/icons/close.svg" alt="close">
   </li>
-  <!-- <button ng-click="closePreview()">Test</button> -->
 </ul>
+<div id="copy-link-message">
+  <div id="copy-message">Copied link</div>
+  <div id="copy-background"></div>
+</div>
+
 <section id="item-details-container">
   <h4 class="board-name">{{ viewInfo.name }}</h4>
   <p class="preview-title editable-content" spellcheck="false" contenteditable="true" placeholder="Add a title here...">{{ viewInfo.title }}</p>
-  <p class="preview-description editable-content" spellcheck="false" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
+  <p class="preview-description editable-content" ng-class="{hidePlaceholder : hide}" spellcheck="false" contenteditable="true" placeholder="Add a description here...">{{ viewInfo.description }}</p>
   <div class="preview-url-container">
-    <p class="preview-reference-url editable-content" spellcheck="false" contenteditable="true" placeholder="Add a reference url here...">{{ viewInfo.reference_url }}</p>
+    <p class="preview-reference-url editable-content" ng-class="{hidePlaceholder : hide}" spellcheck="false" contenteditable="true" placeholder="Add a reference url here...">{{ viewInfo.reference_url }}</p>
     <p class="preview-site-url">{{ viewInfo.site_url }}</p>
 </div>
 </section>

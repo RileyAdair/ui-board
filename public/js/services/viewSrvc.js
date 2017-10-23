@@ -4,10 +4,6 @@ app.service('viewSrvc',function($http, $sce){
     if (user) {
         this.user = user
         return user
-        console.log(user);
-    }
-    else {
-      this.noUser = true;
     }
   })
 

@@ -49,6 +49,9 @@
   text-align: left
   float: right
 
+.username-container.hideLink
+  cursor: default
+
 .user-item
   @extend .directory-item
 
@@ -63,6 +66,10 @@
   background: $charcoal
   opacity: 0
   transition: all .22s cubic-bezier(.615,.19,.305,.91)
+
+.user-item:hover.hideLink::after
+  top: 82%
+  opacity: 0
 
 .user-item:hover::after
   top: 70%

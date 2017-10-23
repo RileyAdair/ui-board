@@ -4,10 +4,6 @@ app.service('boardSrvc',function($http, $location, $sce){
     if (user) {
         this.user = user
         return user
-        console.log(user);
-    }
-    else {
-      this.noUser = true;
     }
   })
 

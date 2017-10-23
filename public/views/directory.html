@@ -5,7 +5,7 @@
       <div class="thumbnail">
         <img class="board-image" ng-src="{{ board.image_url }}">
         <iframe ng-src="{{ board.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
-        <div class="thumbnail-trash" ng-click="deleteBoard(board.board_id)"></div>
+        <div class="thumbnail-trash" ng-class="{hideAction : hide}" ng-click="deleteBoard(board.board_id)"></div>
       </div>
     </div>
     <div class="board-caption-container">
@@ -16,7 +16,9 @@
 </section>
 
 <!-- Show create board modal-->
-<div class="action-button" ng-click="showModal()">Create</div>
+<div class="action-button" ng-class="{hideAction : hide}" ng-click="showModal()">Create</div>
+<!-- Sign up button displays when user is not signed in-->
+<div class="action-button" ng-class="{hideAction : !hide}" ui-sref="login">Sign up</div>
 
 <!-- Create board modal -->
 <section id="create-board-modal-container">

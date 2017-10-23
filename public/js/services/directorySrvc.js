@@ -4,10 +4,6 @@ app.service('directorySrvc',function($http, $location, $sce, $rootScope){
     if (user) {
         this.user = user
         return user
-        console.log(user);
-    }
-    else {
-      this.noUser = true;
     }
   })
 
@@ -54,7 +50,6 @@ app.service('directorySrvc',function($http, $location, $sce, $rootScope){
   Board Route ==================================================================
   */
   this.boardRoute = (board) => {
-    console.log(board);
     const boardId = board.board_id;
     const userId = board.userId;
     $location.path('/directory' + userId + '/board' + boardId);
@@ -64,7 +59,6 @@ app.service('directorySrvc',function($http, $location, $sce, $rootScope){
   Create board =================================================================
   */
   this.createNewBoard = (board) => {
-    console.log(board);
     const userId = board.id
     // Endpoint - create board
     return $http.post('/user/createBoard', board)

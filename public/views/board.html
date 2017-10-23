@@ -12,7 +12,7 @@
       <div class="board-thumbnail unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id}">
         <img class="board-view-image unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, shadow : image.image_url}" ng-src="{{ image.image_url }}">
         <iframe class="board-iframe unselected" ng-class="{selected : $state.current.name === 'board.view' && image.image_id == id, shadow : image.site_url}" ng-src="{{ image.site_url }}" frameborder="0" onload="this.style.opacity = 1"></iframe>
-        <div class="thumbnail-trash" ng-click="deleteImage(image)"></div>
+        <div class="thumbnail-trash" ng-class="{hideAction : hide}" ng-click="deleteImage(image)"></div>
       </div>
     </div>
   </div>
@@ -20,7 +20,9 @@
 <ui-view></ui-view>
 
 <!-- Show save modal-->
-<div id="save-modal-button" class="action-button" ng-click="showModal()">Save</div>
+<div id="save-modal-button" ng-class="{hideAction : hide}" class="action-button" ng-click="showModal()">Save</div>
+<!-- Sign up button displays when user is not signed in-->
+<div class="action-button" ng-class="{hideAction : !hide}" ui-sref="login">Sign up</div>
 
 <!-- Save modal -->
 <section id="create-board-modal-container">
@@ -38,15 +40,18 @@
       <h3>Drag &amp; Drop</h3>
       <p>Your images anywhere or, <span ngf-select="upload($file)">browse</span></p>
     </div>
+
     <div id="create-board-step">
       <div>
         <h2 class="input-header">Save from a website</h2>
-        <form id="create-board-container" class="input-container">
+        <form id="create-board-container" class="input-container" ng-submit= "addSite(site)">
           <input id="create-board-input" spellcheck="false" class="input" ng-model="site" type="url" autofocus placeholder="https://" ng-focus="boardNameFocus()">
         </form>
       </div>
       <input id="save-website-button" class="action-button" ng-click="addSite(site)" type="submit"></input>
+      <input style="display:none" type="submit" id="submit">
     </div>
+
   </div>
   <button class="close-modal" ng-click="hideModal()">X</button>
 </section>

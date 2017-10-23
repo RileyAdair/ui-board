@@ -9,40 +9,342 @@
   background-repeat: no-repeat
   background-color: $charcoal
   border-right: 1px solid $borderGrey
-  z-index: 99
+  z-index: 999
   position: fixed
   left: 0
   top: 0
 
-// .sidebar::before
-//   content: ""
-//   width: 110px
-//   height: 30px
-//   background: url(../../assets/logo/logo_full.svg) no-repeat
-//   transform: rotate(-90deg)
-//   position: absolute
-//   left: -25px
-//   bottom: 60px
+// Navigation
+#navigation
+  position: fixed
+  top: 0
+  left: 60px
+  width: 380px
+  height: 100%
+  background: $charcoal
+  z-index: 999
+  -webkit-transform: translateX(-100%)
+  transform: translateX(-100%)
+
+.nav-container
+  margin: 90px auto 0
+  height: auto
+
+.nav-container:hover .nav-item
+  opacity: .15
+
+.nav-container, .nav-item
+  width: 100%
+  position: relative
+  display: block
+
+#first, #second, #third
+  overflow: hidden
+
+#first:hover, #second:hover, #third:hover
+  opacity: 1
+
+#first.selected, #second.selected, #third.selected
+  opacity: 1
+  overflow: visible
+
+#first.selected .nav-title::after, #second.selected .nav-title::after, #third.selected .nav-title::after
+  width: 150px
+  -webkit-transform: translateX(50px)
+  transform: translateX(50px)
+
+#first.unselected, #second.unselected, #third.unselected
+  opacity: .15
+
+.nav-item
+  text-align: left
+  margin: 0 auto -20px
+  height: 100px
+  cursor: pointer
+  transition: .3s
+
+.nav-item.unselected
+  opacity: .15
+
+.nav-item:hover .nav-title::after
+  -webkit-transform: translateX(-18px)
+  transform: translateX(-18px)
+
+.nav-title
+  position: relative
+  margin-left: 50px
+  font-size: 40px
+  color: #fff
+  font-family: $font-stack-light
+  // -webkit-transform: translateY(100%)
+  // transform: translateY(100%)
+  // opacity: 0
+  // overflow: hidden
+  z-index: 1
+
+.item-1.nav-title::after
+  width: 165px
+
+.nav-title::after
+  content: ''
+  position: absolute
+  top: 26px
+  right: 0
+  width: 80px
+  height: 1px
+  background: #fff
+  z-index: -1
+  -webkit-transform: translateX(100%)
+  transform: translateX(100%)
+
+.nav-subtitle
+  position: relative
+  margin-left: 50px
+  // -webkit-transform: translateY(100%)
+  // transform: translateY(100%)
+
+.nav-number
+  position: absolute
+  top: 6px
+  left: 34px
+  -webkit-transform: rotate(-90deg)
+  transform: rotate(-90deg)
+
+.nav-number, .nav-subtitle
+  +bold-font
+  font-size: 10px
+  color: #777
+  // opacity: 0
+
+#navigation #social-icons .social-icon, #navigation-expanded .navigation-item a, #navigation-expanded .navigation-item a:after, .nav-item, .nav-title:after
+  transition: all .22s cubic-bezier(.615,.19,.305,.91)
+
+
+#navigation-expanded-mask-1
+  top: 0
+  background: linear-gradient(0deg,rgba(46,46,46,0) 0,#2E2E2E 100%)
+  transition: all 3s ease
+
+#navigation-expanded-mask-2
+  bottom: 0
+  background: linear-gradient(180deg,rgba(46,46,46,0) 0,#2E2E2E 100%)
+  transition: all 3s ease
+
+#navigation-expanded-mask-1, #navigation-expanded-mask-2
+  left: 0
+  width: 0
+  height: 90px
+  position: fixed
+  display: block
+  z-index: 30
+  // transition: all .3s ease
+
+#navigation-expanded-mask-1.active
+  border-left: 1px solid rgb(70, 70, 70)
+  width: calc(100% - 440px)
+  right: 5px
+  left: 440px
+
+#navigation-expanded-mask-2.active
+  border-left: 1px solid rgb(70, 70, 70)
+  width: calc(100% - 440px)
+  right: 5px
+  left: 440px
+
+#navigation-expanded
+  left: 0
+  top: 0
+  bottom: 0
+  width: 0
+  // position: absolute
+  position: fixed
+  display: block
+  z-index: 20
+  background: $charcoal
+  overflow-y: auto
+  // transition: all .3s ease
+
+
+#navigation-expanded.active
+  border-left: 1px solid rgb(70, 70, 70)
+  width: calc(100% - 440px)
+  right: 0px
+  left: 440px
+
+.scroll-wrapper
+  overflow: hidden!important
+  padding: 0!important
+  position: relative
+  // min-height: 100%
+  // max-height: 100%
+
+.scrollbar-chrome>.scroll-content.scroll-scrolly_visible
+  left: -16px
+  margin-left: 16px
+
+.scroll-wrapper>.scroll-content
+  border: none!important
+  box-sizing: content-box!important
+  height: auto
+  left: 0
+  margin: 0
+  max-height: none
+  max-width: none!important
+  overflow: scroll!important
+  padding: 0
+  position: relative!important
+  top: 0
+  width: auto!important
+
+#navigation-expanded .navigation-item
+  position: relative
+  width: 100%
+  padding: 50px 100px
+  margin: 0
+  box-sizing: border-box
+  color: #6E6E6E
+  text-align: left
+  font-size: 16px
+  max-width: 1100px
+
+#navigation-expanded .navigation-item h1
+  line-height: 20px
+  font-size: 12px
+  text-transform: uppercase
+  margin-bottom: 25px
+
+#navigation-expanded .navigation-item h2
+  line-height: 22px
+  font-size: 16px
+  color: #D9D9D9
+  padding-bottom: 14px
+
+#navigation-expanded .navigation-item p
+  font-size: 14px
+  line-height: 22px
+
+.navigation-item
+  display: none
+
+.navigation-item.selected
+  display: block
+
+// Hamburger
+.hamburger
+  padding: 0
+  display: inline-block
+  cursor: pointer
+  transition-property: opacity,-webkit-filter
+  transition-property: opacity,filter
+  transition-property: opacity,filter,-webkit-filter
+  transition-duration: .75s
+  transition-timing-function: linear
+  font: inherit
+  color: inherit
+  background-color: transparent
+  border: 0
+  margin: 0
+  overflow: hidden
+  position: relative
+
+  &:hover .hamburger-hover
+    top: -100%
+    left: -100%
+
+.hamburger-box
+  width: 60px
+  height: 60px
+  display: block
+  margin: 0 auto
+  position: relative
+  border-bottom: 1px solid #464646
+  overflow: hidden
+  text-transform: none
+
+.hamburger-hover
+  position: absolute
+  top: 0
+  left: 0
+  width: 100px
+  height: 100px
+  background: #1C1C1C
+  transition: all .25s cubic-bezier(.615,.19,.305,.91)
+  -webkit-transform: translate3d(45%,45%,0) rotate(45deg)
+  transform: translate3d(45%,45%,0) rotate(45deg)
+
+.hamburger-spin .hamburger-inner
+  transition-duration: .3s
+  transition-timing-function: cubic-bezier(.55,.055,.675,.19)
+
+.hamburger-spin .hamburger-inner::after
+  transition: bottom .1s .3s ease-in,-webkit-transform .3s cubic-bezier(.55,.055,.675,.19)
+  transition: bottom .1s .3s ease-in,transform .3s cubic-bezier(.55,.055,.675,.19)
+  transition: bottom .1s .3s ease-in,transform .3s cubic-bezier(.55,.055,.675,.19),-webkit-transform .3s cubic-bezier(.55,.055,.675,.19)
+
+.hamburger-spin .hamburger-inner::before
+  transition: top .1s .3s ease-in,opacity .1s ease-in
+
+.hamburger-inner
+  top: 0
+  left: 0
+  margin: 29px 0 0 20px
+  padding: 0
+  z-index: 999
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+  width: 20px
+  height: 2px
+  background-color: #fff
+  position: absolute
+  transition-property: -webkit-transform
+  transition-property: transform
+  transition-property: transform,-webkit-transform
+  transition-duration: .15s
+  transition-timing-function: ease
+
+.hamburger-inner::before
+  top: -6px
+
+.hamburger-inner::after
+  bottom: -6px
+
+.hamburger-inner::after, .hamburger-inner::before
+  content: ""
+  display: block
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+  width: 20px
+  height: 2px
+  background-color: #fff
+  position: absolute
+  transition-property: -webkit-transform
+  transition-property: transform
+  transition-property: transform,-webkit-transform
+  transition-duration: .15s
+  transition-timing-function: ease
 
 
 
+// Is Active
+.hamburger.active
+  .hamburger-inner
+    -webkit-transform: rotate(-225deg)
+    transform: rotate(-225deg)
+    transition-delay: .1s
+    transition-timing-function: cubic-bezier(.215,.61,.355,1)
 
+  .hamburger-inner::before
+    top: 0
+    opacity: 0
+    transition: top .1s ease-out,opacity .1s .1s ease-out
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .hamburger-inner::after
+    bottom: 0
+    -webkit-transform: rotate(-90deg)
+    transform: rotate(-90deg)
+    transition: bottom .1s ease-out,-webkit-transform .3s .1s cubic-bezier(.215,.61,.355,1)
+    transition: bottom .1s ease-out,transform .3s .1s cubic-bezier(.215,.61,.355,1)
+    transition: bottom .1s ease-out,transform .3s .1s cubic-bezier(.215,.61,.355,1),-webkit-transform .3s .1s cubic-bezier(.215,.61,.355,1)
 
 
 

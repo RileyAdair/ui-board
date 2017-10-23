@@ -1,13 +1,13 @@
-app.controller('directoryCtrl', function($scope, $location, $stateParams, directorySrvc) {
+app.controller('directoryCtrl', function($scope, $location, $stateParams, directorySrvc, $state) {
 
   firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            this.user = user
-            return user
-            console.log(user);
-        };
-        // else { ng-show set to false }
-        console.log(this.user);
+    if (user) {
+        $scope.user = user
+        $scope.hide = false
+    }
+    else {
+      $scope.hide = true
+    }
   })
 
 
@@ -15,14 +15,14 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   angular.element(document).ready(function(){
     setTimeout(function(){
       $('body').find('.directory-boards-container').css('opacity', '1')
-    }, 520);
+    }, 550);
 
     function animate(){
-      TweenMax.staggerFrom(".animate", .2, {opacity:0, scale:1.3}, 0.2);
+      TweenMax.staggerFrom(".animate", .23, {opacity:0, scale:1.3}, 0.2);
     }
     setTimeout(function(){
       animate()
-    }, 270);
+    }, 300);
 
     // Show / Hide - Modal
     $scope.showModal = () => {
@@ -81,8 +81,6 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
         name: boardName,
         id: $stateParams.id
       }
-      // console.log(board);
-      // board.id = $stateParams.id;
       directorySrvc.createNewBoard(board);
     }
   };
@@ -90,7 +88,6 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   // Remove error class
   $scope.boardNameFocus = () => {
     $('#create-board-input').keypress(function(event){
-      console.log('typing');
       $('#create-board-container').removeClass('error')
     });
   }
