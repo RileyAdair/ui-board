@@ -254,6 +254,16 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/public\/assets\/icons\/submitArrow.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/public\/assets\/icons\/submitArrow.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/public\/assets\/icons\/trash.png": {
 		"ft": 32768,
 		"iS": 829,
@@ -345,6 +355,12 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/public\/assets\/logo\/logo_ui_box_red.ico": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/public\/assets\/logo\/logo_ui_box_red.ico",
+		"oF": 0
+		},
 	"\/public\/assets\/logo\/logo_ui_box_red.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -427,16 +443,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/public\/js\/controllers\/viewCtrl-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/public\/js\/intro-animation-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/public\/js\/intro-animation-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -763,6 +769,12 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_mobile-message.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_mobile-message.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_modules-dir.sassc": {

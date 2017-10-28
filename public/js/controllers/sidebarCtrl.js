@@ -3,7 +3,6 @@ app.controller('sidebarCtrl', function($scope) {
   angular.element(document).ready(function(){
 
     $scope.item = false
-    console.log($scope.item);
     let clicked = false
 
     $scope.toggleNav = () => {
@@ -43,22 +42,9 @@ app.controller('sidebarCtrl', function($scope) {
       }
     }
 
-    // $('#first').on('mouseenter', function(){$('#second').css('opacity','.15');$('#third').css('opacity','.15');});
-    // $('#first').on('mouseleave', function(){$('#second').css('opacity','1');$('#third').css('opacity','1');});
-    // $('#second').on('mouseenter', function(){$('#first').css('opacity','.15');$('#third').css('opacity','.15');});
-    // $('#second').on('mouseleave', function(){$('#first').css('opacity','1');$('#third').css('opacity','1');});
-    // $('#third').on('mouseenter', function(){$('#second').css('opacity','.15');$('#first').css('opacity','.15');});
-    // $('#third').on('mouseleave', function(){$('#second').css('opacity','1');$('#first').css('opacity','1');});
-
-
     $scope.toggleMenu = (navItem) => {
 
       $scope.item = navItem
-      console.log($scope.item);
-      console.log(navItem);
-      // $('#first').removeClass('selected')
-      // $('#second').removeClass('selected')
-      // $('#third').removeClass('selected')
 
       if(navItem == 'first') {
         $('#first').removeClass('unselected')
@@ -78,6 +64,10 @@ app.controller('sidebarCtrl', function($scope) {
         $('#first').addClass('unselected')
         $('#second').addClass('selected')
         $('#third').addClass('unselected')
+
+        setTimeout(function(){
+          $('#report-input').focus();
+        }, 100);
       }
 
       if(navItem == 'third') {
@@ -97,12 +87,35 @@ app.controller('sidebarCtrl', function($scope) {
       $('#navigation-expanded-mask-1').addClass('active')
       $('#navigation-expanded-mask-2').addClass('active')
 
-      // function animate(){
-      //   TweenMax.to("#navigation-expanded", .3, {left: -380}, {setSize:{width:auto}});
-      // }
-      // setTimeout(function(){
-      //   animate()
-      // }, 10);
+    }
+
+
+    $scope.submitReport = (reportSubmission) => {
+      let report = reportSubmission
+
+      if(!report){
+        setTimeout(function(){
+          $('#report-input').addClass('error')
+          console.log(report);
+        }, 50);
+      }
+      if(report) {
+        setTimeout(function(){
+          $('#report-label').html('Your report has been sent successfully!')
+          $('#report-input').val('')
+          $('#report-input').removeClass('error')
+          $scope.report = ''
+        }, 300);
+      }
+    }
+
+    // Remove error class
+    $scope.reportFocus = () => {
+      $('#report-label').html('How can we improve?')
+      $('#report-input').removeClass('error')
+      $('#report-input').keypress(function(event){
+        $('#report-input').removeClass('error')
+      });
     }
 
   })

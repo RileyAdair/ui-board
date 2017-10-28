@@ -20,7 +20,6 @@ app.service('boardSrvc',function($http, $location, $sce){
     // Endpoint - get board images
     return $http.get(`/user/getBoardImages/${board.board_id}`)
     .then(response => {
-      console.log(response);
       const results = response.data;
       const imagesArr = [];
 
@@ -82,19 +81,16 @@ app.service('boardSrvc',function($http, $location, $sce){
         file.title = name.replace(/.([^.]*)$/,'');
         const title = file.title.charAt(0).toUpperCase() + file.title.slice(1);
         // pass download url to database
-        console.log(title);
         resolve({downloadURL, boardId, title});
       });
 
     })
     .then(({downloadURL, boardId, title}) => {
       // const {downloadURL, boardId} = obj
-      console.log(downloadURL, boardId, title);
       // Endpoint - add image
       return $http.post('/user/addImage', [ downloadURL, boardId, title ])
       .then(response => {
         const results = response.data[0];
-        console.log(results);
 
         const obj = {
           board_id: results.board_id,
@@ -128,7 +124,6 @@ app.service('boardSrvc',function($http, $location, $sce){
     return $http.post('/user/addsite', [ site, boardId, title ])
     .then(response => {
       const results = response.data[0];
-      console.log(results);
 
       const obj = {
         board_id: results.board_id,
@@ -149,7 +144,6 @@ app.service('boardSrvc',function($http, $location, $sce){
   Update board name ============================================================
   */
   this.updateBoardName = (name, boardId) => {
-    console.log(name, boardId);
     // Endpoint - update board name
     return $http.post('/user/updateBoardName', [ name, boardId ])
   }

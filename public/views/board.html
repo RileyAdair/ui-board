@@ -1,9 +1,12 @@
+<!-- Topbar - directory & username -->
 <section class="board-topbar">
   <div class="board-name-container">
     <span>—</span>
     <p id="board-name-header" class="editable-content" contenteditable="true" placeholder="Add title here...">{{ boardName }}</p>
   </div>
 </section>
+
+<div id="start-message"><p>Start saving design inspirations</p></div>
 
 <!-- Saved images and sites -->
 <section class="board-view-container unselected"  ng-class="{selected : $state.current.name === 'board.view'}">
@@ -35,7 +38,6 @@
     ngf-pattern="'image/*,application/pdf'" id="save-modal-container" class="create-board-modal-content-container">
     <div class="upload-container">
       <div class="drag-drop">
-        <!-- <img src="../assets/icons/drag-drop.png" alt=""> -->
       </div>
       <h3>Drag &amp; Drop</h3>
       <p>Your images anywhere or, <span ngf-select="upload($file)">browse</span></p>
@@ -51,7 +53,6 @@
       <input id="save-website-button" class="action-button" ng-click="addSite(site)" type="submit"></input>
       <input style="display:none" type="submit" id="submit">
     </div>
-
   </div>
   <button class="close-modal" ng-click="hideModal()">X</button>
 </section>

@@ -40,6 +40,8 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
 
   angular.element(document).ready(function(){
 
+    // $('#start-message').css('display','none')
+
     $scope.removeClass = () => {
       $('body').find('.board-thumbnail-container.selected').removeClass('move')
     }
@@ -63,9 +65,20 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
     }
   })
 
-  // **** For testing updates
   $scope.images = [];
   const imagesArr = $scope.images;
+
+  $scope.checkLength = () => {
+    if(imagesArr.length > 0){
+      $('#start-message').css('display','none')
+      console.log('icons');
+    }
+    else {
+      $scope.startMessage = true;
+      console.log('nope');
+      $('#start-message').css('display','block')
+    }
+  }
 
   // Get Board Name & Board Images / Sites
   boardSrvc.getBoardName(boardId).then(response => {
@@ -76,6 +89,7 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
     response.forEach(i => {
       imagesArr.push(i);
     })
+    $scope.checkLength();
   })
 
   $scope.deleteImage = (image) => {
@@ -87,12 +101,11 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
        if( imagesArr[i]
            && imagesArr[i].hasOwnProperty(imageProp)
            && (arguments.length > 2 && imagesArr[i][imageProp] === imageId ) ){
-
            imagesArr.splice(i,1);
-
        }
     }
     boardSrvc.deleteImage(imageId, boardId)
+    $scope.checkLength();
   }
 
   // Add site
@@ -112,15 +125,17 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
       .then(response => {
 
         imagesArr.push(response);
-        console.log(response);
+
+
 
         $('#create-board-modal-container').css('opacity','0');
         setTimeout(function(){
           $('#create-board-modal-container').css('display','none');
           $('#create-board-input').val('')
           $('#create-board-container').removeClass('error')
+          $scope.checkLength();
+          $scope.site = ''
         }, 300);
-        // $scope.images = response;
       })
     }
   }
@@ -147,11 +162,14 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
         imagesArr.push(response);
       }, 0)
 
+
+
       $('#create-board-modal-container').css('opacity','0');
 
       setTimeout(function(){
         $('#create-board-modal-container').css('display','none');
         $('#create-board-input').val('')
+        $scope.checkLength();
       }, 300);
     })
   }
