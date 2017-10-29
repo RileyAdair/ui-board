@@ -22,20 +22,6 @@ app.use(json());
 app.use(cors());
 app.use('/', express.static(__dirname + '/public'));
 
-
-// Session -
-// app.use(session({
-//   secret,
-//   resave: true,
-//   saveUninitialized: true
-// }))
-// if not logged in, send error message and catch in resolve
-// else send user
-// app.get('/auth/me', (req, res) => {
-//     if (!req.session.user) return res.status(401).json({err: 'User Not Authenticated'});
-//     res.status(200).json(req.session.user);
-// });
-
 /*
 Endpoints ======================================================================
 */

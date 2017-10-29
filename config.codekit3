@@ -165,12 +165,6 @@
 		"oO": 0,
 		"oS": 1
 		},
-	"\/public\/404.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/public\/404.html",
-		"oF": 0
-		},
 	"\/public\/assets\/font\/gilroy-extrabold-webfont.woff2": {
 		"ft": 8192,
 		"oA": 2,
@@ -593,20 +587,16 @@
 		"oAP": "\/public\/styles\/css\/app.css.map",
 		"oF": 0
 		},
-	"\/public\/styles\/css\/main.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/public\/styles\/css\/main-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/public\/styles\/sass\/.sass-cache\/1b2e76d441529dff542197d211511c5cbf00495d\/_plugins-dir.sassc": {
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/1b2e76d441529dff542197d211511c5cbf00495d\/_plugins-dir.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/25930a9dd8b27b75b9a8a8e281ddf3486841337a\/_plugins-dir.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/25930a9dd8b27b75b9a8a8e281ddf3486841337a\/_plugins-dir.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/_mixins.sassc": {
@@ -625,6 +615,126 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/app.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_base-dir.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_base-dir.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_common.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_common.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_mixins.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_mixins.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_variables.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_variables.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/app.sassc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/app.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_0-login.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_0-login.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_1-directory.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_1-directory.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_2-board.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_2-board.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_3-preview.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_3-preview.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_bottombar.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_bottombar.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_breakpoints.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_breakpoints.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_layouts-dir.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_layouts-dir.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_sidebar.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_sidebar.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_topbar.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_topbar.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_ui-board.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_ui-board.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_action-button.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_action-button.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_editable-content.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_editable-content.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_input.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_input.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_intro-animation.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_intro-animation.sassc",
+		"oF": 0
+		},
+	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_modules-dir.sassc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_modules-dir.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-home.sassc": {

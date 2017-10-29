@@ -595,20 +595,6 @@ button, .input-button {
   content: "";
   display: block; }
 
-.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  transition-property: -webkit-transform;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease; }
-
 .hamburger.active .hamburger-box {
   background: #1C1C1C; }
 .hamburger.active .hamburger-inner {
@@ -1663,8 +1649,7 @@ button, .input-button {
           align-items: center;
   z-index: 2200;
   -webkit-transition: all 0.7s;
-  transition: all 0.7s;
-  display: none; }
+  transition: all 0.7s; }
 
 .logo-container {
   width: 360px;

@@ -71,11 +71,9 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
   $scope.checkLength = () => {
     if(imagesArr.length > 0){
       $('#start-message').css('display','none')
-      console.log('icons');
     }
     else {
       $scope.startMessage = true;
-      console.log('nope');
       $('#start-message').css('display','block')
     }
   }

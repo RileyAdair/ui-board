@@ -50,11 +50,9 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   $scope.checkLength = () => {
     if(boardsArr.length > 0){
       $('#board-message').css('display','none')
-      console.log('icons');
     }
     else {
       $scope.startMessage = true;
-      console.log('nope');
       $('#board-message').css('display','block')
     }
   }
