@@ -1,19 +1,19 @@
+require("dotenv").config()
 const express = require('express');
 const { json } = require('body-parser');
 const cors = require('cors');
 // Session - const session = require('express-session');
 const massive = require('massive');
-const port = 3000;
 const app = express();
 const ctrl = require('./server/ctrl.js');
 // Session - const { secret, dbUser, database } = require('./server/config');
 const { dbUser, database } = require('./server/config');
 // Database connection information
-const connectionString = `postgres://${dbUser}@localhost/${database}`;
-// const connectionString = "postgres://lyqkwtvsnrrqyf:acd804d40b1368b5dbfbf97a607ae16580d26e68bf6a61c5a152b91a7b3cef25@ec2-54-163-245-14.compute-1.amazonaws.com:5432/d1k08g3kh90mfi?ssl=true";
+// const connectionString = `postgres://${dbUser}@localhost/${database}`;
+const connectionString = "postgres://lyqkwtvsnrrqyf:acd804d40b1368b5dbfbf97a607ae16580d26e68bf6a61c5a152b91a7b3cef25@ec2-54-163-245-14.compute-1.amazonaws.com:5432/d1k08g3kh90mfi?ssl=true";
 
 // connecting to our DB with massive
-massive(connectionString).then(db => {
+massive(process.env.HEROKU_POSTGRESQL_MAUVE_URL).then(db => {
   app.set('db', db);
 });
 
@@ -50,6 +50,6 @@ app.post('/user/updateViewTitle', ctrl.updateViewTitle);
 app.post('/user/updateViewDescription', ctrl.updateViewDescription)
 app.post('/user/updateViewReference', ctrl.updateViewReference)
 
-app.listen(port, function() {
+app.listen(process.env.PORT, function() {
   console.log('Server listening on port', port);
 })

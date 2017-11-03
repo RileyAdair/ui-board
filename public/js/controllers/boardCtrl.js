@@ -40,8 +40,6 @@ app.controller('boardCtrl', function($scope, $timeout, $location, $stateParams, 
 
   angular.element(document).ready(function(){
 
-    // $('#start-message').css('display','none')
-
     $scope.removeClass = () => {
       $('body').find('.board-thumbnail-container.selected').removeClass('move')
     }

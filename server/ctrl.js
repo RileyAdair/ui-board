@@ -40,7 +40,6 @@ module.exports = {
   },
 
   createUser(req, res) {
-    console.log(req.body);
     req.app
       .get('db')
       .add_user(req.body)
