@@ -51,5 +51,5 @@ app.post('/user/updateViewDescription', ctrl.updateViewDescription)
 app.post('/user/updateViewReference', ctrl.updateViewReference)
 
 app.listen(process.env.PORT, function() {
-  console.log('Server listening on port', port);
+  console.log('Server listening on port', process.env.PORT);
 })
