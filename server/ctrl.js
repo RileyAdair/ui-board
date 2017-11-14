@@ -20,9 +20,10 @@ module.exports = {
   },
 
   getUserId(req, res) {
+    console.log(req.body);
     req.app
       .get('db')
-      .get_user_id(req.params.id)
+      .get_user_id(req.body)
       .then(users => res.json(users))
       .catch(err => res.json(err));
   },

@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25900",
 "files": {
+	"\/.env": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.env",
+		"oF": 0
+		},
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
@@ -157,6 +163,14 @@
 		"oAP": "\/build\/node_modules",
 		"oF": 0
 		},
+	"\/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 1,
@@ -164,6 +178,12 @@
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
+		},
+	"\/Procfile": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/Procfile",
+		"oF": 0
 		},
 	"\/public\/assets\/font\/gilroy-extrabold-webfont.woff2": {
 		"ft": 8192,
@@ -585,330 +605,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/public\/styles\/css\/app.css.map",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/1b2e76d441529dff542197d211511c5cbf00495d\/_plugins-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/1b2e76d441529dff542197d211511c5cbf00495d\/_plugins-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/25930a9dd8b27b75b9a8a8e281ddf3486841337a\/_plugins-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/25930a9dd8b27b75b9a8a8e281ddf3486841337a\/_plugins-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/_mixins.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/_mixins.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/_variables.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/_variables.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/app.sassc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/3a88c57028c5c27a8061fc37183011a3b5d46189\/app.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_base-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_base-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_common.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/3c8bac7e61376763446dce6a6d1ac1eef1191f1a\/_common.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_mixins.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_mixins.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_variables.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/_variables.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/app.sassc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/57c8eb8e215090bab33a136d59dbf46481365f30\/app.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_0-login.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_0-login.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_1-directory.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_1-directory.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_2-board.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_2-board.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_3-preview.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_3-preview.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_bottombar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_bottombar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_breakpoints.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_breakpoints.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_layouts-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_layouts-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_sidebar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_sidebar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_topbar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_topbar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_ui-board.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/93ff28e0e7948d12f1e03cdb7bc9cde911b394e5\/_ui-board.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_action-button.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_action-button.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_editable-content.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_editable-content.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_input.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_input.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_intro-animation.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_intro-animation.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_modules-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/a73b88a46c57e97ca0a6e5c611db04dc72eb676e\/_modules-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-home.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-home.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-login.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_0-login.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_1-directory.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_1-directory.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_2-board.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_2-board.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_3-preview.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_3-preview.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_bottombar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_bottombar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_break-points.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_break-points.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_breakpoints.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_breakpoints.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_intro-animation.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_intro-animation.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_layouts-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_layouts-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_sidebar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_sidebar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_topbar.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_topbar.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_ui-board.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_ui-board.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-directory.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-directory.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-home.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-home.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-login.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/_view-login.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/header.sassc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/header.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/ui-board.sassc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/c4e684b0cdf68ac55d63b113f91a68710cd1d01e\/ui-board.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_action-button.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_action-button.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_add-button.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_editable-content.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_editable-content.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_input.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_input.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_intro-animation.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_intro-animation.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_logo-ui-box.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_mobile-message.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_mobile-message.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_modules-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/cc2438879b113c6445ed427c737204ab7fead84a\/_modules-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_base-dir.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_base-dir.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_base.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_base.sassc",
-		"oF": 0
-		},
-	"\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_common.sassc": {
-		"ft": 8192,
-		"oA": 1,
-		"oAP": "\/public\/styles\/sass\/.sass-cache\/de95875404e993f0091366e3753af74486efbf0d\/_common.sassc",
 		"oF": 0
 		},
 	"\/public\/styles\/sass\/0-plugins\/_plugins-dir.sass": {
