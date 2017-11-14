@@ -21,7 +21,6 @@ app.service('loginSrvc',function($http, $location){
 
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         .then(() => {
-          console.log(user);
           // Endpoint - get user id
           return $http.post('/user/getUserId', {email: user.email})
           .then(response => {

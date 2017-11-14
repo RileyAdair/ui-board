@@ -20,12 +20,11 @@ module.exports = {
   },
 
   getUserId(req, res) {
-    console.log(req.body);
     req.app
       .get('db')
       .get_user_id(req.body.email)
-      .then(users => {console.log(users); res.json(users)})
-      .catch(err => {console.log(err);res.json(err)});
+      .then(users => res.json(users))
+      .catch(err => res.json(err));
   },
 
   checkUser: (req, res) => {
