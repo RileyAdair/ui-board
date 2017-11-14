@@ -23,7 +23,7 @@ app.service('loginSrvc',function($http, $location){
         .then(() => {
           console.log(user);
           // Endpoint - get user id
-          return $http.post('/user/getUserId', user.email)
+          return $http.post('/user/getUserId', {email: user.email})
           .then(response => {
             $location.path('/directory' + response.data[0].id);
           })
