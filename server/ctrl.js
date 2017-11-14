@@ -24,8 +24,8 @@ module.exports = {
     req.app
       .get('db')
       .get_user_id(req.body)
-      .then(users => res.json(users))
-      .catch(err => res.json(err));
+      .then(users => {console.log(users); res.json(users)})
+      .catch(err => {console.log(err);res.json(err)});
   },
 
   checkUser: (req, res) => {
