@@ -952,6 +952,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/server\/temp.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/server\/temp-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/storage.rules": {
 		"ft": 8192,
 		"oA": 2,
