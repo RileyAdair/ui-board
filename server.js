@@ -7,7 +7,7 @@ const app = express();
 const ctrl = require('./server/ctrl.js');
 const { dbUser, database } = require('./server/config');
 // Database connection information
-// const connectionString = `postgres://${dbUser}@localhost/${database}`;
+// const connectionString = `postgres://${dbUser}@localhost/${database}`; 
 
 const { port, connectionString } = require('./config')
 // connecting to our DB with massive
