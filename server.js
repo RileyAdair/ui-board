@@ -10,10 +10,10 @@ const ctrl = require('./server/ctrl.js');
 const { dbUser, database } = require('./server/config');
 // Database connection information
 // const connectionString = `postgres://${dbUser}@localhost/${database}`;
-const connectionString = "postgres://lyqkwtvsnrrqyf:acd804d40b1368b5dbfbf97a607ae16580d26e68bf6a61c5a152b91a7b3cef25@ec2-54-163-245-14.compute-1.amazonaws.com:5432/d1k08g3kh90mfi?ssl=true";
 
+const { port, connectionString } = require('./config')
 // connecting to our DB with massive
-massive(process.env.HEROKU_POSTGRESQL_MAUVE_URL).then(db => {
+massive(connectionString).then(db => {
   app.set('db', db);
 });
 
@@ -27,7 +27,7 @@ Endpoints ======================================================================
 */
 // Home Endpoints
 app.post('/user/login', ctrl.login);
-app.get('/user/getUserId/:id', ctrl.getUserId);
+app.post('/user/getUserId', ctrl.getUserId);
 app.post('/user/checkUser', ctrl.checkUser);
 app.post('/user/createUser', ctrl.createUser);
 // Directory Endpoints
@@ -50,6 +50,6 @@ app.post('/user/updateViewTitle', ctrl.updateViewTitle);
 app.post('/user/updateViewDescription', ctrl.updateViewDescription)
 app.post('/user/updateViewReference', ctrl.updateViewReference)
 
-app.listen(process.env.PORT, function() {
+app.listen(port, function() {
   console.log('Server listening on port', port);
 })

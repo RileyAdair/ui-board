@@ -21,17 +21,18 @@ app.service('loginSrvc',function($http, $location){
 
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         .then(() => {
+          // console.log(user);
           // Endpoint - get user id
-          return $http.get(`/user/getUserId/${user.email}`)
+          return $http.post('/user/getUserId', {email: user.email})
           .then(response => {
             $location.path('/directory' + response.data[0].id);
           })
           .catch(err => {
-            console.log(err);
+            // console.log(err);
           })
         })
         .catch(err => {
-          console.log(err);
+          // console.log(err);
           if(err.message == "The password is invalid or the user does not have a password.") {
 
             setTimeout(function(){
@@ -65,21 +66,21 @@ app.service('loginSrvc',function($http, $location){
   Create new user ==============================================================
   */
   this.createNewUser = (name, email, password) => {
-    console.log(name, email, password)
+    // console.log(name, email, password)
     if(!name) {
-      console.log('no name')
+      // console.log('no name')
     }
     if(!email) {
-      console.log('no email')
+      // console.log('no email')
     }
     if(!password) {
-      console.log('no password')
+      // console.log('no password')
     }
     if(name && email && password) {
 
       function check(name, email, password) {
         const userEmail = {email:email}
-        console.log(email);
+        // console.log(email);
 
         // Endpoint - checkUser
         return $http.post('/user/checkUser', userEmail)
@@ -94,7 +95,7 @@ app.service('loginSrvc',function($http, $location){
                 // Endpoint - create user
                 return $http.post('/user/createUser', userInfo).then((response) => {
                   $location.path('/directory' + response.data[0].id);
-                  console.log(response);
+                  // console.log(response);
                 })
             })
           }
@@ -110,7 +111,7 @@ app.service('loginSrvc',function($http, $location){
   this.signOut = (user) => {
     $location.path('/');
     firebase.auth().signOut().then((user) => {
-        console.log(this.user.uid, 'Signed Out');
+        // console.log(this.user.uid, 'Signed Out');
     })
   }
 

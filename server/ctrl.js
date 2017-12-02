@@ -22,7 +22,7 @@ module.exports = {
   getUserId(req, res) {
     req.app
       .get('db')
-      .get_user_id(req.params.id)
+      .get_user_id(req.body.email)
       .then(users => res.json(users))
       .catch(err => res.json(err));
   },
