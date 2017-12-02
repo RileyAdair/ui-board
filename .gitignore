@@ -3,7 +3,6 @@ config.js
 database.rules.json
 firebase.json
 Procfile
-package.json
 package-lock.json
 storage.rules
 .env
