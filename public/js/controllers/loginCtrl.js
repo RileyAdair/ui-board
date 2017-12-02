@@ -213,7 +213,6 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
       $('#signup-password-container').addClass('error')
     }
     else {
-      console.log(name, email, password);
       loginSrvc.createNewUser(name, email, password)
     }
   }
@@ -253,6 +252,4 @@ app.controller('loginCtrl', function($scope, $location, loginSrvc, Upload) {
       $('#signup-name-input').focus();
     }, 100);
   }
-
-
 });

@@ -78,11 +78,9 @@ app.controller('directoryCtrl', function($scope, $location, $stateParams, direct
   // Create board
   $scope.createBoard = (boardName) => {
     if(!boardName) {
-      console.log('Please enter name');
       $('#create-board-container').addClass('error')
     }
     if(boardName) {
-      console.log(boardName);
       const board = {
         name: boardName,
         id: $stateParams.id
