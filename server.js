@@ -2,11 +2,9 @@ require("dotenv").config()
 const express = require('express');
 const { json } = require('body-parser');
 const cors = require('cors');
-// Session - const session = require('express-session');
 const massive = require('massive');
 const app = express();
 const ctrl = require('./server/ctrl.js');
-// Session - const { secret, dbUser, database } = require('./server/config');
 const { dbUser, database } = require('./server/config');
 // Database connection information
 // const connectionString = `postgres://${dbUser}@localhost/${database}`;
@@ -22,9 +20,6 @@ app.use(json());
 app.use(cors());
 app.use('/', express.static(__dirname + '/public'));
 
-/*
-Endpoints ======================================================================
-*/
 // Home Endpoints
 app.post('/user/login', ctrl.login);
 app.post('/user/getUserId', ctrl.getUserId);
