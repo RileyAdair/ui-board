@@ -96,7 +96,6 @@ app.controller('sidebarCtrl', function($scope) {
       if(!report){
         setTimeout(function(){
           $('#report-input').addClass('error')
-          console.log(report);
         }, 50);
       }
       if(report) {

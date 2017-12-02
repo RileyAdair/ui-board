@@ -5,11 +5,8 @@ const cors = require('cors');
 const massive = require('massive');
 const app = express();
 const ctrl = require('./server/ctrl.js');
-const { dbUser, database } = require('./server/config');
 // Database connection information
-// const connectionString = `postgres://${dbUser}@localhost/${database}`; 
-
-const { port, connectionString } = require('./config')
+const { port, connectionString } = require('./config');
 // connecting to our DB with massive
 massive(connectionString).then(db => {
   app.set('db', db);
